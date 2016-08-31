@@ -5,7 +5,7 @@ using MvvmCross.Droid.Views;
 namespace TestDemo.Droid
 {
     [Activity(
-        Label = "Demo"
+        Label = "Shared-Demo"
         , MainLauncher = true
         , Icon = "@drawable/icon"
         , Theme = "@style/Theme.Splash"

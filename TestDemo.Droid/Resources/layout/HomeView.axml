@@ -1,33 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:layout_margin="10dp">
     <TextView
         android:text="Welcome to GROW"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewTitle" />
+        android:id="@+id/textViewTitle"
+        android:textColor="@color/button_default"
+        android:layout_margin="10dp" />
     <Button
         android:text="Daily Task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonDailyTask" />
+        android:id="@+id/buttonDailyTask"
+        android:background="@color/button_default"
+        android:textColor="@color/button_text"
+        android:layout_margin="10dp" />
     <Button
         android:text="Medal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonMedal" />
+        android:id="@+id/buttonMedal"
+        android:background="@color/button_default"
+        android:textColor="@color/button_text"
+        android:layout_margin="10dp" />
     <Button
         android:text="Journey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonJourney" />
+        android:id="@+id/buttonJourney"
+        android:background="@color/button_default"
+        android:textColor="@color/button_text"
+        android:layout_margin="10dp" />
     <Button
         android:text="Setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonSetting" />
+        android:id="@+id/buttonSetting"
+        android:background="@color/button_default"
+        android:textColor="@color/button_text"
+        android:layout_margin="10dp" />
+    <Button
+        android:text="Others - new user view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonForNewUser"
+        local:MvxBind="Click StartFirstViewCommand"
+        android:background="@color/button_default"
+        android:textColor="@color/button_text"
+        android:layout_margin="10dp" />
 </LinearLayout>

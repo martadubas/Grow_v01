@@ -137,13 +137,34 @@ namespace TestDemo.Droid
 			public const int MvxBindingTagUnique = 2130968577;
 			
 			// aapt resource value: 0x7f040004
-			public const int button1 = 2130968580;
+			public const int button4 = 2130968580;
+			
+			// aapt resource value: 0x7f040006
+			public const int buttonDailyTask = 2130968582;
+			
+			// aapt resource value: 0x7f04000a
+			public const int buttonForNewUser = 2130968586;
+			
+			// aapt resource value: 0x7f040008
+			public const int buttonJourney = 2130968584;
+			
+			// aapt resource value: 0x7f040007
+			public const int buttonMedal = 2130968583;
+			
+			// aapt resource value: 0x7f040009
+			public const int buttonSetting = 2130968585;
 			
 			// aapt resource value: 0x7f040003
 			public const int editText1 = 2130968579;
 			
 			// aapt resource value: 0x7f040002
 			public const int textView1 = 2130968578;
+			
+			// aapt resource value: 0x7f04000b
+			public const int textViewGrow = 2130968587;
+			
+			// aapt resource value: 0x7f040005
+			public const int textViewTitle = 2130968581;
 			
 			static Id()
 			{
@@ -162,7 +183,10 @@ namespace TestDemo.Droid
 			public const int FirstView = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int SplashScreen = 2130903041;
+			public const int HomeView = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int SplashScreen = 2130903042;
 			
 			static Layout()
 			{
