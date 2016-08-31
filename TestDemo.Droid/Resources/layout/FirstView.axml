@@ -25,11 +25,9 @@
   <Button
      android:text="Next"
      android:layout_width="match_parent"
-    android:layout_height="50"
+    android:layout_height="50pt"
     android:id="@+id/button4"
-    android:layout_marginLeft="120"
-    android:layout_marginRight="120"
-    android:textSize="20"
+    android:textSize="20pt"
     android:background="@color/button_default"
     android:textColor="@color/button_text"/>
 
