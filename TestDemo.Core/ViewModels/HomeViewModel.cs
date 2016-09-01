@@ -6,22 +6,22 @@ namespace TestDemo.Core.ViewModels
     public class HomeViewModel 
         : MvxViewModel
     {
-        //private string _hello = "Hello MvvmCross";
-        //public string Hello
-        //{
-        //    get { return _hello; }
-        //    set { SetProperty(ref _hello, value); }
-        //}
-
-
-        public IMvxCommand StartFirstViewCommand
+     
+        public IMvxCommand NewUserCommand
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<FirstViewModel>());
+                return new MvxCommand(() => ShowViewModel<NewUserViewModel>());
             }
         }
 
+        public IMvxCommand LevelViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<LevelViewModel>());
+            }
+        }
         //private bool isGoing;
 
         /*

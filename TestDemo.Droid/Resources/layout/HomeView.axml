@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Author: Elvin Prananta, N9806482-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,10 +20,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonDailyTask"
+        local:MvxBind="Click LevelViewCommand"
         android:background="@color/button_default"
         android:textColor="@color/button_text"
-        android:layout_margin="10dp" 
-        android:padding="10dp"/>
+        android:layout_margin="10dp"
+        android:padding="10dp" />
     <Button
         android:text="Medal"
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
         android:background="@color/button_default"
         android:textColor="@color/button_text"
         android:layout_margin="10dp"
-        android:padding="10dp"/>
+        android:padding="10dp" />
     <Button
         android:text="Journey"
         android:layout_width="match_parent"
@@ -49,14 +49,14 @@
         android:id="@+id/buttonSetting"
         android:background="@color/button_default"
         android:textColor="@color/button_text"
-        android:layout_margin="10dp" 
-        android:padding="10dp"/>
+        android:layout_margin="10dp"
+        android:padding="10dp" />
     <Button
         android:text="Others - new user view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonForNewUser"
-        local:MvxBind="Click StartFirstViewCommand"
+        local:MvxBind="Click NewUserCommand"
         android:background="@color/button_default"
         android:textColor="@color/button_text"
         android:layout_margin="10dp" />
