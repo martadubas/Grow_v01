@@ -16,48 +16,42 @@
         android:textColor="@color/button_default"
         android:layout_margin="10dp" />
     <Button
-        android:text="Daily Task"
+        android:text="Your daily Tasks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonDailyTask"
-        local:MvxBind="Click LevelViewCommand"
+        local:MvxBind="Click TaskListViewCommand"
         android:background="@color/button_default"
         android:textColor="@color/button_text"
         android:layout_margin="10dp"
         android:padding="10dp" />
     <Button
-        android:text="Medal"
+        android:text="Your medals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonMedal"
         android:background="@color/button_default"
         android:textColor="@color/button_text"
+        local:MvxBind="Click MedalsViewCommand"
         android:layout_margin="10dp"
         android:padding="10dp" />
     <Button
-        android:text="Journey"
+        android:text="Your journey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonJourney"
         android:background="@color/button_default"
+        local:MvxBind="Click JourneyViewCommand"
         android:textColor="@color/button_text"
         android:layout_margin="10dp" />
     <Button
-        android:text="Setting"
+        android:text="Settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonSetting"
         android:background="@color/button_default"
+        local:MvxBind="Click SettingsViewCommand"
         android:textColor="@color/button_text"
         android:layout_margin="10dp"
         android:padding="10dp" />
-    <Button
-        android:text="Others - new user view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonForNewUser"
-        local:MvxBind="Click NewUserCommand"
-        android:background="@color/button_default"
-        android:textColor="@color/button_text"
-        android:layout_margin="10dp" />
 </LinearLayout>

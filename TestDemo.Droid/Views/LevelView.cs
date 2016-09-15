@@ -6,7 +6,7 @@ using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "View for LevelViewModel")]
+    [Activity(Label = "")]
     public class LevelView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

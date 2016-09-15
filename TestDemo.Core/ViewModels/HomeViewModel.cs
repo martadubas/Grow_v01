@@ -7,14 +7,7 @@ namespace TestDemo.Core.ViewModels
         : MvxViewModel
     {
      
-        public IMvxCommand NewUserCommand
-        {
-            get
-            {
-                return new MvxCommand(() => ShowViewModel<NewUserViewModel>());
-            }
-        }
-
+        
         public IMvxCommand LevelViewCommand
         {
             get
@@ -22,6 +15,39 @@ namespace TestDemo.Core.ViewModels
                 return new MvxCommand(() => ShowViewModel<LevelViewModel>());
             }
         }
+
+        public IMvxCommand JourneyViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<JourneyViewModel>());
+            }
+        }
+
+        public IMvxCommand MedalsViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<MedalsViewModel>());
+            }
+        }
+        public IMvxCommand TaskListViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<TaskListViewModel>());
+            }
+        }
+        public IMvxCommand SettingsViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<SettingsViewModel>());
+            }
+        }
+
+
+
         //private bool isGoing;
 
         /*
@@ -36,5 +62,8 @@ namespace TestDemo.Core.ViewModels
         }
         */
 
+
     }
 }
+
+

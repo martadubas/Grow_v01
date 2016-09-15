@@ -11,7 +11,7 @@ namespace TestDemo.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.HomeViewModel>();
+            RegisterAppStart<ViewModels.JourneyViewModel>();
         }
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -28,6 +29,7 @@
         android:layout_height="15pt"
         android:id="@+id/NextUser"
         android:textSize="10pt"
+        local:MvxBind="Click ChooseAvatarCommand"
         android:background="@color/button_default"
         android:textColor="@color/button_text" />
 </LinearLayout>

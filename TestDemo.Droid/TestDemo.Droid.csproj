@@ -88,9 +88,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="Views\ChooseAvatarView.cs" />
+    <Compile Include="Views\ChooseTasksView.cs" />
+    <Compile Include="Views\DetailMedalView.cs" />
+    <Compile Include="Views\HelloNewUserView.cs" />
+    <Compile Include="Views\ImageAdapter.cs" />
+    <Compile Include="Views\InfoNewUserView.cs" />
+    <Compile Include="Views\JourneyView.cs" />
+    <Compile Include="Views\MedalsView.cs" />
     <Compile Include="Views\NewUserView.cs" />
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\LevelView.cs" />
+    <Compile Include="Views\SettingsView.cs" />
+    <Compile Include="Views\TaskListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -105,6 +115,33 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\LevelView.axml" />
+    <AndroidResource Include="Resources\layout\ChooseAvatarView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ChooseTasksView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DetailMedalView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\HelloNewUserView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\InfoNewUserView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\JourneyView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\MedalsView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TaskListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SettingsView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -128,6 +165,7 @@
     <AndroidResource Include="Resources\values\Color.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\egg.png" />
     <Content Include="Views\ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

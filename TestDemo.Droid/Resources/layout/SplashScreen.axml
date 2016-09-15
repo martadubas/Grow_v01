@@ -6,12 +6,12 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Loading....again" />
+        android:text="" />
     <TextView
-        android:text="Grow"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewGrow" 
-        android:gravity="center"/>
+        android:id="@+id/textViewGrow"
+        android:gravity="center" />
 </LinearLayout>

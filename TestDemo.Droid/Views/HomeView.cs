@@ -6,7 +6,7 @@ using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "View for HomeViewModel")]
+    [Activity(Label = "")]
     public class HomeView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
