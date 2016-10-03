@@ -108,17 +108,45 @@ namespace TestDemo.Droid
 			}
 		}
 		
+		public partial class Dimension
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int button_padding = 2131099648;
+			
+			static Dimension()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Dimension()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int egg = 2130837504;
+			public const int eagle2_silhouette = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int eagle3_silhouette = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int splash = 2130837506;
+			public const int egg = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int Icon = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int jar_empty = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int jar_stars = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int splash = 2130837510;
 			
 			static Drawable()
 			{
@@ -139,14 +167,20 @@ namespace TestDemo.Droid
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
 			
-			// aapt resource value: 0x7f040013
-			public const int NextUser = 2130968595;
+			// aapt resource value: 0x7f04001b
+			public const int NextUser = 2130968603;
+			
+			// aapt resource value: 0x7f04000e
+			public const int avatar2 = 2130968590;
+			
+			// aapt resource value: 0x7f040011
+			public const int avatar3 = 2130968593;
+			
+			// aapt resource value: 0x7f04000d
+			public const int avatars_container = 2130968589;
 			
 			// aapt resource value: 0x7f040007
 			public const int buttonDailyTask = 2130968583;
-			
-			// aapt resource value: 0x7f04000e
-			public const int buttonForNewUser = 2130968590;
 			
 			// aapt resource value: 0x7f040009
 			public const int buttonJourney = 2130968585;
@@ -157,44 +191,62 @@ namespace TestDemo.Droid
 			// aapt resource value: 0x7f04000a
 			public const int buttonSetting = 2130968586;
 			
+			// aapt resource value: 0x7f040015
+			public const int button_home = 2130968597;
+			
+			// aapt resource value: 0x7f040016
+			public const int button_newuser = 2130968598;
+			
+			// aapt resource value: 0x7f040014
+			public const int buttons = 2130968596;
+			
 			// aapt resource value: 0x7f040004
 			public const int confirmAvatar = 2130968580;
 			
 			// aapt resource value: 0x7f040005
 			public const int e = 2130968581;
 			
-			// aapt resource value: 0x7f040012
-			public const int editText1 = 2130968594;
+			// aapt resource value: 0x7f04001a
+			public const int editText1 = 2130968602;
 			
 			// aapt resource value: 0x7f040003
 			public const int galleryChooseAvatar = 2130968579;
 			
-			// aapt resource value: 0x7f04000b
-			public const int imageView1 = 2130968587;
-			
 			// aapt resource value: 0x7f04000c
-			public const int imageView2 = 2130968588;
+			public const int imageview_currentavatar = 2130968588;
 			
 			// aapt resource value: 0x7f04000f
-			public const int level1 = 2130968591;
+			public const int imageview_level2 = 2130968591;
 			
 			// aapt resource value: 0x7f040010
-			public const int level2 = 2130968592;
+			public const int imageview_level2_jar = 2130968592;
 			
-			// aapt resource value: 0x7f040011
-			public const int level3 = 2130968593;
+			// aapt resource value: 0x7f040012
+			public const int imageview_level3 = 2130968594;
 			
-			// aapt resource value: 0x7f04000d
-			public const int startJourney = 2130968589;
+			// aapt resource value: 0x7f040013
+			public const int imageview_level3_jar = 2130968595;
+			
+			// aapt resource value: 0x7f040017
+			public const int level1 = 2130968599;
+			
+			// aapt resource value: 0x7f040018
+			public const int level2 = 2130968600;
+			
+			// aapt resource value: 0x7f040019
+			public const int level3 = 2130968601;
 			
 			// aapt resource value: 0x7f040002
 			public const int textView1 = 2130968578;
 			
-			// aapt resource value: 0x7f040014
-			public const int textViewGrow = 2130968596;
+			// aapt resource value: 0x7f04001c
+			public const int textViewGrow = 2130968604;
 			
 			// aapt resource value: 0x7f040006
 			public const int textViewTitle = 2130968582;
+			
+			// aapt resource value: 0x7f04000b
+			public const int textview_title = 2130968587;
 			
 			static Id()
 			{
@@ -261,11 +313,11 @@ namespace TestDemo.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070001
-			public const int ApplicationName = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int ApplicationName = 2131230721;
 			
-			// aapt resource value: 0x7f070000
-			public const int Hello = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int Hello = 2131230720;
 			
 			static String()
 			{
@@ -280,8 +332,8 @@ namespace TestDemo.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Theme_Splash = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int Theme_Splash = 2131165184;
 			
 			static Style()
 			{
