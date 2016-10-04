@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
     android:cacheColorHint="@android:color/transparent">
-  <TextView
-    android:text="Some text as placeholder"
+    <TextView
+        android:text="Some text as placeholder"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         local:MvxBind="Text GoalDescription"
-        android:textColor="@color/button_default" />
+        android:textColor="@color/button_txtCol" />
 </LinearLayout>

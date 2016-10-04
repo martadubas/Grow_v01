@@ -1,8 +1,4 @@
-﻿
-using Android.Content;
-using Android.Widget;
-using MvvmCross.Core.ViewModels;
-
+﻿using MvvmCross.Core.ViewModels;
 
 namespace TestDemo.Core.ViewModels
 {

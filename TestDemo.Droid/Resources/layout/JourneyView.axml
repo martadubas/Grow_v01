@@ -5,11 +5,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_default"
+    android:background="@color/all_bgCol"
     android:weightSum="6">
     <TextView
         android:text="Your journey"
-        android:textColor="@color/button_default"
+        android:textColor="@color/button_txtCol"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -79,8 +79,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:id="@+id/button_home"
-            android:background="@color/button_default"
-            android:textColor="@color/button_text"
+            android:background="@color/button_bgCol"
+            android:textColor="@color/button_txtCol"
             local:MvxBind="Click HomeViewCommand"
             android:layout_gravity="center_vertical" />
         <Button
@@ -89,8 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/button_newuser"
-            android:background="@color/button_default"
-            android:textColor="@color/button_text"
+            android:background="@color/button_bgCol"
+            android:textColor="@color/button_txtCol"
             local:MvxBind="Click ShareOnFacebookCommand"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
