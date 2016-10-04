@@ -5,44 +5,93 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/all_bgCol">
+    android:background="@color/bg_default"
+    android:weightSum="6">
     <TextView
         android:text="Your journey"
-        android:textColor="@color/button_bgCol"
+        android:textColor="@color/button_default"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="51.3dp"
-        android:id="@+id/textView1" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/textview_title" />
     <ImageView
         android:src="@drawable/egg"
         android:layout_width="match_parent"
-        android:layout_height="168.0dp"
-        android:id="@+id/imageView1" />
-    <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:id="@+id/imageview_currentavatar"
+        android:layout_marginBottom="0.0dp" />
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2" />
-    <Button
-        android:text="Start"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:id="@+id/avatars_container">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/avatar2"
+            android:layout_weight="1">
+            <ImageView
+                android:src="@drawable/eagle2_silhouette"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageview_level2" />
+            <ImageView
+                android:src="@drawable/jar_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageview_level2_jar" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/avatar3"
+            android:layout_weight="1">
+            <ImageView
+                android:src="@drawable/eagle3_silhouette"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageview_level3" />
+            <ImageView
+                android:src="@drawable/jar_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/imageview_level3_jar" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:id="@+id/startJourney"
-        android:background="@color/button_bgCol"
-        android:textColor="@color/button_txtCol"
-        local:MvxBind="Click HomeViewCommand"
-        android:layout_marginRight="90.0dp"
-        android:layout_marginLeft="90.0dp"
-        android:layout_marginBottom="40.0dp" />
-    <Button
-        android:text="New user view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonForNewUser"
-        android:background="@color/button_bgCol"
-        android:textColor="@color/button_txtCol"
-        local:MvxBind="Click HelloNewUserCommand"
-        android:layout_marginRight="90.0dp"
-        android:layout_marginLeft="90.0dp"
-        android:layout_marginBottom="40.0dp" />
+        android:layout_height="0dp"
+        android:id="@+id/buttons"
+        android:layout_weight="1">
+        <Button
+            android:text="Home"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/button_home"
+            android:background="@color/button_default"
+            android:textColor="@color/button_text"
+            local:MvxBind="Click HomeViewCommand"
+            android:layout_gravity="center_vertical" />
+        <Button
+            android:text="Share"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/button_newuser"
+            android:background="@color/button_default"
+            android:textColor="@color/button_text"
+            local:MvxBind="Click ShareOnFacebookCommand"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
 </LinearLayout>
