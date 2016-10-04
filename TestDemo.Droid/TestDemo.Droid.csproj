@@ -106,7 +106,7 @@
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\LevelView.cs" />
     <Compile Include="Views\SettingsView.cs" />
-    <Compile Include="Views\TaskListView.cs" />
+    <Compile Include="Views\GoalListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -142,10 +142,22 @@
     <AndroidResource Include="Resources\layout\MedalsView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\TaskListView.axml">
+    <AndroidResource Include="Resources\layout\GoalListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SettingsView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GoalListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UnitCodeItemLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LocationSearchLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SecondView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

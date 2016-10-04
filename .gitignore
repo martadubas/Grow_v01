@@ -243,3 +243,10 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/TestDemo.Core/Models/Forecast.cs
+/TestDemo.Core/Models/LocationAutoCompleteResult.cs
+/TestDemo.Core/Services/WeatherService.cs
+/TestDemo.Core/ViewModels/SecondViewModel.cs
+/TestDemo.Core/ViewModels/SettingsViewModel.cs
+/TestDemo.Core/ViewModels/SettingsViewModel.cs
+/TestDemo.Core/ViewModels/SettingsViewModel.cs
