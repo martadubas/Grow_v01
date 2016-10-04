@@ -16,11 +16,11 @@
         android:textColor="@color/button_default"
         android:layout_margin="10dp" />
     <Button
-        android:text="Your daily Tasks"
+        android:text="Daily Goals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonDailyTask"
-        local:MvxBind="Click TaskListViewCommand"
+        android:id="@+id/buttonGoals"
+        local:MvxBind="Click GoalListViewCommand"
         android:background="@color/button_default"
         android:textColor="@color/button_text"
         android:layout_margin="10dp"

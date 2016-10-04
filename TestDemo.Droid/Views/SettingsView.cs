@@ -1,27 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using MvvmCross.Droid.Views;
+using MvvmCross.Core.ViewModels;
+using TestDemo.Core.ViewModels;
+using Android.App;
+using Android.OS;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "Settings")]
+    [MvxViewFor(typeof(SettingsViewModel))]
+    [Activity(Label = "View for SettingsViewModel")]
     public class SettingsView : MvxActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
             SetContentView(Resource.Layout.SettingsView);
-
-            // Create your application here
         }
     }
 }
