@@ -1,12 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
-  <!-- colors-->
-  <color name="button_default">#3385ff</color>
   
-  <color name="button_text">#ffffff</color>
+  <!--button-->
+  <color name="button_bgCol">#3385ff</color>
+  <color name="button_txtCol">#ffffff</color>
+
+ 
+  <!--text input-->
+  <color name="text_bgCol">#A2DEC2</color>
+  <color name="text_txtCol">#ffffff</color>
+
+  <!--headings-->
+  <color name="h1_txtCol">#ffffff</color>
+
   
-  <color name="bg_default">#e6faff</color>
-  
-  <color name="text_default">#008060</color>
+  <!--general-->
+  <color name="all_bgCol">#5accc7</color>
+  <color name="all_txt">#ffffff</color>
+
 
 </resources>

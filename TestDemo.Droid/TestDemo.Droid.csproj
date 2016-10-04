@@ -114,7 +114,9 @@
     <AndroidResource Include="Resources\layout\HomeView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\LevelView.axml" />
+    <AndroidResource Include="Resources\layout\LevelView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\ChooseAvatarView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -166,6 +168,11 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\egg.png" />
+    <AndroidResource Include="Resources\values\Dimensions.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\gradient.xml" />
+    <AndroidResource Include="Resources\drawable\button.png" />
     <Content Include="Views\ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -5,23 +5,25 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_default">
+    android:background="@drawable/gradient">
     <TextView
         android:text="Hello"
-        android:textColor="@color/button_default"
+        android:textColor="@color/button_bgCol"
+        android:textSize="@dimen/button_height"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="51.3dp"
+        android:layout_height="@dimen/button_height"
         android:id="@+id/textView1" />
     <Button
         android:text="Start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/e"
-        android:background="@color/button_default"
-        android:textColor="@color/button_text"
+        android:background="@color/button_bgCol"
+        android:textColor="@color/button_txtCol"
         local:MvxBind="Click NewUserViewCommand"
         android:layout_marginRight="90.0dp"
         android:layout_marginLeft="90.0dp"
-        android:layout_marginBottom="40.0dp" />
+        android:layout_marginBottom="198.0dp"
+        android:layout_marginTop="0.0dp" />
 </LinearLayout>

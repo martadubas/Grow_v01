@@ -5,21 +5,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_default">
+    android:background="@drawable/gradient">
     <TextView
         android:text="Hello"
-        android:textColor="@color/button_default"
+        android:textColor="@color/button_bgCol"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="51.3dp"
-        android:id="@+id/textView1" />
+        android:id="@+id/h1Hello" />
+  <TextView
+       android:text="Here some welcome message for a user who opens the application for the first time"
+       android:textColor="@color/button_bgCol"
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/h1Hello" />
     <Button
         android:text="Start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/e"
-        android:background="@color/button_default"
-        android:textColor="@color/button_text"
+        android:background="@color/button_bgCol"
+        android:textColor="@color/button_txtCol"
         local:MvxBind="Click LevelViewCommand"
         android:layout_marginRight="90.0dp"
         android:layout_marginLeft="90.0dp"

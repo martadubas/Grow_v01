@@ -5,31 +5,34 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/bg_default">
+    android:background="@drawable/gradient">
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/textView1"
+        android:textSize="@dimen/h1_fontSize"
+        android:id="@+id/h1_username"
         android:text="Choose username:"
-        android:textColor="@color/button_default"
+        android:textColor="@color/button_bgCol"
         android:gravity="center"
-        android:paddingTop="25pt" />
+        android:paddingTop="@dimen/padding_top" />
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="35dp"
+        android:textSize="@dimen/input_fontSize"
         local:MvxBind="Text Name, Mode=OneWayToSource"
-        android:id="@+id/editText1"
-        android:textColor="@color/text_default"
+        android:id="@+id/edit_username"
+        android:textColor="@color/button_txtCol"
         android:gravity="center" />
     <Button
         android:text="Next"
-        android:layout_width="match_parent"
-        android:layout_height="15pt"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/button_padding_top"
         android:id="@+id/NextUser"
-        android:textSize="10pt"
+        android:textSize="@dimen/button_fontsize"
         local:MvxBind="Click ChooseAvatarCommand"
-        android:background="@color/button_default"
-        android:textColor="@color/button_text" />
+        android:background="@drawable/button"
+        android:textColor="@color/button_txtCol"
+        android:layout_marginRight="@dimen/button_marg"
+        android:layout_marginLeft="@dimen/button_marg" />
 </LinearLayout>

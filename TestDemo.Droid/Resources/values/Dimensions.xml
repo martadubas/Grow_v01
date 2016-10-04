@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <!--button-->
+
+  <dimen name="button_fontsize">25dp</dimen>
+  <dimen name="button_width">120dp</dimen>
+  <dimen name="button_height">45dp</dimen>
+  <dimen name="button_marg">90dp</dimen>
+  <dimen name="button_padding_top">25dp</dimen>
+ 
+  <!--text input-->
+
+  <dimen name="input_fontSize">20dp</dimen>
+  <dimen name="input_width">100dp</dimen>
+  <dimen name="input_height">25dp</dimen>
+
+  <!--headings-->
+
+  <dimen name="h1_fontSize">25dp</dimen>
+  <dimen name="h1_marg">10dp</dimen>
+
+  <!--headings-->
+  <dimen name="padding_top">30dp</dimen>
+  <dimen name="padding_bottom">20dp</dimen>
+  <dimen name="padding_left">12dp</dimen>
+  <dimen name="padding_right">12dp</dimen>
+
+
+
+  <!--general-->
+
+  <dimen name="text_fontSize">12dp</dimen>
+
+</resources>
+

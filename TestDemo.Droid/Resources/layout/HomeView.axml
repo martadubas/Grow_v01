@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_default"
+    android:background="@color/all_bgCol"
     android:layout_margin="10dp">
     <TextView
         android:text="Welcome to GROW"
@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewTitle"
-        android:textColor="@color/button_default"
+        android:textColor="@color/button_bgCol"
+        android:textSize="20dp"
         android:layout_margin="10dp" />
     <Button
         android:text="Your daily Tasks"
@@ -21,8 +22,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/buttonDailyTask"
         local:MvxBind="Click TaskListViewCommand"
-        android:background="@color/button_default"
-        android:textColor="@color/button_text"
+        android:background="@color/button_bgCol"
+        android:textColor="@color/button_txtCol"
         android:layout_margin="10dp"
         android:padding="10dp" />
     <Button
@@ -30,8 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonMedal"
-        android:background="@color/button_default"
-        android:textColor="@color/button_text"
+        android:background="@color/button_bgCol"
+        android:textColor="@color/button_txtCol"
         local:MvxBind="Click MedalsViewCommand"
         android:layout_margin="10dp"
         android:padding="10dp" />
@@ -40,18 +41,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonJourney"
-        android:background="@color/button_default"
+        android:background="@color/button_bgCol"
         local:MvxBind="Click JourneyViewCommand"
-        android:textColor="@color/button_text"
+        android:textColor="@color/button_txtCol"
         android:layout_margin="10dp" />
     <Button
         android:text="Settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonSetting"
-        android:background="@color/button_default"
+        android:background="@color/button_bgCol"
         local:MvxBind="Click SettingsViewCommand"
-        android:textColor="@color/button_text"
+        android:textColor="@color/button_txtCol"
         android:layout_margin="10dp"
         android:padding="10dp" />
 </LinearLayout>
