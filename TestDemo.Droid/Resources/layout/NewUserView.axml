@@ -4,35 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/gradient">
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/h1_height"
+        android:padding="@dimen/h1_marg"
+        android:layout_marginTop="@dimen/h1_margTop"
         android:textSize="@dimen/h1_fontSize"
-        android:id="@+id/h1_username"
+        android:id="@+id/h1NewUser"
         android:text="Choose username:"
-        android:textColor="@color/button_bgCol"
-        android:gravity="center"
-        android:paddingTop="@dimen/padding_top" />
+        android:textColor="@color/h1_txtCol"
+        android:gravity="center" />
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/input_fontSize"
         local:MvxBind="Text Name, Mode=OneWayToSource"
-        android:id="@+id/edit_username"
-        android:textColor="@color/button_txtCol"
+        android:id="@+id/editTxtNewUser"
+        android:textColor="@color/text_txtCol"
+        android:backgroundTint="@color/text_lineCol"
+        android:layout_marginLeft="@dimen/button_margTop"
+        android:layout_marginRight="@dimen/button_margTop"
         android:gravity="center" />
     <Button
         android:text="Next"
-        android:layout_width="@dimen/button_width"
+        android:layout_width="fill_parent"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="@dimen/button_padding_top"
-        android:id="@+id/NextUser"
+        android:layout_marginLeft="@dimen/button_marg"
+        android:layout_marginRight="@dimen/button_marg"
+        android:layout_marginTop="@dimen/button_margTop"
+        android:padding="@dimen/button_padding_top"
+        android:id="@+id/btnNewUser"
         android:textSize="@dimen/button_fontsize"
         local:MvxBind="Click ChooseAvatarCommand"
-        android:background="@drawable/button"
-        android:textColor="@color/button_txtCol"
-        android:layout_marginRight="@dimen/button_marg"
-        android:layout_marginLeft="@dimen/button_marg" />
+        android:background="@color/light_blue"
+        android:textColor="@color/pink"
+        android:gravity="center" />
 </LinearLayout>

@@ -8,27 +8,36 @@
     android:background="@drawable/gradient">
     <TextView
         android:text="Hello"
-        android:textColor="@color/button_bgCol"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/h1_height"
+        android:padding="@dimen/h1_marg"
+        android:layout_marginTop="@dimen/h1_margTop"
+        android:textSize="@dimen/h1_fontSize"
+        android:id="@+id/h1InfoUser"
+        android:textColor="@color/h1_txtCol"
+        android:gravity="center" />
+    <TextView
+        android:text="Here some welcome message for a user who opens the application for the first time"
+        android:textColor="@color/dark_blue"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="51.3dp"
-        android:id="@+id/h1Hello" />
-  <TextView
-       android:text="Here some welcome message for a user who opens the application for the first time"
-       android:textColor="@color/button_bgCol"
-       android:gravity="center"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:id="@+id/h1Hello" />
-    <Button
-        android:text="Start"
+        android:textSize="@dimen/text_fontSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/e"
-        android:background="@color/button_bgCol"
-        android:textColor="@color/button_txtCol"
-        local:MvxBind="Click LevelViewCommand"
-        android:layout_marginRight="90.0dp"
-        android:layout_marginLeft="90.0dp"
-        android:layout_marginBottom="40.0dp" />
+        android:layout_marginLeft="@dimen/text_marg"
+        android:layout_marginRight="@dimen/text_marg"
+        android:id="@+id/txtInfoUser" />
+    <Button
+        android:text="Next"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginLeft="@dimen/button_marg"
+        android:layout_marginRight="@dimen/button_marg"
+        android:layout_marginTop="@dimen/button_margTop"
+        android:padding="@dimen/button_padding_top"
+        android:id="@+id/btnInfoUser"
+        android:textSize="@dimen/button_fontsize"
+        local:MvxBind="Click NewUserViewCommand"
+        android:background="@color/light_blue"
+        android:textColor="@color/pink"
+        android:gravity="center" />
 </LinearLayout>

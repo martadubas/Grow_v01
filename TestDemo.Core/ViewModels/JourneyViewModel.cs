@@ -12,6 +12,14 @@ namespace TestDemo.Core.ViewModels
                 return new MvxCommand(() => ShowViewModel<HomeViewModel>());
             }
         }
+        public IMvxCommand InfoNewUserCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<InfoNewUserViewModel>());
+            }
+        }
+        
 
         public IMvxCommand ShareOnFacebookCommand
         {

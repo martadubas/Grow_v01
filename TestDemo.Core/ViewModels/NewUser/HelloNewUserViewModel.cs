@@ -10,11 +10,11 @@ namespace TestDemo.Core.ViewModels
     class HelloNewUserViewModel
          : MvxViewModel
     {
-        public IMvxCommand NewUserViewCommand
+        public IMvxCommand LevelViewViewCommand
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<NewUserViewModel>());
+                return new MvxCommand(() => ShowViewModel<LevelViewModel>());
             }
         }
     }
