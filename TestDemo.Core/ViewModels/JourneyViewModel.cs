@@ -1,6 +1,4 @@
 ﻿
-using Android.Content;
-using Android.Widget;
 using MvvmCross.Core.ViewModels;
 
 
@@ -17,21 +15,12 @@ namespace TestDemo.Core.ViewModels
             }
         }
 
-        public IMvxCommand ShareOnFacebookCommand
+        public IMvxCommand HelloNewUserCommand
         {
             get
             {
-                
-                //Context context = getApplicationContext();
-                //string text = "Share on Facebook!";
-                //int duration = Toast.LENGTH_SHORT;
-
-                //Toast toast = Toast.makeText(context, text, duration);
-                //toast.show();
-                return null;
-                //return new MvxCommand(() => ShowViewModel<HelloNewUserViewModel>());
+                return new MvxCommand(() => ShowViewModel<HelloNewUserViewModel>());
             }
-
         }
 
 

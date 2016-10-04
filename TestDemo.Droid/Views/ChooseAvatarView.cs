@@ -21,14 +21,14 @@ namespace TestDemo.Droid.Views
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ChooseAvatarView);
 
-            /*
+
             Gallery gallery = (Gallery)FindViewById<Gallery>(Resource.Id.galleryChooseAvatar);
 
             gallery.Adapter = new ImageAdapter(this);
 
             gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs args) {
                 Toast.MakeText(this, args.Position.ToString(), ToastLength.Short).Show();
-            };*/
+            };
         }
     }
 }

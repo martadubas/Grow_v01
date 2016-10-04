@@ -31,11 +31,11 @@ namespace TestDemo.Core.ViewModels
                 return new MvxCommand(() => ShowViewModel<MedalsViewModel>());
             }
         }
-        public IMvxCommand GoalListViewCommand
+        public IMvxCommand TaskListViewCommand
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<GoalListViewModel>());
+                return new MvxCommand(() => ShowViewModel<TaskListViewModel>());
             }
         }
         public IMvxCommand SettingsViewCommand
