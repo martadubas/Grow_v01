@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/all_bgCol"
+    android:background="@color/bg_default"
     android:layout_margin="10dp">
     <TextView
         android:text="Welcome to GROW"
@@ -13,17 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewTitle"
-        android:textColor="@color/button_bgCol"
-        android:textSize="20dp"
+        android:textColor="@color/button_default"
         android:layout_margin="10dp" />
     <Button
-        android:text="Your daily Tasks"
+        android:text="Daily Goals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonDailyTask"
-        local:MvxBind="Click TaskListViewCommand"
-        android:background="@color/button_bgCol"
-        android:textColor="@color/button_txtCol"
+        android:id="@+id/buttonGoals"
+        local:MvxBind="Click GoalListViewCommand"
+        android:background="@color/button_default"
+        android:textColor="@color/button_text"
         android:layout_margin="10dp"
         android:padding="10dp" />
     <Button
@@ -31,8 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonMedal"
-        android:background="@color/button_bgCol"
-        android:textColor="@color/button_txtCol"
+        android:background="@color/button_default"
+        android:textColor="@color/button_text"
         local:MvxBind="Click MedalsViewCommand"
         android:layout_margin="10dp"
         android:padding="10dp" />
@@ -41,18 +40,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonJourney"
-        android:background="@color/button_bgCol"
+        android:background="@color/button_default"
         local:MvxBind="Click JourneyViewCommand"
-        android:textColor="@color/button_txtCol"
+        android:textColor="@color/button_text"
         android:layout_margin="10dp" />
     <Button
         android:text="Settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonSetting"
-        android:background="@color/button_bgCol"
+        android:background="@color/button_default"
         local:MvxBind="Click SettingsViewCommand"
-        android:textColor="@color/button_txtCol"
+        android:textColor="@color/button_text"
         android:layout_margin="10dp"
         android:padding="10dp" />
 </LinearLayout>
