@@ -7,10 +7,17 @@
     android:background="@android:color/transparent"
     android:cacheColorHint="@android:color/transparent">
     <TextView
-        android:text="Some text as placeholder"
+        android:text="Goal category"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        local:MvxBind="Text Category"
+        android:textColor="@color/button_txtCol" />
+    <TextView
+        android:text="Goal title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        local:MvxBind="Text GoalDescription"
+        local:MvxBind="Text Title"
         android:textColor="@color/button_txtCol" />
 </LinearLayout>

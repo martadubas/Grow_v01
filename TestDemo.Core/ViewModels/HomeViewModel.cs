@@ -46,6 +46,14 @@ namespace TestDemo.Core.ViewModels
             }
         }
 
+        public IMvxCommand NewUserViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<HelloNewUserViewModel>());
+            }
+        }
+
 
 
         //private bool isGoing;

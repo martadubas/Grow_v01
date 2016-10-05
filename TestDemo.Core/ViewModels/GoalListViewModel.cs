@@ -18,42 +18,15 @@ namespace TestDemo.Core.ViewModels
             get { return goals; }
             set { SetProperty(ref goals, value); }
         }
-        private string goalDescription;
-        public string GoalDescription
-        {
-            get { return goalDescription; }
-            set
-            {
-                if (value != null)
-                {
-                    SetProperty(ref goalDescription, value);
-                }
-            }
-        }
-
 
         public ICommand SelectGoalCommand { get; private set; }
         public GoalListViewModel()
         {
-            List<string> goallist = new List<string>
-            { 
-                "Goal 1", "Goal 2", "Goal 3","Goal 4","Goal 5","Goal 1", "Goal 2", "Goal 3","Goal 4","Goal 5","Goal 1", "Goal 2", "Goal 3","Goal 4","Goal 5"
-            };
 
-            Goals = new ObservableCollection<Goal>()
-        {
+            Goals = getSampleGoals();
+        
+            SelectGoalCommand = new MvxCommand<Goal>(selectedGoal => ShowViewModel<GoalDetailViewModel>(selectedGoal));
             
-        };
-            foreach(string goal in goallist ){
-                Goals.Add(new Models.Goal(goal));
-            }
-
-
-            SelectGoalCommand = new MvxCommand<Goal>(goal =>
-            {
-                //GoalDescription = goal.GoalDescription;
-                //do nothing for now. 
-            });
         }
         public IMvxCommand HomeViewCommand
         {
@@ -62,23 +35,28 @@ namespace TestDemo.Core.ViewModels
                 return new MvxCommand(() => ShowViewModel<HomeViewModel>());
             }
         }
-
         public IMvxCommand ShareOnFacebookCommand
         {
             get
             {
-                //Context context = getApplicationContext();
-                //string text = "Share on Facebook!";
-                //int duration = Toast.LENGTH_SHORT;
-
-                //Toast toast = Toast.makeText(context, text, duration);
-                //toast.show();
-                return new MvxCommand(() =>
-                {
-                    //RaisePropertyChanged(() => Goals);
-                    
-                });
+                return null;
             }
+
+        }
+        private ObservableCollection<Goal> getSampleGoals()
+        {
+
+
+            Goals = new ObservableCollection<Goal>() { };
+
+            Goals.Add(new Goal("Goal 1", "Description 1", "food"));
+            Goals.Add(new Goal("Goal 2", "Description 2", "sport"));
+            Goals.Add(new Goal("Goal 3", "Description 3", "social"));
+            Goals.Add(new Goal("Goal 4", "Description 4", "food"));
+            Goals.Add(new Goal("Goal 5", "Description 5", "sport"));
+            Goals.Add(new Goal("Goal 6", "Description 6", "social"));
+
+            return Goals;
 
         }
     }

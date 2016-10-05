@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_bgCol"
+    android:weightSum="7">
+  <TextView
+      android:text="Goal title"
+      android:textAppearance="@android:style/TextAppearance.Large"
+      android:textColor="@color/button_txtCol"
+      android:gravity="center"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:id="@+id/textview_title"
+      local:MvxBind="Text Title"/>
+  <TextView
+      android:text="Some text to describe what is this goal about."
+      android:textAppearance="@android:style/TextAppearance.Medium"
+      android:textColor="@color/button_txtCol"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="2"
+      android:id="@+id/textview_comment"
+      local:MvxBind="Text Description"/>
+  <ImageView
+      android:src="@drawable/goal_placeholder"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:id="@+id/imageview_goal"
+      android:layout_weight="3"
+  />
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:id="@+id/buttons"
+      android:layout_weight="1">
+    <Button
+        android:text="Back to goal list"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:id="@+id/button_home"
+        android:background="@color/button_bgCol"
+        android:textColor="@color/button_txtCol"
+        local:MvxBind="Click GoalListViewCommand"
+        android:layout_gravity="center_vertical" />
+    <Button
+        android:text="Select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/button_newuser"
+        android:background="@color/button_bgCol"
+        android:textColor="@color/button_txtCol"
+        local:MvxBind="Click SelectGoalCommand"
+        android:layout_gravity="center_vertical" />
+  </LinearLayout>
+</LinearLayout>
+<!--local:MvxBind="DrawableName MyDrawable"-->
