@@ -5,29 +5,34 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/all_bgCol">
+    android:background="@drawable/gradient">
     <TextView
         android:text="Choose your avatar"
-        android:textColor="@color/button_bgCol"
+        android:textColor="@color/h1_txtCol"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="51.3dp"
-        android:id="@+id/textView1" />
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/h1_height"
+        android:id="@+id/h1ChooseAvatar"
+        android:padding="@dimen/h1_marg"
+        android:layout_marginTop="@dimen/h1_margTop"
+        android:textSize="@dimen/h1_fontSize" />
     <Gallery
         android:layout_width="match_parent"
-        android:layout_height="328.0dp"
+        android:layout_height="wrap_content"
         android:id="@+id/galleryChooseAvatar"
-        android:layout_marginBottom="0.0dp" />
+        android:layout_marginTop="@dimen/h1_margTop" />
     <Button
-        android:text="OK"
-        android:layout_width="match_parent"
-        android:layout_height="34.7dp"
-        android:id="@+id/confirmAvatar"
-        android:background="@color/button_bgCol"
-        android:textColor="@color/button_txtCol"
-        local:MvxBind="Click InfoNewUserViewCommand"
-        android:layout_marginRight="90.0dp"
-        android:layout_marginLeft="90.0dp"
-        android:layout_marginBottom="40.0dp"
-        android:layout_marginTop="14.7dp" />
+        android:text="Let's start"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/button_height"
+        android:id="@+id/btnChooseAvatar"
+        android:background="@color/light_blue"
+        android:textColor="@color/pink"
+        local:MvxBind="Click HelloNewUserViewCommand"
+        android:layout_marginRight="@dimen/button_marg"
+        android:layout_marginTop="@dimen/button_margTop"
+        android:layout_marginLeft="@dimen/button_marg"
+        android:padding="@dimen/button_padding_top"
+        android:textSize="@dimen/button_fontsize"
+        android:gravity="center" />
 </LinearLayout>

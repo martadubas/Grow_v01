@@ -5,14 +5,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/all_bgCol"
+    android:background="@drawable/gradient"
     android:weightSum="6">
     <TextView
         android:text="Your journey"
-        android:textColor="@color/button_txtCol"
+        android:textColor="@color/h1_txtCol"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/h1_height"
+        android:textSize="@dimen/h1_fontSize"
         android:layout_weight="1"
         android:id="@+id/textview_title" />
     <ImageView
@@ -21,7 +22,7 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:id="@+id/imageview_currentavatar"
-        android:layout_marginBottom="0.0dp" />
+        android:layout_marginBottom="@dimen/button_margTop" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -75,23 +76,36 @@
         android:layout_weight="1">
         <Button
             android:text="Home"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_height"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:id="@+id/button_home"
-            android:background="@color/button_bgCol"
-            android:textColor="@color/button_txtCol"
+            android:background="@color/light_blue"
+            android:textColor="@color/pink"
             local:MvxBind="Click HomeViewCommand"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/button_margTop" />
         <Button
             android:text="Share"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_height"
             android:layout_weight="1"
             android:id="@+id/button_newuser"
-            android:background="@color/button_bgCol"
-            android:textColor="@color/button_txtCol"
+            android:background="@color/light_blue"
+            android:textColor="@color/pink"
             local:MvxBind="Click ShareOnFacebookCommand"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/button_margTop" />
+        <Button
+            android:text="New User (testing)"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_weight="1"
+            android:id="@+id/btnTestNewUser"
+            android:background="@color/light_blue"
+            android:textColor="@color/pink"
+            local:MvxBind="Click InfoNewUserCommand"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/button_margTop" />
     </LinearLayout>
 </LinearLayout>

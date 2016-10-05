@@ -1,22 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+
+  <!--gradient-->
+  <color name="start_gradient">#D6E59C</color>
+  <color name="end_gradient">#81E5BA</color>
   
   <!--button-->
   <color name="button_bgCol">#3385ff</color>
-  <color name="button_txtCol">#ffffff</color>
+  <color name="button_txtCol">#5AE5DD</color>
 
  
   <!--text input-->
   <color name="text_bgCol">#A2DEC2</color>
-  <color name="text_txtCol">#ffffff</color>
+  <color name="text_txtCol">#3E82BC</color>
+  <color name="text_lineCol">#B182BC</color>
 
   <!--headings-->
-  <color name="h1_txtCol">#ffffff</color>
+  <color name="h1_txtCol">#454C49</color>
 
   
   <!--general-->
   <color name="all_bgCol">#5accc7</color>
-  <color name="all_txt">#ffffff</color>
-
+  <color name="pink">#6F5475</color>
+  <color name="blue">#0BD1FF</color>
+  <color name="light_blue">#4CC1B8</color>
+  <color name="dark_blue">#3E82BC</color>
+  <color name="vdark_blue">#1B3849</color>
+  <color name="green">#71E59C</color>
+  <color name="light_green">#60E8DA</color>
+  
 
 </resources>

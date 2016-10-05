@@ -12,11 +12,11 @@ namespace TestDemo.Core.ViewModels
     class ChooseAvatarViewModel
          : MvxViewModel
     {
-        public IMvxCommand InfoNewUserViewCommand
+        public IMvxCommand HelloNewUserViewCommand
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<InfoNewUserViewModel>());
+                return new MvxCommand(() => ShowViewModel<HelloNewUserViewModel>());
             }
         }
 
