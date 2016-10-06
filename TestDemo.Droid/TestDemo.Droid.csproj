@@ -179,6 +179,18 @@
     <AndroidResource Include="Resources\drawable\button_blue.png" />
     <AndroidResource Include="Resources\drawable\button_celeste.png" />
     <AndroidResource Include="Resources\drawable\button_green.png" />
+    <AndroidResource Include="Resources\drawable\bird_01.png" />
+    <AndroidResource Include="Resources\drawable\bird_02.png" />
+    <AndroidResource Include="Resources\drawable\bird_03.png" />
+    <AndroidResource Include="Resources\drawable\buterfly_03.png" />
+    <AndroidResource Include="Resources\drawable\butterfly_01.png" />
+    <AndroidResource Include="Resources\drawable\butterfly_02.png" />
+    <AndroidResource Include="Resources\drawable\diamond_01.png" />
+    <AndroidResource Include="Resources\drawable\diamond_02.png" />
+    <AndroidResource Include="Resources\drawable\diamond_03.png" />
+    <AndroidResource Include="Resources\drawable\bird_1.png" />
+    <AndroidResource Include="Resources\drawable\butterfly_1.png" />
+    <AndroidResource Include="Resources\drawable\diamond_1.png" />
     <Content Include="Views\ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

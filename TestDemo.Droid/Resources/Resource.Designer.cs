@@ -218,43 +218,79 @@ namespace TestDemo.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int button = 2130837504;
+			public const int bird_01 = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int button_blue = 2130837505;
+			public const int bird_02 = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int button_celeste = 2130837506;
+			public const int bird_03 = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int button_green = 2130837507;
+			public const int bird_1 = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int button_pink = 2130837508;
+			public const int buterfly_03 = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int eagle2_silhouette = 2130837509;
+			public const int butterfly_01 = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int eagle3_silhouette = 2130837510;
+			public const int butterfly_02 = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int egg = 2130837511;
+			public const int butterfly_1 = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int gradient = 2130837512;
+			public const int button = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int Icon = 2130837513;
+			public const int button_blue = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int jar_empty = 2130837514;
+			public const int button_celeste = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int jar_stars = 2130837515;
+			public const int button_green = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int splash = 2130837516;
+			public const int button_pink = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int diamond_01 = 2130837517;
+			
+			// aapt resource value: 0x7f02000e
+			public const int diamond_02 = 2130837518;
+			
+			// aapt resource value: 0x7f02000f
+			public const int diamond_03 = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int diamond_1 = 2130837520;
+			
+			// aapt resource value: 0x7f020011
+			public const int eagle2_silhouette = 2130837521;
+			
+			// aapt resource value: 0x7f020012
+			public const int eagle3_silhouette = 2130837522;
+			
+			// aapt resource value: 0x7f020013
+			public const int egg = 2130837523;
+			
+			// aapt resource value: 0x7f020014
+			public const int gradient = 2130837524;
+			
+			// aapt resource value: 0x7f020015
+			public const int Icon = 2130837525;
+			
+			// aapt resource value: 0x7f020016
+			public const int jar_empty = 2130837526;
+			
+			// aapt resource value: 0x7f020017
+			public const int jar_stars = 2130837527;
+			
+			// aapt resource value: 0x7f020018
+			public const int splash = 2130837528;
 			
 			static Drawable()
 			{
