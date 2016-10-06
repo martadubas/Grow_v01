@@ -10,14 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
+using TestDemo.Core.ViewModels;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "")]
+    [Activity(Label = "",ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class ChooseAvatar : MvxActivity
     {
+        ChooseAvatarViewModel vm;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            vm = ViewModel as ChooseAvatarViewModel;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ChooseAvatarView);
 
@@ -27,7 +30,7 @@ namespace TestDemo.Droid.Views
             gallery.Adapter = new ImageAdapter(this);
 
             gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs args) {
-                Toast.MakeText(this, args.Position.ToString(), ToastLength.Short).Show();
+                vm.SetAvatar(args.Position);
             };
         }
     }

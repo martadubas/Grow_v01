@@ -36,10 +36,12 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Models\Goal.cs" />
+    <Compile Include="Models\KeyPair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\NewUser\ChooseAvatarViewModel.cs" />
     <Compile Include="ViewModels\ChooseTasksViewModel.cs" />
     <Compile Include="ViewModels\DetailMedalViewModel.cs" />
+    <Compile Include="ViewModels\NewUser\GoalDetailViewModel.cs" />
     <Compile Include="ViewModels\NewUser\GoalListViewModel.cs" />
     <Compile Include="ViewModels\NewUser\HelloNewUserViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />

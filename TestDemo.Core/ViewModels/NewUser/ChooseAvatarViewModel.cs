@@ -9,7 +9,7 @@ using MvvmCross.Core.ViewModels;
 namespace TestDemo.Core.ViewModels
 
 {
-    class ChooseAvatarViewModel
+    public class ChooseAvatarViewModel
          : MvxViewModel
     {
         public IMvxCommand HelloNewUserViewCommand
@@ -20,5 +20,17 @@ namespace TestDemo.Core.ViewModels
             }
         }
 
+        public void SetAvatar(int position)
+        {
+            switch (position)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

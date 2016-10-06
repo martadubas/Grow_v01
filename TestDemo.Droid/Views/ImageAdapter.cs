@@ -21,7 +21,7 @@ public class ImageAdapter : BaseAdapter
 
     public override long GetItemId(int position)
     {
-        return 0;
+        return position;
     }
 
     // create a new ImageView for each item referenced by the Adapter
@@ -31,7 +31,7 @@ public class ImageAdapter : BaseAdapter
 
         i.SetImageResource(thumbIds[position]);
         i.LayoutParameters = new Gallery.LayoutParams(720, 720);
-        i.SetScaleType(ImageView.ScaleType.FitXy);
+        i.SetScaleType(ImageView.ScaleType.FitCenter);
 
         return i;
     }
