@@ -8,13 +8,13 @@ namespace TestDemo.Core.ViewModels
     {
      
         
-        public IMvxCommand LevelViewCommand
-        {
-            get
-            {
-                return new MvxCommand(() => ShowViewModel<LevelViewModel>());
-            }
-        }
+        //public IMvxCommand LevelViewCommand
+        //{
+        //    get
+        //    {
+        //        return new MvxCommand(() => ShowViewModel<LevelViewModel>());
+        //    }
+        //}
 
         public IMvxCommand JourneyViewCommand
         {
@@ -24,13 +24,13 @@ namespace TestDemo.Core.ViewModels
             }
         }
 
-        public IMvxCommand MedalsViewCommand
-        {
-            get
-            {
-                return new MvxCommand(() => ShowViewModel<MedalsViewModel>());
-            }
-        }
+        //public IMvxCommand MedalsViewCommand
+        //{
+        //    get
+        //    {
+        //        return new MvxCommand(() => ShowViewModel<MedalsViewModel>());
+        //    }
+        //}
         public IMvxCommand GoalListViewCommand
         {
             get

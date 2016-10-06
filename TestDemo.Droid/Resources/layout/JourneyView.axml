@@ -95,7 +95,8 @@
             android:textColor="@color/pink"
             local:MvxBind="Click ShareOnFacebookCommand"
             android:layout_gravity="center_vertical"
-            android:layout_marginBottom="@dimen/button_margTop" />
+            android:layout_marginBottom="@dimen/button_margTop"
+            android:onClick="" />
         <Button
             android:text="New User (testing)"
             android:layout_width="0dp"

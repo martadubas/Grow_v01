@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Models;
-using TestDemo.Core.Services;
+//using TestDemo.Core.Services;
 
 namespace TestDemo.Core.ViewModels
 {
