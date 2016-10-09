@@ -30,8 +30,8 @@ public class ImageAdapter : BaseAdapter
         ImageView i = new ImageView(context);
 
         i.SetImageResource(thumbIds[position]);
-        i.LayoutParameters = new Gallery.LayoutParams(720, 720);
-        i.SetScaleType(ImageView.ScaleType.FitCenter);
+        i.LayoutParameters = new Gallery.LayoutParams(720,600) ;
+        i.SetScaleType(ImageView.ScaleType.FitXy);
 
         return i;
     }

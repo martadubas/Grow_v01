@@ -3,17 +3,20 @@
 using Android.App;
 using Android.OS;
 using MvvmCross.Droid.Views;
+using TestDemo.Core.ViewModels;
 
 namespace TestDemo.Droid.Views
 {
     [Activity(Label = "")]
     public class NewUserView : MvxActivity
     {
+        private NewUserViewModel _viewModel;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.NewUserView);
-            //ert
+            _viewModel = (NewUserViewModel)ViewModel;
+            
         }
     }
 }

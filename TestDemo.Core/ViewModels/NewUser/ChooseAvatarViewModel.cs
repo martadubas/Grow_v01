@@ -22,15 +22,15 @@ namespace TestDemo.Core.ViewModels
 
         public void SetAvatar(int position)
         {
-            switch (position)
-            {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                default:
-                    break;
-            }
+            //switch (position)
+            //{
+            //    case 0:
+            //        break;
+            //    case 1:
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
     }
 }

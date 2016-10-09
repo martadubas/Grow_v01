@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestDemo.Core.Models
 {
-    public class KeyPair
+    class Avatar
     {
-        public string Key { get; set; }
-        public string Value { get; set; }
     }
 }

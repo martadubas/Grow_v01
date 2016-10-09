@@ -20,7 +20,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/input_fontSize"
-        local:MvxBind="Text Name, Mode=OneWayToSource"
+        local:MvxBind="Text Username, Mode=TwoWay"
         android:id="@+id/editTxtNewUser"
         android:textColor="@color/text_txtCol"
         android:backgroundTint="@color/text_lineCol"
@@ -37,7 +37,7 @@
         android:padding="@dimen/button_padding_top"
         android:id="@+id/btnNewUser"
         android:textSize="@dimen/button_fontsize"
-        local:MvxBind="Click ChooseAvatarCommand"
+        local:MvxBind="Click ConfirmUsernameCommand"
         android:background="@color/light_blue"
         android:textColor="@color/pink"
         android:gravity="center" />

@@ -47,6 +47,8 @@ namespace TestDemo.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::TestDemo.Droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::TestDemo.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::TestDemo.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TestDemo.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TestDemo.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
