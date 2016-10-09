@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Models;
+using TestDemo.Core.Database;
+using TestDemo.Core.Interfaces;
 //using TestDemo.Core.Services;
 
 namespace TestDemo.Core.ViewModels
 {
+
     public class GoalDetailViewModel : MvxViewModel
     {
         private Goal goal;
+        private SelectedGoalDatabase selectedGoalDatabase;
 
         private string title;
         public string Title
@@ -37,6 +41,10 @@ namespace TestDemo.Core.ViewModels
         //        RaisePropertyChanged(() => MyDrawable);
         //    }
         //}
+        public GoalDetailViewModel(ISqlite sqlite)
+        {
+            this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
+        }
         public void Init(Goal goal)
         {
             this.goal = goal;
@@ -46,7 +54,6 @@ namespace TestDemo.Core.ViewModels
         {
             Title = goal.Title;
             Description = goal.Description;
-            //MyDrawable = goal.Title.Trim();
             base.Start();
         }
 
@@ -62,10 +69,17 @@ namespace TestDemo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<GoalListViewModel>());
+                insertSelectedGoals(new SelectedGoal(goal));
+                return new MvxCommand(() => ShowViewModel<GoalDiaryViewModel>());
             }
         }
+        public async void insertSelectedGoals(SelectedGoal selectedGoal)
+        {
+            await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);
 
+            //Close(this);
+
+        }
 
     }
 }

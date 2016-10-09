@@ -35,21 +35,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Database\AvatarDatabase.cs" />
-    <Compile Include="Database\UserDatabase.cs" />
+    <Compile Include="Databases\GoalDatabase.cs" />
+    <Compile Include="Databases\SelectedGoalDatabase.cs" />
+    <Compile Include="Databases\AvatarDatabase.cs" />
+    <Compile Include="Databases\UserDatabase.cs" />
     <Compile Include="Interfaces\IAvatarDatabase.cs" />
+    <Compile Include="Interfaces\IDialogService.cs" />
+    <Compile Include="Interfaces\IGoalDatabase.cs" />
     <Compile Include="Interfaces\ISqlite.cs" />
     <Compile Include="Interfaces\IUserDatabase.cs" />
     <Compile Include="Models\Avatar.cs" />
     <Compile Include="Models\Goal.cs" />
+    <Compile Include="Models\SelectedGoal.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GoalDetailViewModel.cs" />
+    <Compile Include="ViewModels\GoalDiaryViewModel.cs" />
     <Compile Include="ViewModels\GoalListViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\MyGoalViewModel.cs" />
     <Compile Include="ViewModels\NewUser\ChooseAvatarViewModel.cs" />
     <Compile Include="ViewModels\ChooseTasksViewModel.cs" />
     <Compile Include="ViewModels\NewUser\HelloNewUserViewModel.cs" />
-    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\NewUser\InfoNewUserViewModel.cs" />
     <Compile Include="ViewModels\NewUser\NewUserViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
@@ -72,8 +79,16 @@
       <HintPath>..\packages\MvvmCross.Platform.4.2.2\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLiteNetExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLiteNetExtensions.1.3.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

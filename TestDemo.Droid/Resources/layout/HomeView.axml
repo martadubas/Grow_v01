@@ -26,13 +26,13 @@
         android:layout_margin="10dp"
         android:padding="10dp" />
     <Button
-        android:text="Your medals"
+        android:text="Goals Diary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonMedal"
+        android:id="@+id/buttonDiary"
         android:background="@color/button_bgCol"
         android:textColor="@color/button_txtCol"
-        local:MvxBind="Click MedalsViewCommand"
+        local:MvxBind="Click GoalDiaryViewCommand"
         android:layout_margin="10dp"
         android:padding="10dp" />
     <Button
@@ -54,8 +54,7 @@
         android:textColor="@color/button_txtCol"
         android:layout_margin="10dp"
         android:padding="10dp" />
-
-  <Button
+    <Button
         android:text="New User View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

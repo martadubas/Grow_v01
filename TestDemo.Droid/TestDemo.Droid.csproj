@@ -100,14 +100,6 @@
       <HintPath>..\packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Android.Support.v7.CardView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Facebook, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Facebook.Android.4.13.2\lib\MonoAndroid403\Xamarin.Facebook.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\SqliteDroid.cs" />
@@ -120,11 +112,13 @@
     <Compile Include="Views\ChooseAvatarView.cs" />
     <Compile Include="Views\ChooseTasksView.cs" />
     <Compile Include="Views\GoalDetailView.cs" />
+    <Compile Include="Views\GoalDiaryView.cs" />
     <Compile Include="Views\GoalListView.cs" />
     <Compile Include="Views\HelloNewUserView.cs" />
     <Compile Include="Views\ImageAdapter.cs" />
     <Compile Include="Views\InfoNewUserView.cs" />
     <Compile Include="Views\JourneyView.cs" />
+    <Compile Include="Views\MyGoalView.cs" />
     <Compile Include="Views\NewUserView.cs" />
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\SettingsView.cs" />
@@ -136,9 +130,6 @@
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\NewUserView.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\HomeView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ChooseAvatarView.axml">
@@ -159,9 +150,13 @@
     <AndroidResource Include="Resources\layout\SettingsView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\GoalDetailView.axml" />
+    <AndroidResource Include="Resources\layout\GoalDiaryItem.axml" />
+    <AndroidResource Include="Resources\layout\GoalDiaryView.axml" />
     <AndroidResource Include="Resources\layout\GoalListItem.axml" />
     <AndroidResource Include="Resources\layout\GoalListView.axml" />
-    <AndroidResource Include="Resources\layout\GoalDetailView.axml" />
+    <AndroidResource Include="Resources\layout\HomeView.axml" />
+    <AndroidResource Include="Resources\layout\MyGoalView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

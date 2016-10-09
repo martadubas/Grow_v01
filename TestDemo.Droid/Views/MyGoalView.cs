@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 using Android.App;
-using Android;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -14,13 +13,13 @@ using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "Goals Details")]
-    public class GoalDetailView : MvxActivity
+    [Activity(Label = "Goals")]
+    public class MyGoalView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.GoalDetailView);
+            SetContentView(Resource.Layout.GoalListView);
 
             // Create your application here
         }

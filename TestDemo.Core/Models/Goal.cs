@@ -1,10 +1,20 @@
-﻿namespace TestDemo.Core.Models
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SQLite.Net.Attributes;
+namespace TestDemo.Core.Models
 {
     public class Goal
     {
-        
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        //public DateTime DateCreated { get; set; }
+    
 
         public string Category { get; set; }
 
@@ -13,6 +23,7 @@
             Title = title;
             Description = description;
             Category = category;
+            //DateCreated = DateTime.Now;
         }
         public Goal()
         {

@@ -6,15 +6,15 @@ namespace TestDemo.Core.ViewModels
     public class HomeViewModel 
         : MvxViewModel
     {
-     
-        
-        //public IMvxCommand LevelViewCommand
-        //{
-        //    get
-        //    {
-        //        return new MvxCommand(() => ShowViewModel<LevelViewModel>());
-        //    }
-        //}
+
+
+        public IMvxCommand GoalDiaryViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<GoalDiaryViewModel>());
+            }
+        }
 
         public IMvxCommand JourneyViewCommand
         {
@@ -43,6 +43,8 @@ namespace TestDemo.Core.ViewModels
             get
             {
                 return new MvxCommand(() => ShowViewModel<SettingsViewModel>());
+                //return new MvxCommand(() => ShowViewModel<GoalListViewModel>());
+
             }
         }
 
