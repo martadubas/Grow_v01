@@ -8,6 +8,7 @@ using TestDemo.Core.Interfaces;
 using TestDemo.Core.Models;
 using MvvmCross.Platform;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace TestDemo.Core.Database
 {
@@ -43,6 +44,7 @@ namespace TestDemo.Core.Database
         }
         public async Task<Goal> GetGoal(object id)
         {
+            Debug.WriteLine("#### goal DB.getGoal = " + id);
             var query =  database.Query<Goal>("select * from Goal where Id = ?", id);
 
             return query.FirstOrDefault();

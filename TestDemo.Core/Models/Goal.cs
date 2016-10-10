@@ -32,6 +32,11 @@ namespace TestDemo.Core.Models
             Category = "default category";
         }
 
+        public override string ToString()
+        {
+            return Title;
+        }
+
     }
 
 }

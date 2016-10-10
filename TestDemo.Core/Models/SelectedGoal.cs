@@ -28,8 +28,8 @@ namespace TestDemo.Core.Models
 
         public SelectedGoal(Goal goal)
         {
-            GoalId = goal.Id;
             Goal = goal;
+            GoalId = goal.Id;
             Status = "STARTED";
             Title = goal.Title;
             Category = goal.Category;
@@ -66,6 +66,9 @@ namespace TestDemo.Core.Models
         public void setGoal(Goal goal)
         {
             this.Goal = goal;
+            this.Title = goal.Title;
+            this.Category = goal.Category;
+            
         }
 
     }

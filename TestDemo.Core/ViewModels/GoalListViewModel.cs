@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Collections.Generic;
 using TestDemo.Core.Database;
 using TestDemo.Core.Interfaces;
+using System.Diagnostics;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -14,7 +15,7 @@ namespace TestDemo.Core.ViewModels
         : MvxViewModel
     {
 
-        private readonly IDialogService dialog;
+        //private readonly IDialogService dialog;
         private GoalDatabase goalDatabase;
 
         private ObservableCollection<Goal> goals;
@@ -32,24 +33,23 @@ namespace TestDemo.Core.ViewModels
         public GoalListViewModel(ISqlite sqlite)
         {
             //this.goalDatabase = new GoalDatabase(sqlite);
-            //Goals = new ObservableCollection<Goal>();
+            Goals = new ObservableCollection<Goal>() { };
             //Goals = getSampleGoals();
 
             //SelectGoalCommand = new MvxCommand<Goal>(selectedGoal => ShowViewModel<GoalDetailViewModel>(selectedGoal));
 
             this.goalDatabase = new GoalDatabase(sqlite);
 
-            // only do this if doesn exist
-            insertSampleGoalsToDb(getSampleGoals());
+            // only do this for one time, it will clear existing database. beware, may clear dependencies
+            //insertSampleGoalsToDb(getSampleGoals());
             loadGoalsFromDb();
-
             SelectGoalCommand = new MvxCommand<Goal>(selectedGoal => ShowViewModel<GoalDetailViewModel>(selectedGoal));
 
         }
 
         public void OnResume()
         {
-            loadGoalsFromDb();
+            //loadGoalsFromDb();
         }
 
         public async void loadGoalsFromDb()
@@ -58,6 +58,7 @@ namespace TestDemo.Core.ViewModels
             var goalsInDb = await goalDatabase.GetGoals();
             foreach (var goal in goalsInDb)
             {
+                Debug.WriteLine("##### forEach goal : "+goal.Id);
                 Goals.Add(goal);
             }
         }
@@ -78,8 +79,6 @@ namespace TestDemo.Core.ViewModels
         }
         private ObservableCollection<Goal> getSampleGoals()
         {
-            Goals = new ObservableCollection<Goal>() { };
-
             Goals.Add(new Goal("Goal 1", "Description 1", "food"));
             Goals.Add(new Goal("Goal 2", "Description 2", "sport"));
             Goals.Add(new Goal("Goal 3", "Description 3", "social"));
@@ -94,25 +93,13 @@ namespace TestDemo.Core.ViewModels
         public async void insertSampleGoalsToDb(ObservableCollection<Goal> goals)
         {
 
-            //await goalDatabase.DeleteAll();
+            await goalDatabase.DeleteAll();
             foreach (var goal in goals)
             {
                 await goalDatabase.InsertGoal(goal);
             }
             Close(this);
-            //}
-            //else
-            //{
-            //    if (await dialog.Show("This location has already been added", "Location Exists", "Keep Searching", "Go Back"))
-            //    {
-            //        SearchTerm = string.Empty;
-            //        Locations.Clear();
-            //    }
-            //    else
-            //    {
-            //        Close(this);
-            //    }
-            //}
+
         }
     }
 }

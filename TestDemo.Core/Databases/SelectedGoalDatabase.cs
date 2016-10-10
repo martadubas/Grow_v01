@@ -9,6 +9,7 @@ using TestDemo.Core.Models;
 using MvvmCross.Platform;
 using System.Threading.Tasks;
 using SQLiteNetExtensions.Extensions;
+using System.Diagnostics;
 
 namespace TestDemo.Core.Database
 {
@@ -52,6 +53,7 @@ namespace TestDemo.Core.Database
         {
             var num = database.Insert(SelectedGoal);
             database.Commit();
+            //Debug.WriteLine("## num in sgDb =" + num); //return 1 when it is true?
             return num;
         }
 

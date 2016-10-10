@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Collections.Generic;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Database;
-
+using System.Diagnostics;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -15,7 +15,7 @@ namespace TestDemo.Core.ViewModels
         : MvxViewModel
     {
 
-        private readonly IDialogService dialog;
+        //private readonly IDialogService dialog;
         private SelectedGoalDatabase selectedGoalDatabase;
         private GoalDatabase goalDatabase;
 
@@ -30,41 +30,13 @@ namespace TestDemo.Core.ViewModels
 
 
         public ICommand ViewSelectedGoalCommand { get; private set; }
-        //public SelectedGoalListViewModel()
-        //{
-
-        //    SelectedGoals = getSampleSelectedGoals();
-
-        //    ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<SelectedGoalDetailViewModel>(selectedSelectedGoal));
-
-        //}
-
-        //public SelectedGoalListViewModel(IDialogService dialog, ISelectedGoalDatabase selectedGoalDatabase)
-        //{
-        //    this.dialog = dialog;
-        //    this.selectedGoalDatabase = selectedGoalDatabase;
-        //    SelectedGoals = new ObservableCollection<SelectedGoal>();
-        //    //getSampleSelectedGoals1();
-        //    SelectedGoals = getSampleSelectedGoals();
-
-        //    ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<SelectedGoalDetailViewModel>(selectedSelectedGoal));
-        //}
-
-        //public SelectedGoalListViewModel(ISelectedGoalDatabase selectedGoalDatabase)
-        //{
-        //    this.dialog = dialog;
-        //    this.selectedGoalDatabase = selectedGoalDatabase;
-        //    SelectedGoals = new ObservableCollection<SelectedGoal>();
-        //    //getSampleSelectedGoals1();
-        //    SelectedGoals = getSampleSelectedGoals();
-
-        //    ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<SelectedGoalDetailViewModel>(selectedSelectedGoal));
-        //}
 
         public GoalDiaryViewModel(ISqlite sqlite)
         {
+            Debug.WriteLine("###############  new GoalDiary");
+            SelectedGoals = new ObservableCollection<SelectedGoal>() { };
+
             //this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
-            //SelectedGoals = new ObservableCollection<SelectedGoal>();
             //SelectedGoals = getSampleSelectedGoals();
 
             //ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<SelectedGoalDetailViewModel>(selectedSelectedGoal));
@@ -73,41 +45,65 @@ namespace TestDemo.Core.ViewModels
             this.goalDatabase = new GoalDatabase(sqlite);
 
 
-            // only do this if doesn exist
-            insertSampleSelectedGoalsToDb();
+            // only do this if doesn exist. will clear existing selected goals.
+            //insertSampleSelectedGoalsToDbIfNotExist();
             loadSelectedGoalsFromDb();
             ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<GoalDetailViewModel>(selectedSelectedGoal));
 
         }
 
-        //public void OnResume()
-        //{
-        //    loadSelectedGoals();
-        //}
-
         public async void loadSelectedGoalsFromDb()
         {
-            //SelectedGoals.Clear();
+            Debug.WriteLine("###############  load diary from db");
+            SelectedGoals.Clear();
             //var selectedGoalsInDb = await selectedGoalDatabase.GetSelectedGoals();
+            Debug.WriteLine("###############  get selected goals from db");
             var selectedGoalsInDb = selectedGoalDatabase.GetSelectedGoals();
 
-            //TODO the goal is still not shown. find out how to retrived child element or foreignkey
             foreach (var selectedGoal in selectedGoalsInDb)
             {
-                Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
-                if (thisGoal == null)
+                Debug.WriteLine("###############  foreach: selected goal id = "+selectedGoal.Id+", "+selectedGoal.GoalId);
+                try
                 {
-                    thisGoal = new Goal("null goal retrieved", "ll", "ff");
-                }else
-                {
-                    thisGoal = new Goal("not null", "asdasd", "asdasd");
-                }
-                selectedGoal.setGoal(thisGoal);
-                RaisePropertyChanged();
+                    Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
+                    selectedGoal.setGoal(thisGoal);//to update information of Goal object
+                    SelectedGoals.Add(selectedGoal);
+                    Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
 
-                SelectedGoals.Add(selectedGoal);
+                }
+                catch (Exception e)
+                {
+                    //possibly NullReferenceException
+                    Debug.WriteLine("###############  exception: "+e.Message);
+
+                }
+                
             }
         }
+
+        public async void insertSampleSelectedGoalsToDbIfNotExist()
+        {
+            clearSelectedGoalDb();
+            Debug.WriteLine("###############  insert sample diary");
+
+            Goal goal = goalDatabase.GetTheFirstGoal(); //this works
+            if (goal == null)
+            {
+                //in case of empty goalDb
+                goal = new Goal("Title", "Desc", "Cat");
+            }
+
+
+            SelectedGoals.Add(new SelectedGoal(goal));
+
+           // await selectedGoalDatabase.DeleteAll();
+            foreach (var selectedGoal in SelectedGoals)
+            {
+                await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);
+            }
+            Close(this);
+        }
+
         public IMvxCommand HomeViewCommand
         {
             get
@@ -123,34 +119,11 @@ namespace TestDemo.Core.ViewModels
             }
 
         }
-
-        public async void insertSampleSelectedGoalsToDb()
+        public async void clearSelectedGoalDb()
         {
-            Goal goal = goalDatabase.GetTheFirstGoal(); //this works
-
-            SelectedGoals = new ObservableCollection<SelectedGoal>() { };
-
-            SelectedGoals.Add(new SelectedGoal(goal));
+            Debug.WriteLine("###############  clear all selected goals");
 
             await selectedGoalDatabase.DeleteAll();
-            foreach (var selectedGoal in SelectedGoals)
-            {
-                await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);
-            }
-            Close(this);
-            //}
-            //else
-            //{
-            //    if (await dialog.Show("This location has already been added", "Location Exists", "Keep Searching", "Go Back"))
-            //    {
-            //        SearchTerm = string.Empty;
-            //        Locations.Clear();
-            //    }
-            //    else
-            //    {
-            //        Close(this);
-            //    }
-            //}
         }
     }
 }

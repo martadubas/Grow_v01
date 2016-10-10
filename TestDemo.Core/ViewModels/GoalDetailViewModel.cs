@@ -8,7 +8,7 @@ using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Models;
 using TestDemo.Core.Database;
 using TestDemo.Core.Interfaces;
-//using TestDemo.Core.Services;
+using System.Diagnostics;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -43,15 +43,21 @@ namespace TestDemo.Core.ViewModels
         //}
         public GoalDetailViewModel(ISqlite sqlite)
         {
+            //Debug.WriteLine("###############  initialize sqlite");
             this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
+
         }
         public void Init(Goal goal)
         {
+            //Debug.WriteLine("###############  init goal");
+
             this.goal = goal;
 
         }
         public override void Start()
         {
+            //Debug.WriteLine("###############  start");
+
             Title = goal.Title;
             Description = goal.Description;
             base.Start();
@@ -69,13 +75,23 @@ namespace TestDemo.Core.ViewModels
         {
             get
             {
-                insertSelectedGoals(new SelectedGoal(goal));
-                return new MvxCommand(() => ShowViewModel<GoalDiaryViewModel>());
+
+                return new MvxCommand(() => 
+                {
+                    Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
+                    insertSelectedGoal(new SelectedGoal(goal));
+                    ShowViewModel<GoalDiaryViewModel>();
+                });
+                
+                
             }
         }
-        public async void insertSelectedGoals(SelectedGoal selectedGoal)
+        public async void insertSelectedGoal(SelectedGoal selectedGoal)
         {
+            //Debug.WriteLine("###############  insert goals");
+
             await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);
+            Debug.WriteLine("###############  after insert goal");
 
             //Close(this);
 
