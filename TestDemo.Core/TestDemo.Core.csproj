@@ -40,11 +40,9 @@
     <Compile Include="Databases\AvatarDatabase.cs" />
     <Compile Include="Databases\UserDatabase.cs" />
     <Compile Include="Interfaces\IAvatarDatabase.cs" />
-    <Compile Include="Interfaces\IDialogService.cs" />
     <Compile Include="Interfaces\IGoalDatabase.cs" />
     <Compile Include="Interfaces\ISqlite.cs" />
     <Compile Include="Interfaces\IUserDatabase.cs" />
-    <Compile Include="Models\Avatar.cs" />
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\SelectedGoal.cs" />
     <Compile Include="Models\User.cs" />

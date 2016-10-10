@@ -17,21 +17,28 @@ namespace TestDemo.Droid.Views
     [Activity(Label = "",ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class ChooseAvatar : MvxActivity
     {
-        ChooseAvatarViewModel vm;
+       private ChooseAvatarViewModel _viewModel;
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            vm = ViewModel as ChooseAvatarViewModel;
+            
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ChooseAvatarView);
+            _viewModel = (ChooseAvatarViewModel)ViewModel;
+            test();
+           
+        }
 
+        public void test()
+    {
+        Gallery gallery = (Gallery)FindViewById<Gallery>(Resource.Id.galleryChooseAvatar);
 
-            Gallery gallery = (Gallery)FindViewById<Gallery>(Resource.Id.galleryChooseAvatar);
+        gallery.Adapter = new ImageAdapter(this);
 
-            gallery.Adapter = new ImageAdapter(this);
+        gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs args) {
 
-            gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs args) {
-                vm.SetAvatar(args.Position);
-            };
+            var pos = args.Position;
+            _viewModel.SetAvatar(pos);
+        };
         }
     }
 }
