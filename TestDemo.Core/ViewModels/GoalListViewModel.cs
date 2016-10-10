@@ -14,7 +14,7 @@ namespace TestDemo.Core.ViewModels
         : MvxViewModel
     {
 
-        private readonly IDialogService dialog;
+       // private readonly IDialogService dialog;
         private GoalDatabase goalDatabase;
 
         private ObservableCollection<Goal> goals;

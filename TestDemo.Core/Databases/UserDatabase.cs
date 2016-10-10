@@ -18,8 +18,16 @@ namespace TestDemo.Core.Database
             database = sqlite.GetConnection();
             database.CreateTable<User>();
         }
+
+        public User GetUserById(int Id)
+        {
+    
+            User user = database.Table<User>().FirstOrDefault(a => a.Id == Id);
+           
+            return user;
+        }
         
-        public async Task<IEnumerable<User>> GetUser()
+        public async Task<IEnumerable<User>> GetUsers()
         {
             return database.Table<User>().ToList();
         }
@@ -32,6 +40,7 @@ namespace TestDemo.Core.Database
         public async Task<int> DeleteAll()
         {
             return database.DeleteAll<User>();
+           
         }
         public async Task<int> Update(object user)
         {
@@ -45,7 +54,7 @@ namespace TestDemo.Core.Database
             return num;
         }
 
-        public async Task<bool> CheckIfExists(User user)
+        public bool CheckIfExists()
         {
             var exists = database.Table<User>()
                 .Count() > 0;

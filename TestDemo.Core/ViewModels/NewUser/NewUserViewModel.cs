@@ -12,7 +12,7 @@ namespace TestDemo.Core.ViewModels
         : MvxViewModel
     {
         
-        private readonly UserDatabase _userDatabase;
+        private  UserDatabase _userDatabase;
         private User _user = new User();
         private string _username;
 
@@ -36,7 +36,8 @@ namespace TestDemo.Core.ViewModels
             {
                 return new MvxCommand(() =>
                 {
-                    var users  = _userDatabase.GetUser();
+                    //var users  = _userDatabase.GetUsers();
+          
                     
                     if (string.IsNullOrEmpty(Username))
                     {
@@ -45,17 +46,18 @@ namespace TestDemo.Core.ViewModels
                     else
                     {
                 
-                      _user.Username = Username;
-                        if (_userDatabase.isSetUser())
+                        if (_userDatabase.GetUserById(1) != null)
                         {
-                           // _userDatabase.Update(_user);
-                            _userDatabase.DeleteAll();
-                            _userDatabase.InsertUser(_user);
+                            _user = _userDatabase.GetUserById(1);
+                            _user.Username = Username;
+                            _userDatabase.Update(_user);
+                            
                             ShowViewModel<ChooseAvatarViewModel>();
                         }
                         else
                         {
-                            //add
+                            _user.Username = Username;
+                            _user.Id = 1;
                             _userDatabase.InsertUser(_user);
                             ShowViewModel<ChooseAvatarViewModel>();
                         }

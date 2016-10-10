@@ -9,13 +9,13 @@ namespace TestDemo.Core.Interfaces
 {
     public interface IUserDatabase
     {
-        Task<IEnumerable<User>> GetUser();
+        Task<IEnumerable<User>> GetUsers();
 
         Task<int> DeleteUser(object id);
 
         Task<int> InsertUser(User user);
 
-        Task<bool> CheckIfExists(User user);
+
 
 
     }
