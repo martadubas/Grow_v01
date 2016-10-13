@@ -2,6 +2,7 @@
 
 using Android.App;
 using Android.OS;
+using Android.Widget;
 using MvvmCross.Droid.Views;
 using TestDemo.Core.ViewModels;
 
@@ -16,7 +17,20 @@ namespace TestDemo.Droid.Views
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.NewUserView);
             _viewModel = (NewUserViewModel)ViewModel;
-            
-        }
+
+            EditText editTxtNewUser = FindViewById<EditText>(Resource.Id.editTxtNewUser);
+            Button btnNewUser = FindViewById<Button>(Resource.Id.btnNewUser);
+
+            btnNewUser.Click += delegate
+            {
+                if (editTxtNewUser.Text == "")
+                {
+                    Toast.MakeText(this, "Write your username", ToastLength.Short).Show();
+                }
+
+            };
+         }
     }
 }
+
+
