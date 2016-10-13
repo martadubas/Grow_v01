@@ -15,22 +15,24 @@ using TestDemo.Core.ViewModels;
 namespace TestDemo.Droid.Views
 {
     [Activity(Label = "",ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+
     public class ChooseAvatar : MvxActivity
     {
        private ChooseAvatarViewModel _viewModel;
+       
         protected override void OnCreate(Bundle savedInstanceState)
-        {
-            
-            base.OnCreate(savedInstanceState);
+        {   
+              base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ChooseAvatarView);
             _viewModel = (ChooseAvatarViewModel)ViewModel;
-            test();
+
+            SendAvatarId();
            
         }
 
-        public void test()
+        public void SendAvatarId()
     {
-        Gallery gallery = (Gallery)FindViewById<Gallery>(Resource.Id.galleryChooseAvatar);
+        Gallery gallery = FindViewById<Gallery>(Resource.Id.galleryChooseAvatar);
 
         gallery.Adapter = new ImageAdapter(this);
 

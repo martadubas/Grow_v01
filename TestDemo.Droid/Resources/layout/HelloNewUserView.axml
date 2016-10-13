@@ -7,17 +7,18 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient">
     <TextView
-        android:text="Your journey"
+        android:text=""
         android:layout_width="fill_parent"
         android:layout_height="@dimen/h1_height"
         android:padding="@dimen/h1_marg"
         android:layout_marginTop="@dimen/h1_margTop"
         android:textSize="@dimen/h1_fontSize"
         android:id="@+id/h1HelloUser"
+        local:MvxBind="Text h1HelloUser, Mode=TwoWay"
         android:textColor="@color/h1_txtCol"
         android:gravity="center" />
     <TextView
-        android:text="Here some a description saying how the user should choose the levels and proceed with using the application"
+        android:text="Here some a description saying how the user should proceed"
         android:textColor="@color/dark_blue"
         android:gravity="center"
         android:textSize="@dimen/text_fontSize"
@@ -26,6 +27,13 @@
         android:layout_marginLeft="@dimen/text_marg"
         android:layout_marginRight="@dimen/text_marg"
         android:id="@+id/txtHelloUser" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageChosenAvatar"
+        local:MvxBind="DrawableId LocalImage(ImagePath)"
+        android:layout_marginBottom="@dimen/text_marg"
+        android:layout_marginTop="@dimen/text_marg" />
     <Button
         android:text="Start"
         android:layout_width="fill_parent"

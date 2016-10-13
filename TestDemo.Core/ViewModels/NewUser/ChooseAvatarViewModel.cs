@@ -16,20 +16,45 @@ namespace TestDemo.Core.ViewModels
     {
         private UserDatabase _userDatabase;
         private User _user = new User();
+        private string _h1ChooseAvatar;
+
+
+        public override void Start()
+        {
+            base.Start();
+            var user = _userDatabase.GetUserById(1);
+            h1ChooseAvatar = "Choose your avatar, " + user.Username;
+        }
+
+
+
 
         public IMvxCommand HelloNewUserViewCommand
         {
             get
             {
-                //if(_user.Avatar != null)
-                {
-                    return new MvxCommand(() => ShowViewModel<HelloNewUserViewModel>());
-                }
-
-                //return null;
+                return new MvxCommand(() => ShowViewModel<HelloNewUserViewModel>());
             }
-
         }
+
+        //public void Init()
+        //{
+
+        //}
+
+
+        public string h1ChooseAvatar
+        {
+            get { return _h1ChooseAvatar; }
+            set
+            {
+                if (value != null)
+                {
+                    SetProperty(ref _h1ChooseAvatar, value);
+                }
+            }
+        }
+
 
         public void SetAvatar(int position)
         {
@@ -38,18 +63,17 @@ namespace TestDemo.Core.ViewModels
             {
                 case 0:
                     _user.Avatar = 0;
-                    
+
                     break;
                 case 1:
                     _user.Avatar = 1;
-                    
+
                     break;
                 case 2:
                     _user.Avatar = 2;
-                    
+
                     break;
 
-               
             }
             _userDatabase.Update(_user);
         }
@@ -59,6 +83,6 @@ namespace TestDemo.Core.ViewModels
             _userDatabase = new UserDatabase();
         }
 
-        }
+    }
 }
 

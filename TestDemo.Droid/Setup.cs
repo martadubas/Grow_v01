@@ -28,7 +28,7 @@ namespace TestDemo.Droid
         protected override void InitializeFirstChance()
         {
             Mvx.LazyConstructAndRegisterSingleton<ISqlite, SqliteDroid>();
-            Mvx.LazyConstructAndRegisterSingleton<IUserDatabase, UserDatabase>();
+            //Mvx.LazyConstructAndRegisterSingleton<IUserDatabase, UserDatabase>();
             base.InitializeFirstChance();
         }
     }

@@ -15,6 +15,8 @@ namespace TestDemo.Core.ViewModels
         private  UserDatabase _userDatabase;
         private User _user = new User();
         private string _username;
+       
+      
 
         public string Username
         {
@@ -28,7 +30,8 @@ namespace TestDemo.Core.ViewModels
                 }
             }
         }
-       
+
+
         public ICommand ConfirmUsernameCommand
         {
            
@@ -38,30 +41,29 @@ namespace TestDemo.Core.ViewModels
                 {
                     //var users  = _userDatabase.GetUsers();
           
-                    
                     if (string.IsNullOrEmpty(Username))
                     {
                         Debug.WriteLine("Throw exception, username is empty");
                     }
                     else
                     {
-                
-                        if (_userDatabase.GetUserById(1) != null)
+                      if (_userDatabase.GetUserById(1) != null)
                         {
                             _user = _userDatabase.GetUserById(1);
                             _user.Username = Username;
-                            _userDatabase.Update(_user);
+                            _user.Avatar = 99;
+                            var x =_userDatabase.Update(_user);
                             
-                            ShowViewModel<ChooseAvatarViewModel>();
+                           
                         }
                         else
                         {
                             _user.Username = Username;
                             _user.Id = 1;
-                            _userDatabase.InsertUser(_user);
-                            ShowViewModel<ChooseAvatarViewModel>();
+                            var y =_userDatabase.InsertUser(_user);
+                            
                         }
-                       
+                        ShowViewModel<ChooseAvatarViewModel>();
                     }
                 });
                 

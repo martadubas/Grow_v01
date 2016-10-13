@@ -9,7 +9,7 @@ using TestDemo.Core.Models;
 
 namespace TestDemo.Core.Database
 {
-    public class UserDatabase : IUserDatabase
+    public class UserDatabase 
     {
         private SQLiteConnection database;
         public UserDatabase()
@@ -27,49 +27,46 @@ namespace TestDemo.Core.Database
             return user;
         }
         
-        public async Task<IEnumerable<User>> GetUsers()
+        public IEnumerable<User> GetUsers()
         {
             return database.Table<User>().ToList();
         }
 
-        public async Task<int> DeleteUser(object id)
+        public int DeleteUser(object id)
         {
             return database.Delete<User>(Convert.ToInt16(id));
         }
 
-        public async Task<int> DeleteAll()
+        public int DeleteAll()
         {
-            return database.DeleteAll<User>();
+            var num = database.DeleteAll<User>();
+            database.Commit();
+            return num;
            
         }
-        public async Task<int> Update(object user)
+        public int Update(object user)
         {
-            return database.Update(user);
+            var num = database.Update(user);
+            database.Commit();
+            return num;
+
         }
 
-        public async Task<int> InsertUser(User user)
+        public int InsertUser(User user)
         {
             var num = database.Insert(user);
             database.Commit();
             return num;
         }
 
-        public bool CheckIfExists()
-        {
-            var exists = database.Table<User>()
-                .Count() > 0;
-                
-                //Any(x => x.Username == user.Username
-                //|| x.Id == user.Id);
-            return exists;
-        }
+        
 
-        public bool isSetUser()
-        {
-            if (database.Table<User>().Count() > 0) return true;
+        //public bool isSetUser()
+        //{
+        //    if (database.Table<User>().Count() > 0) return true;
 
-            return false;
-        }
+        //    return false;
+        //}
      
     }
 }

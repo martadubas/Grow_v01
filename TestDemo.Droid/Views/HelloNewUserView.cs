@@ -10,16 +10,19 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
+using TestDemo.Core.ViewModels;
 
 namespace TestDemo.Droid.Views
 {
     [Activity(Label = "")]
     public class HelloNewUserView : MvxActivity
     {
+        private HelloNewUserViewModel _viewModel;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.HelloNewUserView);
+            _viewModel = (HelloNewUserViewModel)ViewModel;
 
         }
     }
