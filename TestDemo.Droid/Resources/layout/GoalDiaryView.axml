@@ -7,60 +7,60 @@
     android:layout_height="match_parent"
     android:background="@color/all_bgCol"
     android:weightSum="7">
-  <TextView
-      android:text="Goal Diary"
-      android:textAppearance="@android:style/TextAppearance.Large"
-      android:textColor="@color/button_txtCol"
-      android:gravity="center"
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="1"
-      android:id="@+id/textview_title" />
-  <TextView
-      android:text="View your activity list:)"
-      android:textAppearance="@android:style/TextAppearance.Medium"
-      android:textColor="@color/button_txtCol"
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="1"
-      android:id="@+id/textview_comment" />
-  <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:id="@+id/container_listview"
-      android:layout_weight="4">
-    <Mvx.MvxListView
+    <TextView
+        android:text="Goal Diary"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/button_txtCol"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        local:MvxItemTemplate="@layout/goaldiaryitem"
-        local:MvxBind="ItemsSource SelectedGoals; ItemClick SelectGoalCommand" />
-  </LinearLayout>
-  <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:id="@+id/buttons"
-      android:layout_weight="1">
-    <Button
-        android:text="Home"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/button_home"
-        android:background="@color/button_bgCol"
+        android:id="@+id/textview_title" />
+    <TextView
+        android:text="View your activity list:)"
+        android:textAppearance="@android:style/TextAppearance.Medium"
         android:textColor="@color/button_txtCol"
-        local:MvxBind="Click HomeViewCommand"
-        android:layout_gravity="center_vertical" />
-    <Button
-        android:text="Share"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/button_newuser"
-        android:background="@color/button_bgCol"
-        android:textColor="@color/button_txtCol"
-        local:MvxBind="Click ShareOnFacebookCommand"
-        android:layout_gravity="center_vertical" />
-  </LinearLayout>
+        android:id="@+id/textview_comment" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/container_listview"
+        android:layout_weight="4">
+        <Mvx.MvxListView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            local:MvxItemTemplate="@layout/goaldiaryitem"
+            local:MvxBind="ItemsSource SelectedGoals; ItemClick ViewSelectedGoalCommand" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/buttons"
+        android:layout_weight="1">
+        <Button
+            android:text="Home"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/button_home"
+            android:background="@color/button_bgCol"
+            android:textColor="@color/button_txtCol"
+            local:MvxBind="Click HomeViewCommand"
+            android:layout_gravity="center_vertical" />
+        <Button
+            android:text="Share"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/button_newuser"
+            android:background="@color/button_bgCol"
+            android:textColor="@color/button_txtCol"
+            local:MvxBind="Click ShareOnFacebookCommand"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
 </LinearLayout>

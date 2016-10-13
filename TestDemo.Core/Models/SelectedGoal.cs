@@ -70,6 +70,11 @@ namespace TestDemo.Core.Models
             this.Category = goal.Category;
             
         }
+        public string toString()
+        {
+            
+            return ">>Goal " + Goal.Title + " - Status " + Status + " - " + DateUpdated+"<<" ;
+        }       
 
     }
 }

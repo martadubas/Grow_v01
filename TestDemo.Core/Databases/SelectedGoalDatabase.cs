@@ -41,12 +41,17 @@ namespace TestDemo.Core.Database
         {
             return database.Delete<SelectedGoal>(Convert.ToInt16(id));
         }
-        public async Task<SelectedGoal> GetSelectedGoal(object id)
+
+        public async Task<bool> UpdateSelectedGoal(SelectedGoal selectedGoal)
         {
-            var query = database.Query<SelectedGoal>("select * from SelectedGoal where Id = ?", id);
+            Debug.WriteLine("#### update start for selected goal = " + selectedGoal.Id+" status "+selectedGoal.Status);
 
-            return query.FirstOrDefault();
-
+            database.UpdateWithChildren(selectedGoal);
+            return true;
+            ////sanity check
+            //SelectedGoal newSelectedGoal = GetSelectedGoal(selectedGoal.Id).Result;
+            //Debug.WriteLine("#### after updated selected goal status= " + selectedGoal.Status);
+            //return true;
         }
 
         public async Task<int> InsertSelectedGoal(SelectedGoal SelectedGoal)
@@ -67,6 +72,15 @@ namespace TestDemo.Core.Database
         public async Task<int> DeleteAll()
         {
             return database.DeleteAll<SelectedGoal>();
+        }
+
+        public async Task<SelectedGoal> GetSelectedGoal(object id)
+        {
+            Debug.WriteLine("#### seelctedgoal DB.getGoal = " + id);
+            var query = database.Query<SelectedGoal>("select * from SelectedGoal where Id = ?", id);
+
+            return query.FirstOrDefault();
+
         }
     }
 }
