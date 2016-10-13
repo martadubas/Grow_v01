@@ -58,7 +58,7 @@ namespace TestDemo.Core.ViewModels
             var goalsInDb = await goalDatabase.GetGoals();
             foreach (var goal in goalsInDb)
             {
-                Debug.WriteLine("##### forEach goal : "+goal.Id);
+               // Debug.WriteLine("##### forEach goal : "+goal.Id);
                 Goals.Add(goal);
             }
         }

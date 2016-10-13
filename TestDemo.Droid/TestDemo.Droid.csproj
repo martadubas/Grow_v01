@@ -119,6 +119,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\ChooseAvatarView.cs" />
     <Compile Include="Views\ChooseTasksView.cs" />
+    <Compile Include="Views\GoalUpdateView.cs" />
     <Compile Include="Views\GoalDetailView.cs" />
     <Compile Include="Views\GoalDiaryView.cs" />
     <Compile Include="Views\GoalListView.cs" />
@@ -134,7 +135,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
@@ -166,6 +169,7 @@
     <AndroidResource Include="Resources\layout\GoalListView.axml" />
     <AndroidResource Include="Resources\layout\HomeView.axml" />
     <AndroidResource Include="Resources\layout\MyGoalView.axml" />
+    <AndroidResource Include="Resources\layout\GoalUpdateView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

@@ -10,13 +10,13 @@ using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "Goals Details")]
-    public class GoalDetailView : MvxActivity
+    [Activity(Label = "My Goal")]
+    public class GoalUpdateView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.GoalDetailView);
+            SetContentView(Resource.Layout.GoalUpdateView);
 
             // Create your application here
         }

@@ -33,7 +33,7 @@ namespace TestDemo.Core.ViewModels
 
         public GoalDiaryViewModel(ISqlite sqlite)
         {
-            Debug.WriteLine("###############  new GoalDiary");
+            //Debug.WriteLine("###############  new GoalDiary");
             SelectedGoals = new ObservableCollection<SelectedGoal>() { };
 
             //this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
@@ -48,8 +48,29 @@ namespace TestDemo.Core.ViewModels
             // only do this if doesn exist. will clear existing selected goals.
             //insertSampleSelectedGoalsToDbIfNotExist();
             loadSelectedGoalsFromDb();
-            ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<GoalDetailViewModel>(selectedSelectedGoal));
+            ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => 
+            {
+                //Debug.WriteLine("###############  selected goal = " + selectedSelectedGoal.Id + " goal Id= " + selectedSelectedGoal.Goal.Id);
+                ShowViewModel<GoalUpdateViewModel>(new { selectedGoalId = selectedSelectedGoal.Id });
 
+                }
+            );
+
+        }
+
+        public IMvxCommand ShowDialogCommand
+        {
+            get
+            {
+                return new MvxCommand(() => 
+                {
+                    //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
+                    //insertSelectedGoal(new SelectedGoal(goal));
+                    ShowViewModel<GoalDiaryViewModel>();
+                });
+                
+                
+            }
         }
 
         public async void loadSelectedGoalsFromDb()
@@ -57,18 +78,18 @@ namespace TestDemo.Core.ViewModels
             Debug.WriteLine("###############  load diary from db");
             SelectedGoals.Clear();
             //var selectedGoalsInDb = await selectedGoalDatabase.GetSelectedGoals();
-            Debug.WriteLine("###############  get selected goals from db");
+            //Debug.WriteLine("###############  get selected goals from db");
             var selectedGoalsInDb = selectedGoalDatabase.GetSelectedGoals();
 
             foreach (var selectedGoal in selectedGoalsInDb)
             {
-                Debug.WriteLine("###############  foreach: selected goal id = "+selectedGoal.Id+", "+selectedGoal.GoalId);
+                //Debug.WriteLine("###############  foreach: selected goal id = "+selectedGoal.Id+", "+selectedGoal.GoalId);
                 try
                 {
                     Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
                     selectedGoal.setGoal(thisGoal);//to update information of Goal object
                     SelectedGoals.Add(selectedGoal);
-                    Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
+                    //Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
 
                 }
                 catch (Exception e)
