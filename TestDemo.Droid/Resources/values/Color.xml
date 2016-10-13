@@ -4,6 +4,10 @@
   <!--gradient-->
   <color name="start_gradient">#D6E59C</color>
   <color name="end_gradient">#81E5BA</color>
+
+  <!--gradient_buttons-->
+  <color name="start_gradientb">#5CC1FF</color>
+  <color name="end_gradientb">#76FFF5</color>
   
   <!--button-->
   <color name="button_bgCol">#3385ff</color>

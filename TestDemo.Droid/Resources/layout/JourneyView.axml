@@ -15,11 +15,12 @@
         android:layout_height="@dimen/h1_height"
         android:textSize="@dimen/h1_fontSize"
         android:layout_weight="1"
-        android:id="@+id/textview_title" />
+        local:MvxBind="Text h1Journey, Mode=TwoWay"
+        android:id="@+id/h1Journey" />
     <ImageView
-        android:src="@drawable/egg"
+        local:MvxBind="DrawableId LocalImage(JourneyImagePath)"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="150dp"
         android:layout_weight="2"
         android:id="@+id/imageview_currentavatar"
         android:layout_marginBottom="@dimen/button_margTop" />
@@ -84,7 +85,7 @@
             android:textColor="@color/pink"
             local:MvxBind="Click HomeViewCommand"
             android:layout_gravity="center_vertical"
-            android:layout_marginBottom="@dimen/button_margTop" />
+            android:layout_margin="10dp" />
         <Button
             android:text="Share"
             android:layout_width="0dp"
@@ -95,18 +96,7 @@
             android:textColor="@color/pink"
             local:MvxBind="Click ShareOnFacebookCommand"
             android:layout_gravity="center_vertical"
-            android:layout_marginBottom="@dimen/button_margTop"
+            android:layout_margin="10dp"
             android:onClick="" />
-        <Button
-            android:text="New User (testing)"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/button_height"
-            android:layout_weight="1"
-            android:id="@+id/btnTestNewUser"
-            android:background="@color/light_blue"
-            android:textColor="@color/pink"
-            local:MvxBind="Click InfoNewUserCommand"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="@dimen/button_margTop" />
     </LinearLayout>
 </LinearLayout>

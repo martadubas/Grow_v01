@@ -26,7 +26,27 @@ namespace TestDemo.Core.ViewModels
             var user = _userDatabase.GetUserById(1);
             h1HelloUser = "Let's start, " + user.Username;
            var avatar = user.Avatar;
-            ImagePath = "bird";
+
+            switch (avatar)
+            {
+
+                case 0:
+                    ImagePath = "bird";
+                    break;
+
+                case 1:
+                    ImagePath = "butterfly";
+                    break;
+
+                case 2:
+                    ImagePath = "diamond";
+                    break;
+
+                default:
+                    ImagePath = "bird";
+                    break;
+            }
+            
         }
    
   public string ImagePath {
@@ -49,6 +69,13 @@ namespace TestDemo.Core.ViewModels
                 {
                     SetProperty(ref _h1HelloUser, value);
                 }
+            }
+        }
+        public IMvxCommand JourneyViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<JourneyViewModel>());
             }
         }
 

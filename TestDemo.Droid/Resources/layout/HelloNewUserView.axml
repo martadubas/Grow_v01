@@ -28,23 +28,20 @@
         android:layout_marginRight="@dimen/text_marg"
         android:id="@+id/txtHelloUser" />
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
         android:id="@+id/imageChosenAvatar"
-        local:MvxBind="DrawableId LocalImage(ImagePath)"
-        android:layout_marginBottom="@dimen/text_marg"
-        android:layout_marginTop="@dimen/text_marg" />
+        local:MvxBind="DrawableId LocalImage(ImagePath)" />
     <Button
         android:text="Start"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/button_height"
         android:layout_marginLeft="@dimen/button_marg"
         android:layout_marginRight="@dimen/button_marg"
-        android:layout_marginTop="@dimen/button_margTop"
         android:padding="@dimen/button_padding_top"
         android:id="@+id/btnHelloUser"
         android:textSize="@dimen/button_fontsize"
-        local:MvxBind="Click LevelViewViewCommand"
+        local:MvxBind="Click JourneyViewCommand"
         android:background="@color/light_blue"
         android:textColor="@color/pink"
         android:gravity="center" />

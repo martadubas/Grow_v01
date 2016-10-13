@@ -10,5 +10,13 @@ namespace TestDemo.Core.ViewModels
     class SettingsViewModel
          : MvxViewModel
     {
+
+        public IMvxCommand InfoNewUserCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<InfoNewUserViewModel>());
+            }
+        }
     }
 }

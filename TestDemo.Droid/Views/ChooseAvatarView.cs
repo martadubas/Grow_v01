@@ -36,7 +36,7 @@ namespace TestDemo.Droid.Views
 
         gallery.Adapter = new ImageAdapter(this);
 
-        gallery.ItemClick += delegate (object sender, Android.Widget.AdapterView.ItemClickEventArgs args) {
+        gallery.ItemSelected += delegate (object sender, Android.Widget.AdapterView.ItemSelectedEventArgs args) {
 
             var pos = args.Position;
             _viewModel.SetAvatar(pos);

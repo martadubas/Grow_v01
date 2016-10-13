@@ -21,6 +21,12 @@ namespace TestDemo.Droid.ValueConverter
             int image = 0;
             if (value == "bird")
                 image = Resource.Drawable.bird_1;
+            if (value == "butterfly")
+                image = Resource.Drawable.butterfly_1;
+            if (value == "diamond")
+                image = Resource.Drawable.diamond_1;
+
+
 
             return image;
         }
