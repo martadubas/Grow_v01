@@ -16,12 +16,13 @@ namespace TestDemo.Core.Database
     public class SelectedGoalDatabase 
     {
         private SQLiteConnection database;
-        //public SelectedGoalDatabase()
-        //{
-        //    var sqlite = Mvx.Resolve<ISqlite>();
-        //    database = sqlite.GetConnection();
-        //    database.CreateTable<SelectedGoal>();
-        //}
+        public SelectedGoalDatabase()
+        {
+            var sqlite = Mvx.Resolve<ISqlite>();
+            database = sqlite.GetConnection();
+            database.CreateTable<SelectedGoal>();
+        }
+
         public SelectedGoalDatabase(ISqlite sqlite)
         {
             //var sqlite = Mvx.Resolve<ISqlite>();
@@ -35,6 +36,19 @@ namespace TestDemo.Core.Database
             //database.GetChildren(Goal);
             return database.GetAllWithChildren<SelectedGoal>();
             //return database.Table<SelectedGoal>().ToList();
+        }
+
+        public async Task<List<SelectedGoal>> GetSelectedGoalsToday()
+        {
+            //database.GetChildren(Goal);
+            //return database.GetAllWithChildren<SelectedGoal>();
+            //return database.Table<SelectedGoal>().ToList();
+            //Debug.WriteLine("#### selectedgoal DB.getgoal today");
+            var now = DateTime.Now;
+            var today = new DateTime(now.Year, now.Month, now.Day , 0, 0, 0).Ticks;
+            //Debug.WriteLine("###############  today = " + today.ToString());
+            var query = database.Query<SelectedGoal>("SELECT * FROM SelectedGoal WHERE DateCreated > ?", today.ToString());
+            return query;
         }
 
         public async Task<int> DeleteSelectedGoal(object id)
@@ -76,11 +90,28 @@ namespace TestDemo.Core.Database
 
         public async Task<SelectedGoal> GetSelectedGoal(object id)
         {
-            Debug.WriteLine("#### seelctedgoal DB.getGoal = " + id);
+           // Debug.WriteLine("#### seelctedgoal DB.getGoal = " + id);
             var query = database.Query<SelectedGoal>("select * from SelectedGoal where Id = ?", id);
 
             return query.FirstOrDefault();
-
         }
+
+        //public async Task<bool> DailyRefresh()
+        //{
+
+        //    Debug.WriteLine("#### daily refresh");
+        //    var now = DateTime.Now;
+        //    var today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0).Ticks;
+        //    //Debug.WriteLine("###############  today = " + today.ToString());
+        //    var query = database.Query<SelectedGoal>("SELECT * FROM SelectedGoal WHERE DateUpdated < ? AND Status='STARTED'", today.ToString());
+        //    foreach(var selectedGoal in query)
+        //    {
+        //        selectedGoal.expire();
+        //        await UpdateSelectedGoal(selectedGoal);
+        //    }
+        //    return true;
+
+        //}
+        
     }
 }

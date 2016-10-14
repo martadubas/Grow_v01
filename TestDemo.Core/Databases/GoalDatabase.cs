@@ -28,6 +28,13 @@ namespace TestDemo.Core.Database
             database.CreateTable<Goal>();
         }
 
+        public GoalDatabase()
+        {
+            var sqlite = Mvx.Resolve<ISqlite>();
+            database = sqlite.GetConnection();
+            database.CreateTable<Goal>();
+        }
+
         public async Task<IEnumerable<Goal>> GetGoals()
         {
             return database.Table<Goal>().ToList();
@@ -44,7 +51,7 @@ namespace TestDemo.Core.Database
         }
         public async Task<Goal> GetGoal(object id)
         {
-            Debug.WriteLine("#### goal DB.getGoal = " + id);
+            //Debug.WriteLine("#### goal DB.getGoal = " + id);
             var query =  database.Query<Goal>("select * from Goal where Id = ?", id);
 
             return query.FirstOrDefault();

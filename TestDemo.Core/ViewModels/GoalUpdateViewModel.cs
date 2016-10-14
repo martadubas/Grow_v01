@@ -16,7 +16,6 @@ namespace TestDemo.Core.ViewModels
     {
         private SelectedGoalDatabase selectedGoalDatabase;
         private GoalDatabase goalDatabase;
-
         private SelectedGoal selectedGoal;
 
         private string title;
@@ -46,19 +45,6 @@ namespace TestDemo.Core.ViewModels
             set { SetProperty(ref dateUpdated, value); }
         }
 
-        //private string title;
-        //public string Title
-        //{
-        //    get { return title; }
-        //    set { SetProperty(ref title, value); }
-        //}
-        //private string description;
-        //public string Description
-        //{
-        //    get { return description; }
-        //    set { SetProperty(ref description, value); }
-        //}
-
         //private MyDrawable _myDrawable;
         //public string MyDrawable
         //{
@@ -81,8 +67,6 @@ namespace TestDemo.Core.ViewModels
         {
             //Debug.WriteLine("###############  init goal update");
             Debug.WriteLine("###############  selected goal Id= " + selectedGoalId);
-
-
             try
             {
                 selectedGoal = selectedGoalDatabase.GetSelectedGoal(selectedGoalId).Result;
@@ -95,46 +79,30 @@ namespace TestDemo.Core.ViewModels
             {
                 //possibly NullReferenceException
                 Debug.WriteLine("###############  exception: " + e.Message);
-
             }
-
-
         }
         public override void Start()
         {
             Debug.WriteLine("###############  Goal update start");
 
             Title = selectedGoal.Goal.Title;
-           Description = selectedGoal.Goal.Description;
+            Description = selectedGoal.Goal.Description;
             Status = selectedGoal.Status;
             DateUpdated = selectedGoal.DateUpdated;
             base.Start();
         }
 
-        //public async void insertSelectedGoal(SelectedGoal selectedGoal)
-        //{
-        //    //Debug.WriteLine("###############  insert goals");
-
-        //    await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);
-        //    Debug.WriteLine("###############  after insert goal");
-
-        //    //Close(this);
-
-        //}
-        
-
         public IMvxCommand CompleteGoalCommand
         {
             get
             {
-
                 return new MvxCommand(() =>
                 {
                     //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
                     selectedGoal.complete();
-                    Debug.WriteLine("###############  currentGoal = " + selectedGoal.Status);
-                   selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
-                    ShowViewModel<GoalDiaryViewModel>();
+                    //Debug.WriteLine("###############  currentGoal = " + selectedGoal.Status);
+                    selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
+                    ShowViewModel<MyGoalViewModel>();
                 });
             }
         }
@@ -146,8 +114,9 @@ namespace TestDemo.Core.ViewModels
                 return new MvxCommand(() =>
                 {
                     //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
-                    //insertSelectedGoal(new SelectedGoal(goal));
-                    ShowViewModel<GoalDiaryViewModel>();
+                    selectedGoal.delete();
+                    selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
+                    ShowViewModel<MyGoalViewModel>();
                 });
             }
         }

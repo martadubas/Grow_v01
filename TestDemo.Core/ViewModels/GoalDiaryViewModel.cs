@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Database;
 using System.Diagnostics;
+using TestDemo.Core.Converters;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -19,7 +20,6 @@ namespace TestDemo.Core.ViewModels
         private SelectedGoalDatabase selectedGoalDatabase;
         private GoalDatabase goalDatabase;
 
-
         private ObservableCollection<SelectedGoal> selectedGoals;
 
         public ObservableCollection<SelectedGoal> SelectedGoals
@@ -27,7 +27,6 @@ namespace TestDemo.Core.ViewModels
             get { return selectedGoals; }
             set { SetProperty(ref selectedGoals, value); }
         }
-
 
         public ICommand ViewSelectedGoalCommand { get; private set; }
 
@@ -46,16 +45,15 @@ namespace TestDemo.Core.ViewModels
 
 
             // only do this if doesn exist. will clear existing selected goals.
-            //insertSampleSelectedGoalsToDbIfNotExist();
+            //insertSampleSelectedGoalsToDbForTesting();
+            //clearSelectedGoalDb();
             loadSelectedGoalsFromDb();
             ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => 
             {
                 //Debug.WriteLine("###############  selected goal = " + selectedSelectedGoal.Id + " goal Id= " + selectedSelectedGoal.Goal.Id);
                 ShowViewModel<GoalUpdateViewModel>(new { selectedGoalId = selectedSelectedGoal.Id });
-
                 }
             );
-
         }
 
         public IMvxCommand ShowDialogCommand
@@ -83,26 +81,32 @@ namespace TestDemo.Core.ViewModels
 
             foreach (var selectedGoal in selectedGoalsInDb)
             {
-                //Debug.WriteLine("###############  foreach: selected goal id = "+selectedGoal.Id+", "+selectedGoal.GoalId);
                 try
                 {
+                    Debug.WriteLine("###############  details = " + selectedGoal.toString());
+
                     Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
+                    if (thisGoal == null)
+                    {
+                        thisGoal = new Goal("Goal not found", "", "");
+                    }
                     selectedGoal.setGoal(thisGoal);//to update information of Goal object
                     SelectedGoals.Add(selectedGoal);
                     //Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
-
                 }
                 catch (Exception e)
                 {
                     //possibly NullReferenceException
+                    
                     Debug.WriteLine("###############  exception: "+e.Message);
-
+                    //selectedGoal.GoalId = 1;
+                    await selectedGoalDatabase.DeleteSelectedGoal(selectedGoal.Id);
                 }
                 
             }
         }
 
-        public async void insertSampleSelectedGoalsToDbIfNotExist()
+        public async void insertSampleSelectedGoalsToDbForTesting()
         {
             clearSelectedGoalDb();
             Debug.WriteLine("###############  insert sample diary");
@@ -111,11 +115,14 @@ namespace TestDemo.Core.ViewModels
             if (goal == null)
             {
                 //in case of empty goalDb
-                goal = new Goal("Title", "Desc", "Cat");
+                goal = new Goal("Sample Title", "Desc", "Cat");
             }
+            SelectedGoal newSGoal = new SelectedGoal(goal);
+            //DateTime dt = new DateTime(2008, 3, 9, 16, 5, 7, 123);
+            //newSGoal.DateCreated = new DateTime(2008, 3, 9, 16, 5, 7, 123);
 
 
-            SelectedGoals.Add(new SelectedGoal(goal));
+            SelectedGoals.Add(newSGoal);
 
            // await selectedGoalDatabase.DeleteAll();
             foreach (var selectedGoal in SelectedGoals)

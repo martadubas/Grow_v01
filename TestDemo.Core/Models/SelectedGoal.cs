@@ -56,7 +56,13 @@ namespace TestDemo.Core.Models
             //Status = GoalStatus.DELETED;
             Status = "DELETED";
             updateDate();
+        }
 
+        public void expire()
+        {
+            //Status = GoalStatus.DELETED;
+            Status = "EXPIRED";
+            updateDate();
         }
 
         private void updateDate()

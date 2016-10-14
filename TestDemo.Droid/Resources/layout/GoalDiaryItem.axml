@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@android:color/transparent"
     android:cacheColorHint="@android:color/transparent"
     android:weightSum="4">
     <LinearLayout
@@ -19,13 +19,13 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             local:MvxBind="Text Status"
-            android:textColor="@color/dark_blue" />
+            android:textColor="@color/button_txtCol" />
         <TextView
             android:text="Goal Date"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            local:MvxBind="Text DateCreated"
-            android:textColor="@color/dark_blue" />
+            local:MvxBind="Text DateUpdated, Converter=FormatDate"
+            android:textColor="@color/button_txtCol" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -39,13 +39,13 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             local:MvxBind="Text Category"
-            android:textColor="@color/dark_blue" />
+            android:textColor="@color/button_txtCol" />
         <TextView
             android:text="Goal title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             local:MvxBind="Text Title"
-            android:textColor="@color/dark_blue" />
+            android:textColor="@color/button_txtCol" />
     </LinearLayout>
 </LinearLayout>

@@ -19,7 +19,11 @@ namespace TestDemo.Droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.GoalListView);
+            SetContentView(Resource.Layout.GoalDiaryView);
+
+            TextView title = (TextView) FindViewById(Resource.Id.textview_title);
+            title.Text="My Goal Today";
+
 
             // Create your application here
         }

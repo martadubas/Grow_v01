@@ -119,7 +119,6 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="ValueConverter\LocalImageValueConverter.cs" />
     <Compile Include="Views\ChooseAvatarView.cs" />
-    <Compile Include="Views\ChooseTasksView.cs" />
     <Compile Include="Views\GoalUpdateView.cs" />
     <Compile Include="Views\GoalDetailView.cs" />
     <Compile Include="Views\GoalDiaryView.cs" />
@@ -146,9 +145,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ChooseAvatarView.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\ChooseTasksView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\HelloNewUserView.axml">

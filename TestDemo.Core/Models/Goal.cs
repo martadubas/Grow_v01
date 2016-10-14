@@ -37,6 +37,23 @@ namespace TestDemo.Core.Models
             return Title;
         }
 
+        public void updateTitle(String status)
+        {
+            if (status == null)
+            {
+                return;
+            }
+            switch (status)
+            {
+                case "STARTED":
+                case "COMPLETED":
+                    Title = "["+status+"] "+Title;
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 
 }

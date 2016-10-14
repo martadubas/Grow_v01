@@ -78,9 +78,16 @@ namespace TestDemo.Core.ViewModels
 
                 return new MvxCommand(() => 
                 {
-                    Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
-                    insertSelectedGoal(new SelectedGoal(goal));
-                    ShowViewModel<GoalDiaryViewModel>();
+                    //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
+                    if (goal.Title.Contains("STARTED")||goal.Title.Contains("COMPLETED")) 
+                    {
+                        //show toast in view
+                    }else
+                    {
+                        insertSelectedGoal(new SelectedGoal(goal));
+                        ShowViewModel<MyGoalViewModel>();
+                    }
+                    
                 });
                 
                 

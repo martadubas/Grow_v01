@@ -19,4 +19,20 @@
         android:background="@color/light_blue"
         android:textColor="@color/pink"
         android:gravity="center" />
+<Button
+        android:text="Clear Goal DB"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/button_height"
+        local:MvxBind="Click ClearGoalDBCommand"
+        android:background="@color/light_blue"
+        android:textColor="@color/pink"
+        android:gravity="center" />
+  <Button
+          android:text="Clear SelectedGoal DB"
+          android:layout_width="fill_parent"
+          android:layout_height="@dimen/button_height"
+          local:MvxBind="Click ClearSelectedGoalDBCommand"
+          android:background="@color/light_blue"
+          android:textColor="@color/pink"
+          android:gravity="center" />
 </LinearLayout>

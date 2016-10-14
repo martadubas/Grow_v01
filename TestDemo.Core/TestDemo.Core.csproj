@@ -35,11 +35,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Converters\DrawableSourceValueConverter.cs" />
+    <Compile Include="Converters\FormatDateValueConverter.cs" />
     <Compile Include="Databases\GoalDatabase.cs" />
     <Compile Include="Databases\SelectedGoalDatabase.cs" />
     <Compile Include="Databases\AvatarDatabase.cs" />
     <Compile Include="Databases\UserDatabase.cs" />
-    <Compile Include="Interfaces\IGoalDatabase.cs" />
     <Compile Include="Interfaces\ISqlite.cs" />
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\SelectedGoal.cs" />
@@ -52,7 +53,6 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MyGoalViewModel.cs" />
     <Compile Include="ViewModels\NewUser\ChooseAvatarViewModel.cs" />
-    <Compile Include="ViewModels\ChooseTasksViewModel.cs" />
     <Compile Include="ViewModels\NewUser\HelloNewUserViewModel.cs" />
     <Compile Include="ViewModels\NewUser\InfoNewUserViewModel.cs" />
     <Compile Include="ViewModels\NewUser\NewUserViewModel.cs" />

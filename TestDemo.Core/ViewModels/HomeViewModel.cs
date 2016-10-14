@@ -24,13 +24,13 @@ namespace TestDemo.Core.ViewModels
             }
         }
 
-        //public IMvxCommand MedalsViewCommand
-        //{
-        //    get
-        //    {
-        //        return new MvxCommand(() => ShowViewModel<MedalsViewModel>());
-        //    }
-        //}
+        public IMvxCommand MyGoalViewCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<MyGoalViewModel>());
+            }
+        }
         public IMvxCommand GoalListViewCommand
         {
             get

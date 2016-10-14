@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/all_bgCol"
     android:weightSum="8">
     <TextView
         android:text="Goal title"
@@ -14,7 +14,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-  
+        android:layout_weight="1"
         android:id="@+id/textview_title"
         local:MvxBind="Text Title" />
     <LinearLayout
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textview_updated"
-            local:MvxBind="Text DateUpdated" />
+            local:MvxBind="Text DateUpdated, Converter=FormatDate" />
     </LinearLayout>
     <TextView
         android:text="Some text to describe what is this goal about."
