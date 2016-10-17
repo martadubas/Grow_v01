@@ -35,8 +35,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Converters\DrawableSourceValueConverter.cs" />
     <Compile Include="Converters\FormatDateValueConverter.cs" />
+    <Compile Include="Converters\GoalTitleToDrawableValueConverter.cs" />
     <Compile Include="Databases\GoalDatabase.cs" />
     <Compile Include="Databases\SelectedGoalDatabase.cs" />
     <Compile Include="Databases\AvatarDatabase.cs" />

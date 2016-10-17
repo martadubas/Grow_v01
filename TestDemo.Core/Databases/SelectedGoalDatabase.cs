@@ -34,7 +34,8 @@ namespace TestDemo.Core.Database
         public List<SelectedGoal> GetSelectedGoals()
         {
             //database.GetChildren(Goal);
-            return database.GetAllWithChildren<SelectedGoal>();
+            //return (List < SelectedGoal > )database.GetAllWithChildren<SelectedGoal>().OrderByDescending(sg=>sg.DateCreated);
+            return database.Table<SelectedGoal>().OrderByDescending(sg => sg.DateCreated).ToList();
             //return database.Table<SelectedGoal>().ToList();
         }
 

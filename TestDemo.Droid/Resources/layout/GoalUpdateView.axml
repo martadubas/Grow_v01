@@ -59,52 +59,66 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/imageview_goal"
-        android:layout_weight="3" />
+        android:layout_weight="3"
+  local:MvxBind="DrawableName Title, Converter=GoalTitleToDrawable"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/buttons"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
         <Button
             android:text="Home"
             android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:id="@+id/button_home"
             android:background="@color/button_bgCol"
             android:textColor="@color/button_txtCol"
             local:MvxBind="Click HomeViewCommand"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" />
         <Button
-            android:text="Back to goal diary"
+            android:text="My Goals"
             android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:id="@+id/button_diary"
             android:background="@color/button_bgCol"
             android:textColor="@color/button_txtCol"
             local:MvxBind="Click GoalDiaryViewCommand"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" />
         <Button
             android:text="Complete"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/button_complete"
             android:background="@color/button_bgCol"
             android:textColor="@color/button_txtCol"
             local:MvxBind="Click CompleteGoalCommand"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" />
         <Button
             android:text="Delete"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/button_delete"
             android:background="@color/button_bgCol"
             android:textColor="@color/button_txtCol"
             local:MvxBind="Click DeleteGoalCommand"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" />
     </LinearLayout>
 </LinearLayout>

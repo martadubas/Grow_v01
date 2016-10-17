@@ -30,17 +30,6 @@ namespace TestDemo.Core.ViewModels
             get { return description; }
             set { SetProperty(ref description, value); }
         }
-
-        //private MyDrawable _myDrawable;
-        //public string MyDrawable
-        //{
-        //    get { return _myDrawable; }
-        //    set
-        //    {
-        //        _myDrawable = value;
-        //        RaisePropertyChanged(() => MyDrawable);
-        //    }
-        //}
         public GoalDetailViewModel(ISqlite sqlite)
         {
             //Debug.WriteLine("###############  initialize sqlite");

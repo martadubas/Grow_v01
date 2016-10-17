@@ -24,7 +24,7 @@
             android:text="Goal Date"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            local:MvxBind="Text DateUpdated, Converter=FormatDate"
+            local:MvxBind="Text DateCreated, Converter=FormatDate"
             android:textColor="@color/button_txtCol" />
     </LinearLayout>
     <LinearLayout

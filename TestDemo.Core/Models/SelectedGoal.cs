@@ -79,8 +79,9 @@ namespace TestDemo.Core.Models
         public string toString()
         {
             
-            return ">>Goal " + Goal.Title + " - Status " + Status + " - " + DateUpdated+"<<" ;
+            return ">>Goal " + Goal.Title + " - Status " + Status + " - updated " + DateUpdated + " - goalId " + GoalId+ "<< " ;
         }       
+
 
     }
 }

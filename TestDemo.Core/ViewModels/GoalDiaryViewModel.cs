@@ -81,6 +81,7 @@ namespace TestDemo.Core.ViewModels
 
             foreach (var selectedGoal in selectedGoalsInDb)
             {
+                
                 try
                 {
                     Debug.WriteLine("###############  details = " + selectedGoal.toString());
@@ -88,9 +89,18 @@ namespace TestDemo.Core.ViewModels
                     Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
                     if (thisGoal == null)
                     {
-                        thisGoal = new Goal("Goal not found", "", "");
+                        thisGoal = new Goal(0,"Goal not found", "", "");
                     }
                     selectedGoal.setGoal(thisGoal);//to update information of Goal object
+
+                    if (selectedGoal.Status.Equals("STARTED") && selectedGoal.DateCreated < DateTime.Today)
+                    {
+                        selectedGoal.expire();
+                        await selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
+                        Debug.WriteLine("###############  expired = " + selectedGoal.toString());
+                    }
+
+
                     SelectedGoals.Add(selectedGoal);
                     //Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
                 }
@@ -115,7 +125,7 @@ namespace TestDemo.Core.ViewModels
             if (goal == null)
             {
                 //in case of empty goalDb
-                goal = new Goal("Sample Title", "Desc", "Cat");
+                goal = new Goal(0,"Sample Title", "Desc", "Cat");
             }
             SelectedGoal newSGoal = new SelectedGoal(goal);
             //DateTime dt = new DateTime(2008, 3, 9, 16, 5, 7, 123);

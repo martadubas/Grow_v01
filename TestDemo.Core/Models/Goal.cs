@@ -9,7 +9,7 @@ namespace TestDemo.Core.Models
 {
     public class Goal
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -18,8 +18,17 @@ namespace TestDemo.Core.Models
 
         public string Category { get; set; }
 
-        public Goal(string title, string description, string category)
+        //public Goal(string title, string description, string category)
+        //{
+        //    Title = title;
+        //    Description = description;
+        //    Category = category;
+        //    //DateCreated = DateTime.Now;
+        //}
+
+        public Goal(int id, string title, string description, string category)
         {
+            Id = id;
             Title = title;
             Description = description;
             Category = category;

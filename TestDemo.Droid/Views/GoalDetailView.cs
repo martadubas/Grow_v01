@@ -8,6 +8,7 @@ using Android.OS;
 
 using MvvmCross.Droid.Views;
 using Android.Widget;
+using TestDemo.Core.ViewModels;
 
 namespace TestDemo.Droid.Views
 {
@@ -19,7 +20,7 @@ namespace TestDemo.Droid.Views
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.GoalDetailView);
 
-            //_viewModel = (GoalDetailViewModel)ViewModel;
+            GoalDetailViewModel vm = (GoalDetailViewModel)ViewModel;
 
             TextView goalTitle = FindViewById<TextView>(Resource.Id.textview_title);
             Button btnSelectGoal = FindViewById<Button>(Resource.Id.button_selectgoal);
@@ -44,7 +45,12 @@ namespace TestDemo.Droid.Views
 
             };
 
-            // Create your application here
+            //for images
+           String resourceId = "@drawable/" + vm.Title.ToLower().Trim(); // where myResourceName is the name of your resource file, minus the file extension
+           //int imageResource = getResources().getIdentifier(resourceId, null, getPackageName());
+           // Drawable drawable = ContextCompat.getDrawable(this, imageResource); // For API 21+, gets a drawable styled for theme of passed Context
+           // imageview = (ImageView)findViewById(R.id.imageView);
+           // imageview.setImageDrawable(drawable);
         }
     }
 }
