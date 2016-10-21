@@ -26,12 +26,15 @@
   <!--general-->
   <color name="all_bgCol">#5accc7</color>
   <color name="pink">#6F5475</color>
+  <color name="light_pink">#FC9FFC</color>
   <color name="blue">#0BD1FF</color>
   <color name="light_blue">#4CC1B8</color>
+  <color name="menu">#68EADD</color>
   <color name="dark_blue">#3E82BC</color>
   <color name="vdark_blue">#1B3849</color>
   <color name="green">#71E59C</color>
-  <color name="light_green">#60E8DA</color>
+  <color name="light_green">#ADFFA4</color>
+  <color name="white">#E6FCF8</color>
   
 
 </resources>

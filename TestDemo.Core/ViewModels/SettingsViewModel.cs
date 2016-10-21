@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Database;
+using TestDemo.Core.Models;
 
 namespace TestDemo.Core.ViewModels
 {
     class SettingsViewModel
          : MvxViewModel
-    {
+
+    { 
 
         public IMvxCommand InfoNewUserCommand
         {
@@ -26,8 +28,12 @@ namespace TestDemo.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-
+                    var _user = new User();
                     GoalDatabase _goalDatabase = new GoalDatabase();
+                    UserDatabase _userDatabase = new UserDatabase();
+                    _user = _userDatabase.GetUserById(1);
+                    _user.CompletedGoal = 0;
+                    var x = _userDatabase.Update(_user);
                     await _goalDatabase.DeleteAll();
                     ShowViewModel<GoalListViewModel>();
                 });

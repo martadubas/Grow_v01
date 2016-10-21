@@ -19,33 +19,24 @@
         android:id="@+id/textViewTitle"
         android:layout_marginBottom="0.0dp" />
     <Button
-        android:text="My Goal Today"
+        android:text="Today's goal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonMyGoals"
         local:MvxBind="Click MyGoalViewCommand"
-        android:background="@drawable/gradient_buttons"
+        android:background="@color/menu"
         android:textColor="@color/pink"
-        android:layout_margin="10dp"
-        android:padding="5dp" />
+        android:layout_margin="5dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp" />
     <Button
-        android:text="Goal List"
+        android:text="Choose your goals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonGoals"
         local:MvxBind="Click GoalListViewCommand"
-        android:background="@drawable/gradient_buttons"
+        android:background="@color/menu"
         android:textColor="@color/pink"
-        android:layout_margin="5dp"
-        android:padding="10dp" />
-    <Button
-        android:text="Goals Diary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonDiary"
-        android:background="@drawable/gradient_buttons"
-        android:textColor="@color/pink"
-        local:MvxBind="Click GoalDiaryViewCommand"
         android:layout_margin="5dp"
         android:padding="10dp" />
     <Button
@@ -53,9 +44,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonJourney"
-        android:background="@drawable/gradient_buttons"
+        android:background="@color/menu"
         local:MvxBind="Click JourneyViewCommand"
         android:textColor="@color/pink"
+        android:layout_margin="5dp"
+        android:padding="10dp" />
+    <Button
+        android:text="Your accomplishments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDiary"
+        android:background="@color/menu"
+        android:textColor="@color/pink"
+        local:MvxBind="Click GoalDiaryViewCommand"
         android:layout_margin="5dp"
         android:padding="10dp" />
     <Button
@@ -63,10 +64,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonSetting"
-        android:background="@drawable/gradient_buttons"
+        android:background="@color/menu"
         local:MvxBind="Click SettingsViewCommand"
         android:textColor="@color/pink"
-        android:layout_margin="10dp"
-        android:layout_marginBottom="50dp"
+        android:layout_margin="5dp"
         android:padding="10dp" />
 </LinearLayout>

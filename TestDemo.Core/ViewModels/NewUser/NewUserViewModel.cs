@@ -52,6 +52,9 @@ namespace TestDemo.Core.ViewModels
                             _user = _userDatabase.GetUserById(1);
                             _user.Username = Username;
                             _user.Avatar = 99;
+                            _user.CompletedGoal = 0;
+                            _user.AvatarLevel = 1;
+                        
                             var x =_userDatabase.Update(_user);
                             
                            

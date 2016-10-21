@@ -18,6 +18,8 @@ namespace TestDemo.Core.ViewModels
         //private readonly IDialogService dialog;
         private GoalDatabase goalDatabase;
         private SelectedGoalDatabase selectedGoalDatabase;
+        private readonly IDialogService dialog;
+
 
 
         private ObservableCollection<Goal> goals;
@@ -32,8 +34,9 @@ namespace TestDemo.Core.ViewModels
         public ICommand SelectGoalCommand { get; private set; }
 
 
-        public GoalListViewModel(ISqlite sqlite)
+        public GoalListViewModel(ISqlite sqlite, IDialogService dialog)
         {
+            this.dialog = dialog;
             //this.goalDatabase = new GoalDatabase(sqlite);
             Goals = new ObservableCollection<Goal>() { };
             //Goals = getSampleGoals();
@@ -93,7 +96,7 @@ namespace TestDemo.Core.ViewModels
         {
             get
             {
-                return null;
+                return new MvxCommand(() => dialog.Show("Not available yet", "This functionaity will come in the next version", "OK"));
             }
 
         }
@@ -112,21 +115,20 @@ namespace TestDemo.Core.ViewModels
             Goal goal = goalDatabase.GetTheFirstGoal(); 
             if (goal == null)
             {
+               
                 //in case of empty goalDb
-                //await goalDatabase.InsertGoal(new Goal("Goal 1", "Description 1", "food"));
-                //await goalDatabase.InsertGoal(new Goal("Goal 2", "Description 2", "sport"));
-                //await goalDatabase.InsertGoal(new Goal("Goal 3", "Description 3", "social"));
-                //await goalDatabase.InsertGoal(new Goal("Goal 4", "Description 4", "sport"));
-                //await goalDatabase.InsertGoal(new Goal("Goal 5", "Description 5", "social"));
-                //await goalDatabase.InsertGoal(new Goal("Goal 6", "Description 6", "food"));
-
-                //in case of empty goalDb
-                await goalDatabase.InsertGoal(new Goal(1, "Goal 1", "Description 1", "food"));
-                await goalDatabase.InsertGoal(new Goal(2, "Goal 2", "Description 2", "sport"));
-                await goalDatabase.InsertGoal(new Goal(3, "Goal 3", "Description 3", "social"));
-                await goalDatabase.InsertGoal(new Goal(4, "Goal 4", "Description 4", "sport"));
-                await goalDatabase.InsertGoal(new Goal(5, "Goal 5", "Description 5", "social"));
-                await goalDatabase.InsertGoal(new Goal(6, "Goal 6", "Description 6", "food"));
+                await goalDatabase.InsertGoal(new Goal(1, "Go for a walk", "Take on your shoes and enjoy the fresh air outside!", "sport"));
+                await goalDatabase.InsertGoal(new Goal(2, "Streching", "After your shower, when muscles are relaxed, do some easy stretching excercises.", "sport"));
+                await goalDatabase.InsertGoal(new Goal(3, "Find a buddy", "Find a person you could go for a walk regulary. You can motivate each other!", "social"));
+                await goalDatabase.InsertGoal(new Goal(4, "Meetup", "Call a friend and go out with her/him. See a movie or have a dinner out", "social"));
+                await goalDatabase.InsertGoal(new Goal(5, "Keep water close to you", "Keep a full water bottle on your desk and drink water throughout the day.", "food"));
+                await goalDatabase.InsertGoal(new Goal(6, "Walk a bit more", "Are you driving to the supermarket to do some shopping? Park your car a bit further away so you can walk a bit!", "food"));
+                await goalDatabase.InsertGoal(new Goal(7, "Inner peace", "Close your eyes, sit on the floor and try to focus on your breathing for 5 min", "relax"));
+                await goalDatabase.InsertGoal(new Goal(8, "Eat a leaf", "Increase dark green leafy vegetables in your diet like kale, spinach, swiss chard, and mustardgreens.", "food"));
+                await goalDatabase.InsertGoal(new Goal(9, "Go greener", "Add one additional serving of vegetables to one of your daily meals.", "food"));
+                await goalDatabase.InsertGoal(new Goal(10, "Tea time", "Drink a cup of green tea. Tasty!", "food"));
+                await goalDatabase.InsertGoal(new Goal(11, "Active watching", "Walk or jogg in place while watching tv. Make as many breakes as you wish.", "social"));
+                await goalDatabase.InsertGoal(new Goal(12, "Fresh start", "Drink a glass of water - first thing in the morning.", "food"));
 
             }
 

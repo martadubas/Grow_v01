@@ -19,6 +19,7 @@ namespace TestDemo.Core.ViewModels
         //private readonly IDialogService dialog;
         private SelectedGoalDatabase selectedGoalDatabase;
         private GoalDatabase goalDatabase;
+        private IDialogService dialog;
 
         private ObservableCollection<SelectedGoal> selectedGoals;
 
@@ -30,8 +31,9 @@ namespace TestDemo.Core.ViewModels
 
         public ICommand ViewSelectedGoalCommand { get; private set; }
 
-        public GoalDiaryViewModel(ISqlite sqlite)
+        public GoalDiaryViewModel(ISqlite sqlite, IDialogService dialog)
         {
+            this.dialog = dialog;
             //Debug.WriteLine("###############  new GoalDiary");
             SelectedGoals = new ObservableCollection<SelectedGoal>() { };
 
@@ -153,7 +155,7 @@ namespace TestDemo.Core.ViewModels
         {
             get
             {
-                return null;
+                return new MvxCommand(() => dialog.Show("Not available yet", "This functionaity will come in the next version", "OK"));
             }
 
         }

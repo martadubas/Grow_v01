@@ -6,6 +6,7 @@ using TestDemo.Core.Interfaces;
 using TestDemo.Core.Database;
 using TestDemo.Droid.Database;
 using MvvmCross.Platform;
+using TestDemo.Droid.Services;
 
 namespace TestDemo.Droid
 {
@@ -28,6 +29,7 @@ namespace TestDemo.Droid
         protected override void InitializeFirstChance()
         {
             Mvx.LazyConstructAndRegisterSingleton<ISqlite, SqliteDroid>();
+            Mvx.LazyConstructAndRegisterSingleton<IDialogService, DialogService>();
             //Mvx.LazyConstructAndRegisterSingleton<IUserDatabase, UserDatabase>();
             base.InitializeFirstChance();
         }

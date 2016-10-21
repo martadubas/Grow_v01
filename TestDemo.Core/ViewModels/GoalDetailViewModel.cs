@@ -17,7 +17,7 @@ namespace TestDemo.Core.ViewModels
     {
         private Goal goal;
         private SelectedGoalDatabase selectedGoalDatabase;
-
+       
         private string title;
         public string Title
         {
@@ -30,10 +30,11 @@ namespace TestDemo.Core.ViewModels
             get { return description; }
             set { SetProperty(ref description, value); }
         }
-        public GoalDetailViewModel(ISqlite sqlite)
+        public GoalDetailViewModel(ISqlite sqlite, IDialogService dialog)
         {
             //Debug.WriteLine("###############  initialize sqlite");
             this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
+           
 
         }
         public void Init(Goal goal)
@@ -74,7 +75,7 @@ namespace TestDemo.Core.ViewModels
                     }else
                     {
                         insertSelectedGoal(new SelectedGoal(goal));
-                        ShowViewModel<MyGoalViewModel>();
+                        ShowViewModel<GoalListViewModel>();
                     }
                     
                 });

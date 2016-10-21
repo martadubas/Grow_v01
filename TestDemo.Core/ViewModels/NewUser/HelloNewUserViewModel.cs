@@ -31,15 +31,15 @@ namespace TestDemo.Core.ViewModels
             {
 
                 case 0:
-                    ImagePath = "bird";
+                    ImagePath = "bird1";
                     break;
 
                 case 1:
-                    ImagePath = "butterfly";
+                    ImagePath = "butterfly1";
                     break;
 
                 case 2:
-                    ImagePath = "diamond";
+                    ImagePath = "diamond1";
                     break;
 
                 default:

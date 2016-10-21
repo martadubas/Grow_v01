@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 
 using MvvmCross.Droid.Views;
+using Acr.UserDialogs;
 
 namespace TestDemo.Droid.Views
 {
@@ -20,7 +21,7 @@ namespace TestDemo.Droid.Views
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.JourneyView);
+            SetContentView(Resource.Layout.JourneyView);        
 
         }
     }

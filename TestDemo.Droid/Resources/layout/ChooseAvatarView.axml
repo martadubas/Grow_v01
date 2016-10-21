@@ -6,35 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient">
-
-  <TextView
-         android:text="Choose your avatar"
-      android:textColor="@color/h1_txtCol"
-      android:gravity="center"
-      android:layout_width="fill_parent"
-      android:layout_height="@dimen/h1_height"
-      android:id="@+id/h1ChooseAvatar"
-      local:MvxBind="Text h1ChooseAvatar, Mode=TwoWay"
-      android:padding="@dimen/h1_marg"
-      android:layout_marginTop="@dimen/h1_margTop"
-      android:textSize="@dimen/h1_fontSize" />
-  <Gallery
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/galleryChooseAvatar"
-      android:layout_marginTop="@dimen/h1_margTop" />
-  <Button
-      android:text="Let's start"
-      android:layout_width="fill_parent"
-      android:layout_height="@dimen/button_height"
-      android:id="@+id/btnChooseAvatar"
-      android:background="@color/light_blue"
-      android:textColor="@color/pink"
-      local:MvxBind="Click HelloNewUserViewCommand"
-      android:layout_marginRight="@dimen/button_marg"
-      android:layout_marginTop="@dimen/button_margTop"
-      android:layout_marginLeft="@dimen/button_marg"
-      android:padding="@dimen/button_padding_top"
-      android:textSize="@dimen/button_fontsize"
-      android:gravity="center" />
+    <TextView
+        android:text="Choose your avatar"
+        android:textColor="@color/h1_txtCol"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/h1_height"
+        android:id="@+id/h1ChooseAvatar"
+        local:MvxBind="Text h1ChooseAvatar, Mode=TwoWay"
+        android:padding="@dimen/h1_marg"
+        android:layout_marginTop="@dimen/h1_margTop"
+        android:textSize="@dimen/h1_fontSize" />
+    <Gallery
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/galleryChooseAvatar"
+        android:layout_marginTop="@dimen/h1_margTop" />
+    <Button
+        android:text="Let's start"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/button_height"
+        android:id="@+id/btnChooseAvatar"
+        android:background="@color/light_blue"
+        android:textColor="@color/pink"
+        local:MvxBind="Click HelloNewUserViewCommand"
+        android:layout_marginRight="@dimen/button_marg"
+        android:layout_marginTop="@dimen/button_margTop"
+        android:layout_marginLeft="@dimen/button_marg"
+        android:padding="@dimen/button_padding_top"
+        android:textSize="@dimen/button_fontsize"
+        android:gravity="center" />
 </LinearLayout>

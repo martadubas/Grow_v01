@@ -17,6 +17,8 @@ namespace TestDemo.Core.ViewModels
         private SelectedGoalDatabase selectedGoalDatabase;
         private GoalDatabase goalDatabase;
         private SelectedGoal selectedGoal;
+        private UserDatabase _userDatabase = new UserDatabase();
+        private User _user = new User();
 
         private string title;
         public string Title
@@ -102,6 +104,12 @@ namespace TestDemo.Core.ViewModels
                     selectedGoal.complete();
                     //Debug.WriteLine("###############  currentGoal = " + selectedGoal.Status);
                     selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
+                    _user = _userDatabase.GetUserById(1);
+
+                    //if (_user != null) _user.CompletedGoal = _user.CompletedGoal+1;
+                    //if (_user != null) _user.CompletedGoal = 20;
+                    if (_user != null) _user.CompletedGoal = _user.CompletedGoal+10;
+                    var x = _userDatabase.Update(_user);
                     ShowViewModel<MyGoalViewModel>();
                 });
             }
