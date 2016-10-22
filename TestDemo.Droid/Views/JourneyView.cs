@@ -15,7 +15,7 @@ using Acr.UserDialogs;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "")]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class JourneyView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

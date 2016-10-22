@@ -13,7 +13,7 @@ using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "")]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class InfoNewUserView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

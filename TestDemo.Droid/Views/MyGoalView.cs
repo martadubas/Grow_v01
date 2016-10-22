@@ -13,7 +13,7 @@ using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "Goals")]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MyGoalView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

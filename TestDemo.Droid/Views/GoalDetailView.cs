@@ -12,7 +12,7 @@ using TestDemo.Core.ViewModels;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "Goals Details")]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class GoalDetailView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

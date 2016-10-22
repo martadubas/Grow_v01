@@ -14,7 +14,7 @@ using TestDemo.Core.ViewModels;
 
 namespace TestDemo.Droid.Views
 {
-    [Activity(Label = "")]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class HelloNewUserView : MvxActivity
     {
         private HelloNewUserViewModel _viewModel;

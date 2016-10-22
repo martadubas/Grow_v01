@@ -27,7 +27,7 @@ namespace TestDemo.Core
             }
             else
             {
-                RegisterAppStart<ViewModels.HomeViewModel>();
+                RegisterAppStart<ViewModels.JourneyViewModel>();
             }
 
 
