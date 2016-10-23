@@ -2,6 +2,7 @@
 
 using Android.App;
 using Android.OS;
+using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 using TestDemo.Core.ViewModels;
@@ -15,6 +16,7 @@ namespace TestDemo.Droid.Views
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.NewUserView);
             _viewModel = (NewUserViewModel)ViewModel;
 

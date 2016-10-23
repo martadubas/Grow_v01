@@ -96,7 +96,7 @@ namespace TestDemo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() => dialog.Show("Not available yet", "This functionaity will come in the next version", "OK"));
+                return new MvxCommand(() => dialog.Show("Not available yet", "This functionality will come in the next version", "OK"));
             }
 
         }

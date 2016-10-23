@@ -18,21 +18,13 @@ namespace TestDemo.Core.Models
 
         public string Category { get; set; }
 
-        //public Goal(string title, string description, string category)
-        //{
-        //    Title = title;
-        //    Description = description;
-        //    Category = category;
-        //    //DateCreated = DateTime.Now;
-        //}
-
         public Goal(int id, string title, string description, string category)
         {
             Id = id;
             Title = title;
             Description = description;
             Category = category;
-            //DateCreated = DateTime.Now;
+            
         }
         public Goal()
         {

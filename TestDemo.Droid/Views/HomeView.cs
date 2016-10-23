@@ -2,6 +2,7 @@
 
 using Android.App;
 using Android.OS;
+using Android.Views;
 using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
@@ -12,6 +13,7 @@ namespace TestDemo.Droid.Views
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.HomeView);
             
         }

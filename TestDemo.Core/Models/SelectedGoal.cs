@@ -24,8 +24,8 @@ namespace TestDemo.Core.Models
         public string Category { get; set; }
         [Ignore]
         public string Title { get; set; }
-
-
+        public byte[] Photo { get; set; }
+        
         public SelectedGoal(Goal goal)
         {
             Goal = goal;
@@ -46,21 +46,18 @@ namespace TestDemo.Core.Models
 
         public void complete()
         {
-            //Status = GoalStatus.COMPLETED;
             Status = "COMPLETED";
             updateDate();
 
         }
         public void delete()
         {
-            //Status = GoalStatus.DELETED;
             Status = "DELETED";
             updateDate();
         }
 
         public void expire()
         {
-            //Status = GoalStatus.DELETED;
             Status = "EXPIRED";
             updateDate();
         }

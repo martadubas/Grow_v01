@@ -98,7 +98,7 @@ namespace TestDemo.Core.ViewModels
                     if (selectedGoal.Status.Equals("STARTED") && selectedGoal.DateCreated < DateTime.Today)
                     {
                         selectedGoal.expire();
-                        await selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
+                        selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
                         Debug.WriteLine("###############  expired = " + selectedGoal.toString());
                     }
 
@@ -155,7 +155,7 @@ namespace TestDemo.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() => dialog.Show("Not available yet", "This functionaity will come in the next version", "OK"));
+                return new MvxCommand(() => dialog.Show("Not available yet", "This functionality will come in the next version", "OK"));
             }
 
         }

@@ -9,6 +9,7 @@ using Android.OS;
 using MvvmCross.Droid.Views;
 using Android.Widget;
 using TestDemo.Core.ViewModels;
+using Android.Views;
 
 namespace TestDemo.Droid.Views
 {
@@ -18,7 +19,9 @@ namespace TestDemo.Droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.GoalDetailView);
+
 
             GoalDetailViewModel vm = (GoalDetailViewModel)ViewModel;
 

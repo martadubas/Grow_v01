@@ -19,6 +19,7 @@ namespace TestDemo.Droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.GoalDiaryView);
 
             TextView title = (TextView) FindViewById(Resource.Id.textview_title);

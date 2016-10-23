@@ -16,9 +16,9 @@ namespace TestDemo.Core.ViewModels
         : MvxViewModel
     {
 
-        //private readonly IDialogService dialog;
         private SelectedGoalDatabase selectedGoalDatabase;
         private GoalDatabase goalDatabase;
+        private readonly IDialogService dialog;
 
         private ObservableCollection<SelectedGoal> selectedGoals;
 
@@ -30,16 +30,10 @@ namespace TestDemo.Core.ViewModels
 
         public ICommand ViewSelectedGoalCommand { get; private set; }
 
-        public MyGoalViewModel(ISqlite sqlite)
+        public MyGoalViewModel(ISqlite sqlite, IDialogService dialog)
         {
-            //Debug.WriteLine("###############  new MyGoal");
+            this.dialog = dialog;
             SelectedGoals = new ObservableCollection<SelectedGoal>() { };
-
-            //this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
-            //SelectedGoals = getSampleSelectedGoals();
-
-            //ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<SelectedGoalDetailViewModel>(selectedSelectedGoal));
-
             this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
             this.goalDatabase = new GoalDatabase(sqlite);
 
@@ -49,7 +43,6 @@ namespace TestDemo.Core.ViewModels
             loadSelectedGoalsFromDbToday();
             ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal =>
             {
-                //Debug.WriteLine("###############  selected goal = " + selectedSelectedGoal.Id + " goal Id= " + selectedSelectedGoal.Goal.Id);
                 ShowViewModel<GoalUpdateViewModel>(new { selectedGoalId = selectedSelectedGoal.Id });
             }
             );
@@ -59,13 +52,10 @@ namespace TestDemo.Core.ViewModels
         {
             Debug.WriteLine("###############  load goal today from db");
             SelectedGoals.Clear();
-            //var selectedGoalsInDb = await selectedGoalDatabase.GetSelectedGoals();
-            //Debug.WriteLine("###############  get selected goals from db");
             var selectedGoalsInDb = selectedGoalDatabase.GetSelectedGoalsToday().Result;
 
             foreach (var selectedGoal in selectedGoalsInDb)
             {
-                //Debug.WriteLine("###############  foreach: selected goal id = "+selectedGoal.Id+", "+selectedGoal.GoalId);
                 if (!selectedGoal.Status.Equals("DELETED")) //if goal is deleted, dont display it
                 {
                     try
@@ -73,7 +63,6 @@ namespace TestDemo.Core.ViewModels
                         Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
                         selectedGoal.setGoal(thisGoal);//to update information of Goal object
                         SelectedGoals.Add(selectedGoal);
-                        //Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
                     }
                     catch (Exception e)
                     {
@@ -96,7 +85,7 @@ namespace TestDemo.Core.ViewModels
         {
             get
             {
-                return null;
+                return new MvxCommand(() => dialog.Show("Not available yet", "This functionality will come in the next version", "OK"));
             }
 
         }

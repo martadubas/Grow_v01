@@ -57,7 +57,7 @@ namespace TestDemo.Core.Database
             return database.Delete<SelectedGoal>(Convert.ToInt16(id));
         }
 
-        public async Task<bool> UpdateSelectedGoal(SelectedGoal selectedGoal)
+        public bool UpdateSelectedGoal(SelectedGoal selectedGoal)
         {
             Debug.WriteLine("#### update start for selected goal = " + selectedGoal.Id+" status "+selectedGoal.Status);
 

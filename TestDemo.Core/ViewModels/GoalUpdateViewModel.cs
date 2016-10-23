@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Database;
 using System.Diagnostics;
+using MvvmCross.Plugins.PictureChooser;
+using MvvmCross.Platform;
+using System.IO;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -19,12 +22,20 @@ namespace TestDemo.Core.ViewModels
         private SelectedGoal selectedGoal;
         private UserDatabase _userDatabase = new UserDatabase();
         private User _user = new User();
+        private byte[] _takenPhoto;
 
         private string title;
         public string Title
         {
             get { return title; }
             set { SetProperty(ref title, value); }
+        }
+
+        private string titleIfPhoto;
+        public string TitleIfPhoto
+        {
+            get { return titleIfPhoto; }
+            set { SetProperty(ref titleIfPhoto, value); }
         }
         private string description;
         public string Description
@@ -46,52 +57,83 @@ namespace TestDemo.Core.ViewModels
             get { return dateUpdated; }
             set { SetProperty(ref dateUpdated, value); }
         }
-
-        //private MyDrawable _myDrawable;
-        //public string MyDrawable
-        //{
-        //    get { return _myDrawable; }
-        //    set
-        //    {
-        //        _myDrawable = value;
-        //        RaisePropertyChanged(() => MyDrawable);
-        //    }
-        //}
+               
         public GoalUpdateViewModel(ISqlite sqlite)
         {
-            //Debug.WriteLine("###############  initialize sqlite");
+           
             this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
             this.goalDatabase = new GoalDatabase(sqlite);
-
 
         }
         public void Init(int selectedGoalId)
         {
-            //Debug.WriteLine("###############  init goal update");
-            Debug.WriteLine("###############  selected goal Id= " + selectedGoalId);
+            
             try
             {
                 selectedGoal = selectedGoalDatabase.GetSelectedGoal(selectedGoalId).Result;
                 Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
                 selectedGoal.setGoal(thisGoal);//to update information of Goal object
-                //Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
 
             }
             catch (Exception e)
             {
                 //possibly NullReferenceException
-                Debug.WriteLine("###############  exception: " + e.Message);
+                Debug.WriteLine("exception: " + e.Message);
             }
         }
         public override void Start()
         {
-            Debug.WriteLine("###############  Goal update start");
-
+            if(selectedGoal.Photo==null) TitleIfPhoto = selectedGoal.Goal.Title;
             Title = selectedGoal.Goal.Title;
             Description = selectedGoal.Goal.Description;
             Status = selectedGoal.Status;
             DateUpdated = selectedGoal.DateUpdated;
+            TakenPhoto = selectedGoal.Photo;
             base.Start();
+        }
+        private async void TakePhoto()
+        {
+            var task = Mvx.Resolve<IMvxPictureChooserTask>();
+            var stream = await task.TakePicture(1024, 90);
+            if (stream != null)
+            {
+                Photo(stream);
+            }
+
+        }
+
+        private void Photo(Stream pictureStream)
+        {
+            var memoryStream = new MemoryStream();
+            pictureStream.CopyTo(memoryStream);
+            TakenPhoto = memoryStream.ToArray(); //array of data that can be stored in db
+            selectedGoal.Photo = TakenPhoto;
+            selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
+
+        }
+
+        public byte[] TakenPhoto
+        {
+            get { return _takenPhoto; }
+            set
+            {
+                if (value != null)
+                {
+                    SetProperty(ref _takenPhoto, value);
+                }
+            }
+        }
+
+        public ICommand TakePhotoCommand
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                {
+                    TakePhoto();
+                });
+                
+            }
         }
 
         public IMvxCommand CompleteGoalCommand
@@ -100,16 +142,14 @@ namespace TestDemo.Core.ViewModels
             {
                 return new MvxCommand(() =>
                 {
-                    //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
+                    
                     selectedGoal.complete();
-                    //Debug.WriteLine("###############  currentGoal = " + selectedGoal.Status);
                     selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
                     _user = _userDatabase.GetUserById(1);
 
-                    //if (_user != null) _user.CompletedGoal = _user.CompletedGoal+1;
-                    //if (_user != null) _user.CompletedGoal = 20;
                     if (_user != null) _user.CompletedGoal = _user.CompletedGoal+10;
                     var x = _userDatabase.Update(_user);
+
                     ShowViewModel<MyGoalViewModel>();
                 });
             }
@@ -121,7 +161,6 @@ namespace TestDemo.Core.ViewModels
 
                 return new MvxCommand(() =>
                 {
-                    //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
                     selectedGoal.delete();
                     selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
                     ShowViewModel<MyGoalViewModel>();

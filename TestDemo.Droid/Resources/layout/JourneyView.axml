@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    android:paddingBottom="5dp">
-    <TextView
+    android:paddingBottom="5dp"
+  android:theme="@android:style/Theme.NoTitleBar">
+  <TextView
         android:text="Your journey"
         android:textColor="@color/h1_txtCol"
         android:gravity="center"
@@ -17,90 +18,94 @@
         android:layout_weight="1"
         local:MvxBind="Text h1Journey, Mode=TwoWay"
         android:id="@+id/h1Journey" />
-    <ImageView
-        local:MvxBind="DrawableId LocalImage(JourneyImagePath)"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_weight="2"
-        android:id="@+id/imageview_currentavatar"
-        android:layout_marginBottom="0.0dp" />
+  <ImageView
+      local:MvxBind="DrawableId LocalImage(JourneyImagePath)"
+      android:layout_width="match_parent"
+      android:layout_height="110dp"
+      android:layout_weight="2"
+      android:id="@+id/imageview_currentavatar"
+       />
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="2"
+      android:layout_marginTop="3dp"
+      android:paddingTop="5dp"
+      android:id="@+id/avatars_container">
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:id="@+id/avatars_container">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/shadow1"
-            android:layout_weight="1">
-            <ImageView
-                local:MvxBind="DrawableId LocalImage(JourneyShadow1)"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/imageview_level2" />
-            <TextView
-                android:text="0/0"
-                android:textColor="@color/pink"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text pointsLevel2, Mode=TwoWay"
-                android:id="@+id/textView2" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/avatar3"
-            android:layout_weight="1">
-            <ImageView
-                local:MvxBind="DrawableId LocalImage(JourneyShadow2)"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/shadow2" />
-            <TextView
-                android:text="0/0"
-                android:textColor="@color/pink"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text pointsLevel3, Mode=TwoWay"
-                android:id="@+id/textView1" />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/buttons"
+        android:layout_height="match_parent"
+        android:id="@+id/shadow1"
+        android:layout_marginTop="3dp"
+      android:paddingTop="5dp"
         android:layout_weight="1">
-        <Button
-            android:text="Home"
-            android:layout_height="@dimen/button_height"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:id="@+id/button_home"
-            android:background="@color/light_blue"
-            android:textColor="@color/pink"
-            local:MvxBind="Click HomeViewCommand"
-               android:layout_margin="10dp"
-            android:layout_gravity="center_vertical" />
-        <Button
-            android:text="Share"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/button_height"
-            android:layout_weight="1"
-            android:id="@+id/button_newuser"
-            android:background="@color/light_blue"
-            android:textColor="@color/pink"
-            local:MvxBind="Click ShareOnFacebookCommand"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:onClick="" />
+      <ImageView
+          local:MvxBind="DrawableId LocalImage(JourneyShadow1)"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/imageview_level2" />
+      <TextView
+          android:text="0/0"
+          android:textColor="@color/pink"
+          android:gravity="center"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          local:MvxBind="Text pointsLevel2, Mode=TwoWay"
+          android:id="@+id/textView2" />
     </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/avatar3"
+        android:layout_weight="1">
+      <ImageView
+          local:MvxBind="DrawableId LocalImage(JourneyShadow2)"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/shadow2" />
+      <TextView
+          android:text="0/0"
+          android:textColor="@color/pink"
+          android:gravity="center"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          local:MvxBind="Text pointsLevel3, Mode=TwoWay"
+          android:id="@+id/textView1" />
+    </LinearLayout>
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:id="@+id/buttons"
+      android:layout_weight="1">
+    <Button
+        android:text="Home"
+        android:layout_height="@dimen/button_height"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:id="@+id/button_home"
+        android:background="@color/light_blue"
+        android:textColor="@color/pink"
+        local:MvxBind="Click HomeViewCommand"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_vertical" />
+    <Button
+        android:text="Share"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_weight="1"
+        android:id="@+id/button_newuser"
+        android:background="@color/light_blue"
+        android:textColor="@color/pink"
+        local:MvxBind="Click ShareOnFacebookCommand"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:onClick="" />
+  </LinearLayout>
 </LinearLayout>

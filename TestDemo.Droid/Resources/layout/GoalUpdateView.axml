@@ -69,7 +69,7 @@
         android:layout_weight="3"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        local:MvxBind="DrawableName Title, Converter=GoalTitleToDrawable" />
+        local:MvxBind="DrawableName TitleIfPhoto, Converter=GoalTitleToDrawable; Bitmap ByteArrayToBitmap(TakenPhoto)" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -98,6 +98,19 @@
             android:layout_weight="1"
             android:id="@+id/button_diary"
             local:MvxBind="Click GoalDiaryViewCommand"
+            android:layout_gravity="center_vertical"
+            android:background="@color/light_blue"
+            android:textSize="@dimen/button_small"
+            android:textColor="@color/pink"
+            android:gravity="center" />
+      <Button
+            android:text="Take a picture"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:id="@+id/button_photo"
+            local:MvxBind="Click TakePhotoCommand"
             android:layout_gravity="center_vertical"
             android:background="@color/light_blue"
             android:textSize="@dimen/button_small"
