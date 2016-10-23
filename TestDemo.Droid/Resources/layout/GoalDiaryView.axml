@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    android:weightSum="7">
+    android:weightSum="10">
     <TextView
         android:text="Goal Diary"
         android:textColor="@color/h1_txtCol"
@@ -16,7 +16,10 @@
         android:padding="@dimen/h1_marg"
         android:layout_marginTop="@dimen/h1_margTop"
         android:textSize="@dimen/h1_fontSize"
-        android:id="@+id/textview_title" />
+        android:id="@+id/textview_title" 
+          android:layout_weight="1"
+
+    />
     <TextView
         android:text="View your activity list"
         android:textColor="@color/dark_blue"
@@ -26,14 +29,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/text_marg"
         android:layout_marginRight="@dimen/text_marg"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:id="@+id/textview_comment" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/container_listview"
-        android:layout_weight="4">
+        android:layout_weight="5.5">
         <Mvx.MvxListView
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
