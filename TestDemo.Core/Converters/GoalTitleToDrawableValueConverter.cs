@@ -7,6 +7,7 @@ using MvvmCross.Platform.Converters;
 using System.Globalization;
 using Android;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace TestDemo.Core.Converters
 {
@@ -14,9 +15,9 @@ namespace TestDemo.Core.Converters
     {
         protected override string Convert(string value, Type targetType, object parameter, CultureInfo culture)
         {
-            
-            string drawableName = value.ToLower().Replace(" ","");
-            return drawableName;
+            value = Regex.Replace(value, "(\\[.*\\])",""); //remove status from title when retrieving image
+            value = value.ToLower().Replace(" ", "");
+            return value;
             
         }
     }
