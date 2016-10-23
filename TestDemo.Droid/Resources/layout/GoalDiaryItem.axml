@@ -7,7 +7,7 @@
     android:background="@color/list_item"
     android:layout_margin="2dp"
     android:cacheColorHint="@android:color/transparent"
-    android:weightSum="4">
+    android:weightSum="5">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
@@ -33,6 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
+                local:MvxBind="BackgroundColor Category, Converter=CategoryToBackgroundColor"
         android:layout_weight="3">
         <TextView
             android:text="Goal category"
@@ -49,4 +50,11 @@
             local:MvxBind="Text Title"
             android:textColor="@color/dark_blue" />
     </LinearLayout>
+ <Mvx.MvxImageView
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:id="@+id/imageview_status"
+    android:layout_weight="1"
+    local:MvxBind="DrawableId Status, Converter=StatusToDrawable" 
+    android:layout_gravity="center"/>
 </LinearLayout>

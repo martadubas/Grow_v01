@@ -88,7 +88,7 @@ namespace TestDemo.Core.ViewModels
             //Debug.WriteLine("###############  insert goals");
 
             await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);
-            Debug.WriteLine("###############  after insert goal");
+            //Debug.WriteLine("###############  after insert goal");
 
             //Close(this);
 

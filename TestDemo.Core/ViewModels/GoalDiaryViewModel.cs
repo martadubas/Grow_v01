@@ -75,7 +75,7 @@ namespace TestDemo.Core.ViewModels
 
         public async void loadSelectedGoalsFromDb()
         {
-            Debug.WriteLine("###############  load diary from db");
+            //Debug.WriteLine("###############  load diary from db");
             SelectedGoals.Clear();
             //var selectedGoalsInDb = await selectedGoalDatabase.GetSelectedGoals();
             //Debug.WriteLine("###############  get selected goals from db");
@@ -86,7 +86,7 @@ namespace TestDemo.Core.ViewModels
                 
                 try
                 {
-                    Debug.WriteLine("###############  details = " + selectedGoal.toString());
+                    //Debug.WriteLine("###############  details = " + selectedGoal.toString());
 
                     Goal thisGoal = goalDatabase.GetGoal(selectedGoal.GoalId).Result;
                     if (thisGoal == null)
@@ -99,7 +99,7 @@ namespace TestDemo.Core.ViewModels
                     {
                         selectedGoal.expire();
                         selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
-                        Debug.WriteLine("###############  expired = " + selectedGoal.toString());
+                        //Debug.WriteLine("###############  expired = " + selectedGoal.toString());
                     }
 
 

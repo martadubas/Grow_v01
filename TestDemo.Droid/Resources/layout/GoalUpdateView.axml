@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    android:weightSum="8">
+    android:weightSum="10.5">
     <TextView
         android:text="Goal title"
         android:textColor="@color/h1_txtCol"
@@ -17,12 +17,13 @@
         android:layout_marginTop="@dimen/h1_margTop"
         android:textSize="@dimen/h1_fontSize"
         android:id="@+id/textview_title"
-        local:MvxBind="Text Title" />
+        local:MvxBind="Text Title"
+        android:layout_weight="1.5" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
         <TextView
             android:text="Status"
             android:textAppearance="@android:style/TextAppearance.Large"
@@ -60,13 +61,14 @@
         android:layout_marginLeft="@dimen/text_marg"
         android:layout_marginRight="@dimen/text_marg"
         android:id="@+id/textview_comment"
+        android:layout_weight="3"
         local:MvxBind="Text Description" />
     <ImageView
         android:src="@drawable/goal_placeholder"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/imageview_goal"
-        android:layout_weight="3"
+        android:layout_weight="4.5"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         local:MvxBind="DrawableName TitleIfPhoto, Converter=GoalTitleToDrawable; Bitmap ByteArrayToBitmap(TakenPhoto)" />
@@ -103,7 +105,7 @@
             android:textSize="@dimen/button_small"
             android:textColor="@color/pink"
             android:gravity="center" />
-      <Button
+        <Button
             android:text="Take a picture"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
@@ -116,7 +118,7 @@
             android:textSize="@dimen/button_small"
             android:textColor="@color/pink"
             android:gravity="center" />
-       <Button
+        <Button
             android:text="Delete"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
@@ -141,6 +143,5 @@
             android:gravity="center"
             local:MvxBind="Click CompleteGoalCommand"
             android:layout_gravity="center_vertical" />
-       
     </LinearLayout>
 </LinearLayout>

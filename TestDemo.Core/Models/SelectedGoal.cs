@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
+using System.Diagnostics;
 
 namespace TestDemo.Core.Models
 {
@@ -65,6 +66,8 @@ namespace TestDemo.Core.Models
         private void updateDate()
         {
             DateUpdated = DateTime.Now;
+            //Debug.WriteLine("### update date = " + DateUpdated);
+
         }
         public void setGoal(Goal goal)
         {

@@ -59,7 +59,7 @@ namespace TestDemo.Core.Database
 
         public bool UpdateSelectedGoal(SelectedGoal selectedGoal)
         {
-            Debug.WriteLine("#### update start for selected goal = " + selectedGoal.Id+" status "+selectedGoal.Status);
+            //Debug.WriteLine("#### update start for selected goal = " + selectedGoal.Id+" status "+selectedGoal.Status);
 
             database.UpdateWithChildren(selectedGoal);
             return true;
@@ -89,6 +89,7 @@ namespace TestDemo.Core.Database
             return database.DeleteAll<SelectedGoal>();
         }
 
+
         public async Task<SelectedGoal> GetSelectedGoal(object id)
         {
            // Debug.WriteLine("#### seelctedgoal DB.getGoal = " + id);
@@ -97,22 +98,6 @@ namespace TestDemo.Core.Database
             return query.FirstOrDefault();
         }
 
-        //public async Task<bool> DailyRefresh()
-        //{
-
-        //    Debug.WriteLine("#### daily refresh");
-        //    var now = DateTime.Now;
-        //    var today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0).Ticks;
-        //    //Debug.WriteLine("###############  today = " + today.ToString());
-        //    var query = database.Query<SelectedGoal>("SELECT * FROM SelectedGoal WHERE DateUpdated < ? AND Status='STARTED'", today.ToString());
-        //    foreach(var selectedGoal in query)
-        //    {
-        //        selectedGoal.expire();
-        //        await UpdateSelectedGoal(selectedGoal);
-        //    }
-        //    return true;
-
-        //}
         
     }
 }
