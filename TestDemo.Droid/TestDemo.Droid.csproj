@@ -267,7 +267,6 @@
     <AndroidResource Include="Resources\values\Color.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\egg.png" />
     <AndroidResource Include="Resources\values\Dimensions.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -285,11 +284,7 @@
     <AndroidResource Include="Resources\drawable\diamond_03.png" />
     <AndroidResource Include="Resources\drawable\generic.png" />
     <AndroidResource Include="Resources\drawable\goal_placeholder.PNG" />
-    <AndroidResource Include="Resources\drawable\butterfly_1.png" />
-    <AndroidResource Include="Resources\drawable\diamond_1.png" />
-    <AndroidResource Include="Resources\drawable\bird_1.png" />
     <AndroidResource Include="Resources\drawable\gradient_buttons.xml" />
-    <AndroidResource Include="Resources\drawable\butterfly_3.gif" />
     <AndroidResource Include="Resources\drawable\bird_03_shadow.png" />
     <AndroidResource Include="Resources\drawable\butterfly_02_shadow.png" />
     <AndroidResource Include="Resources\drawable\butterfly_03_shadow.png" />
@@ -310,10 +305,13 @@
     <AndroidResource Include="Resources\drawable\meetup.jpg" />
     <AndroidResource Include="Resources\drawable\walkabitmore.jpg" />
     <AndroidResource Include="Resources\drawable\menu.png" />
-    <AndroidResource Include="Resources\drawable\status_deleted.png" />
+    <AndroidResource Include="Resources\drawable\butterfly_1.png" />
+    <AndroidResource Include="Resources\drawable\diamond_1.png" />
+    <AndroidResource Include="Resources\drawable\bird_1.png" />
     <AndroidResource Include="Resources\drawable\status_expired.png" />
     <AndroidResource Include="Resources\drawable\status_started.png" />
     <AndroidResource Include="Resources\drawable\status_completed.png" />
+    <AndroidResource Include="Resources\drawable\status_deleted.png" />
     <Content Include="Views\ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

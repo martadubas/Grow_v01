@@ -8,9 +8,9 @@
     android:background="@drawable/gradient">
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/h1_height"
-        android:padding="@dimen/h1_marg"
-        android:layout_marginTop="@dimen/h1_margTop"
+        android:layout_height="@dimen/nu_height"
+        android:padding="@dimen/nu_marg"
+        android:layout_marginTop="@dimen/nu_margTop"
         android:textSize="@dimen/h1_fontSize"
         android:id="@+id/h1NewUser"
         android:text="Choose username:"

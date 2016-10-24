@@ -24,6 +24,13 @@ namespace TestDemo.Core.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+
+        private string titleIfPhoto;
+        public string TitleIfPhoto
+        {
+            get { return titleIfPhoto; }
+            set { SetProperty(ref titleIfPhoto, value); }
+        }
         private string description;
         public string Description
         {
@@ -49,6 +56,7 @@ namespace TestDemo.Core.ViewModels
             //Debug.WriteLine("###############  start");
 
             Title = goal.Title;
+            TitleIfPhoto = goal.Title;
             Description = goal.Description;
             base.Start();
         }

@@ -11,17 +11,17 @@
         android:textColor="@color/h1_txtCol"
         android:gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/h1_height"
+        android:layout_height="@dimen/nu_height"
         android:id="@+id/h1ChooseAvatar"
         local:MvxBind="Text h1ChooseAvatar, Mode=TwoWay"
-        android:padding="@dimen/h1_marg"
-        android:layout_marginTop="@dimen/h1_margTop"
+        android:padding="@dimen/nu_marg"
+        android:layout_marginTop="@dimen/nu_margTop"
         android:textSize="@dimen/h1_fontSize" />
     <Gallery
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/galleryChooseAvatar"
-        android:layout_marginTop="@dimen/h1_margTop" />
+        android:layout_marginTop="@dimen/nu_margTop" />
     <Button
         android:text="Let's start"
         android:layout_width="fill_parent"

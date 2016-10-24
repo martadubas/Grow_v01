@@ -21,9 +21,9 @@
   <!--headings-->
 
   <dimen name="h1_fontSize">25dp</dimen>
-  <dimen name="h1_height">52dp</dimen>
-  <dimen name="h1_marg">10dp</dimen>
-  <dimen name="h1_margTop">25dp</dimen>
+  <dimen name="h1_height">10dp</dimen>
+  <dimen name="h1_marg">5dp</dimen>
+  <dimen name="h1_margTop">5dp</dimen>
 
   <dimen name="h2_fontSize">15dp</dimen>
   
@@ -38,6 +38,15 @@
 
   <dimen name="text_fontSize">20dp</dimen>
   <dimen name="text_marg">30dp</dimen>
+
+  <!--new user-->
+
+  <dimen name="nu_fontSize">25dp</dimen>
+  <dimen name="nu_height">52dp</dimen>
+  <dimen name="nu_marg">10dp</dimen>
+  <dimen name="nu_margTop">25dp</dimen>
+
+  <dimen name="h2_fontSize">15dp</dimen>
 
 </resources>
 

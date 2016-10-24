@@ -21,11 +21,11 @@ namespace TestDemo.Droid.ValueConverter
             int image = 0;
             //level 1
             if (value == "bird1")
-                image = Resource.Drawable.bird_1;
+                image = Resource.Drawable.bird_01;
             if (value == "butterfly1")
-                image = Resource.Drawable.butterfly_1;
+                image = Resource.Drawable.butterfly_01;
             if (value == "diamond1")
-                image = Resource.Drawable.diamond_1;
+                image = Resource.Drawable.diamond_01;
             //level 2
             if (value == "bird2")
                 image = Resource.Drawable.bird_02;
