@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using TestDemo.Core.Database;
 using TestDemo.Core.Interfaces;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -51,7 +52,37 @@ namespace TestDemo.Core.ViewModels
             insertSampleGoalsToDbIfNotExist();
             loadGoalsFromDb();
             
-            SelectGoalCommand = new MvxCommand<Goal>(selectedGoal => ShowViewModel<GoalDetailViewModel>(selectedGoal));
+            SelectGoalCommand = new MvxCommand<Goal>(selectedGoal => {
+                //if (selectedGoal.Title.Contains("STARTED")|| selectedGoal.Title.Contains("COMPLETED"))
+                //{
+                //    bool found = false;
+                //    var selectedGoalsToday = getSelectedGoalsToday().Result;
+
+
+                //    foreach (SelectedGoal sg in selectedGoalsToday)
+                //    {
+                //        if (sg.GoalId == selectedGoal.Id)
+                //        {
+                //            found = true;
+                //            sg.Goal = selectedGoal;
+                //            ShowViewModel<GoalUpdateViewModel>(sg);
+                //        }
+                //    }
+                //    if (!found)
+                //    {
+                //        ShowViewModel<GoalDetailViewModel>(selectedGoal);
+
+                //    }
+
+
+                //}
+                //else
+                //{
+                    ShowViewModel<GoalDetailViewModel>(selectedGoal);
+                //}
+                    }
+            
+            );
 
         }
 
@@ -64,7 +95,7 @@ namespace TestDemo.Core.ViewModels
         {
             Goals.Clear();
             var goalsInDb = await goalDatabase.GetGoals();
-            var selectedGoalsToday = await selectedGoalDatabase.GetSelectedGoalsToday();
+            var selectedGoalsToday = getSelectedGoalsToday().Result;
 
 
             foreach (var goal in goalsInDb)
@@ -85,6 +116,13 @@ namespace TestDemo.Core.ViewModels
                 Goals.Add(goal);
             }
         }
+
+        public async Task<List<SelectedGoal>> getSelectedGoalsToday()
+        {
+            var selectedGoalsToday = await selectedGoalDatabase.GetSelectedGoalsToday();
+            return selectedGoalsToday;
+        }
+
         public IMvxCommand HomeViewCommand
         {
             get

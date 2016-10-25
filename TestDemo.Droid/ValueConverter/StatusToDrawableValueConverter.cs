@@ -19,12 +19,12 @@ namespace TestDemo.Droid.ValueConverter
     {
         protected override int Convert(string value, Type targetType, object parameter, CultureInfo culture)
         {
-            Debug.WriteLine("###### Status drawable converter");
+            //Debug.WriteLine("###### Status drawable converter");
 
             int image = 0;
             if (value.Contains("STARTED"))
             {
-                Debug.WriteLine("###### started = ");
+               // Debug.WriteLine("###### started = ");
                 image = Resource.Drawable.status_started;
             }else if (value.Contains("COMPLETED"))
             {

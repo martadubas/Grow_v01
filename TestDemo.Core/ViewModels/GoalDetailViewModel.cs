@@ -93,9 +93,10 @@ namespace TestDemo.Core.ViewModels
         }
         public async void insertSelectedGoal(SelectedGoal selectedGoal)
         {
-            //Debug.WriteLine("###############  insert goals");
+            //Debug.WriteLine("###############  insert goal: "+selectedGoal.toString());
 
             await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);
+
             //Debug.WriteLine("###############  after insert goal");
 
             //Close(this);

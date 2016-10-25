@@ -34,15 +34,15 @@ namespace TestDemo.Core.Models
             Status = "STARTED";
             Title = goal.Title;
             Category = goal.Category;
-            DateCreated = DateTime.Now;
-            DateUpdated = DateTime.Now;
+            DateCreated = DateTime.Now.ToLocalTime();
+            DateUpdated = DateTime.Now.ToLocalTime();
         }
         public SelectedGoal()
         {
             Goal = new Goal();
             Status = "STARTED";
-            DateCreated = DateTime.Now;
-            DateUpdated = DateTime.Now;
+            DateCreated = DateTime.Now.ToLocalTime();
+            DateUpdated = DateTime.Now.ToLocalTime();
         }
 
         public void complete()
@@ -65,7 +65,7 @@ namespace TestDemo.Core.Models
 
         private void updateDate()
         {
-            DateUpdated = DateTime.Now;
+            DateUpdated = DateTime.Now.ToLocalTime();
             //Debug.WriteLine("### update date = " + DateUpdated);
 
         }
@@ -79,7 +79,7 @@ namespace TestDemo.Core.Models
         public string toString()
         {
             
-            return ">>Goal " + Goal.Title + " - Status " + Status + " - updated " + DateUpdated + " - goalId " + GoalId+ "<< " ;
+            return ">>SelectedGoal '" + Goal.Title + "' - Status " + Status + " - updated " + DateUpdated + " - goalId " + GoalId+ "<< " ;
         }       
 
 

@@ -45,7 +45,7 @@ namespace TestDemo.Core.Database
             //return database.GetAllWithChildren<SelectedGoal>();
             //return database.Table<SelectedGoal>().ToList();
             //Debug.WriteLine("#### selectedgoal DB.getgoal today");
-            var now = DateTime.Now;
+            var now = DateTime.Now.ToLocalTime();
             var today = new DateTime(now.Year, now.Month, now.Day , 0, 0, 0).Ticks;
             //Debug.WriteLine("###############  today = " + today.ToString());
             var query = database.Query<SelectedGoal>("SELECT * FROM SelectedGoal WHERE DateCreated > ?", today.ToString());
@@ -69,9 +69,15 @@ namespace TestDemo.Core.Database
             //return true;
         }
 
-        public async Task<int> InsertSelectedGoal(SelectedGoal SelectedGoal)
+        public async Task<int> InsertSelectedGoal(SelectedGoal selectedGoal)
         {
-            var num = database.Insert(SelectedGoal);
+            //Debug.WriteLine("###############  in db before insert: " + selectedGoal.toString());
+
+            var num = database.Insert(selectedGoal);
+
+            //SelectedGoal sg = GetSelectedGoal(selectedGoal.Id).Result;
+            //Debug.WriteLine("###############  in db after insert goal: " + sg.toString());
+
             database.Commit();
             //Debug.WriteLine("## num in sgDb =" + num); //return 1 when it is true?
             return num;
@@ -90,6 +96,7 @@ namespace TestDemo.Core.Database
         }
 
 
+        //get selected goal by calling GetSelectedGoal(object id).Result
         public async Task<SelectedGoal> GetSelectedGoal(object id)
         {
            // Debug.WriteLine("#### seelctedgoal DB.getGoal = " + id);

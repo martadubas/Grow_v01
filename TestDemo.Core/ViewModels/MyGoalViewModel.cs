@@ -50,7 +50,7 @@ namespace TestDemo.Core.ViewModels
 
         public async void loadSelectedGoalsFromDbToday()
         {
-            Debug.WriteLine("###############  load goal today from db");
+            //Debug.WriteLine("###############  load goal today from db");
             SelectedGoals.Clear();
             var selectedGoalsInDb = selectedGoalDatabase.GetSelectedGoalsToday().Result;
 

@@ -95,9 +95,21 @@ namespace TestDemo.Core.ViewModels
                     }
                     selectedGoal.setGoal(thisGoal);//to update information of Goal object
 
-                    if (selectedGoal.Status.Equals("STARTED") && selectedGoal.DateCreated < DateTime.Today)
+                    if (selectedGoal.Status.Equals("STARTED") && selectedGoal.DateUpdated.Date < DateTime.Today.ToLocalTime().Date)
                     {
+                        //Debug.WriteLine("###############  goal seems to be expired. " + selectedGoal.toString());
+                        //Debug.WriteLine("######  created: " + selectedGoal.DateCreated);
+                        //Debug.WriteLine("#####  updated: " + selectedGoal.DateUpdated);
+                        //Debug.WriteLine("########  DateTime.Today.Date: " + DateTime.Today.Date);
+                        //Debug.WriteLine("#######  selectedGoal.DateUpdated.Date: " + selectedGoal.DateCreated.Date);
+
+
+
                         selectedGoal.expire();
+
+                        //Debug.WriteLine("--------   after expired");
+                        //Debug.WriteLine("########  DateTime.Today.Date: " + DateTime.Today.Date);
+                        //Debug.WriteLine("#######  selectedGoal.DateUpdated.Date: " + selectedGoal.DateCreated.Date);
                         selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
                         //Debug.WriteLine("###############  expired = " + selectedGoal.toString());
                     }
