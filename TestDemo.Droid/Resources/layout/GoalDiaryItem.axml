@@ -7,6 +7,7 @@
     android:background="@color/list_item"
     android:layout_margin="2dp"
     android:cacheColorHint="@android:color/transparent"
+              local:MvxBind="BackgroundColor Category, Converter=CategoryToBackgroundColor"
     android:weightSum="5">
     <LinearLayout
         android:orientation="vertical"
@@ -18,7 +19,7 @@
             android:text="Status"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="10dp"
             local:MvxBind="Text Status"
             android:textColor="@color/dark_blue" />
         <TextView
@@ -33,7 +34,6 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
-        local:MvxBind="BackgroundColor Category, Converter=CategoryToBackgroundColor"
         android:layout_weight="3">
         <TextView
             android:text="Goal category"
