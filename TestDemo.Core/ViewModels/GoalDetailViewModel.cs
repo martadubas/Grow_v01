@@ -87,8 +87,7 @@ namespace TestDemo.Core.ViewModels
                     }
                     
                 });
-                
-                
+               
             }
         }
         public async void insertSelectedGoal(SelectedGoal selectedGoal)

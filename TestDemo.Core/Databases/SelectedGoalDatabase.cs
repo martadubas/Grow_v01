@@ -10,6 +10,7 @@ using MvvmCross.Platform;
 using System.Threading.Tasks;
 using SQLiteNetExtensions.Extensions;
 using System.Diagnostics;
+using Java.Text;
 
 namespace TestDemo.Core.Database
 {
@@ -41,14 +42,11 @@ namespace TestDemo.Core.Database
 
         public async Task<List<SelectedGoal>> GetSelectedGoalsToday()
         {
-            //database.GetChildren(Goal);
-            //return database.GetAllWithChildren<SelectedGoal>();
-            //return database.Table<SelectedGoal>().ToList();
-            //Debug.WriteLine("#### selectedgoal DB.getgoal today");
-            var now = DateTime.Now.ToLocalTime();
-            var today = new DateTime(now.Year, now.Month, now.Day , 0, 0, 0).Ticks;
-            //Debug.WriteLine("###############  today = " + today.ToString());
-            var query = database.Query<SelectedGoal>("SELECT * FROM SelectedGoal WHERE DateCreated > ?", today.ToString());
+
+            //var query = database.Query<SelectedGoal>("SELECT * FROM SelectedGoal WHERE DateCreated > Datetime(?)", today.ticks.ToString());
+            var query = database.Query<SelectedGoal>("SELECT * FROM SelectedGoal WHERE DateCreated >= date('now','localtime','start of day')");
+
+            
             return query;
         }
 
