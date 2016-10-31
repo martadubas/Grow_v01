@@ -17,7 +17,7 @@
         android:textColor="@color/h1_txtCol"
         android:gravity="center" />
     <TextView
-        android:text="Here some welcome message for a user who opens the application for the first time"
+        android:text="Thank you for choosing Grow! Toghether we can make your life better by taking small steps everyday. Please follow the instructions on the screen."
         android:textColor="@color/dark_blue"
         android:gravity="center"
         android:textSize="@dimen/text_fontSize"

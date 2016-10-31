@@ -30,7 +30,6 @@ namespace TestDemo.Droid
         {
             Mvx.LazyConstructAndRegisterSingleton<ISqlite, SqliteDroid>();
             Mvx.LazyConstructAndRegisterSingleton<IDialogService, DialogService>();
-            //Mvx.LazyConstructAndRegisterSingleton<IUserDatabase, UserDatabase>();
             base.InitializeFirstChance();
         }
     }

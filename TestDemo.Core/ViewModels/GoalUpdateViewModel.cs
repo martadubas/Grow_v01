@@ -1,10 +1,8 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿//author: Elvin Prananta
+using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Models;
 using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Windows.Input;
-using System.Collections.Generic;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Database;
 using System.Diagnostics;

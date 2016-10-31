@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//author: Elvin Prananta
 using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Models;
 using TestDemo.Core.Database;
 using TestDemo.Core.Interfaces;
-using System.Diagnostics;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -46,15 +40,11 @@ namespace TestDemo.Core.ViewModels
         }
         public void Init(Goal goal)
         {
-            //Debug.WriteLine("###############  init goal");
-
             this.goal = goal;
 
         }
         public override void Start()
         {
-            //Debug.WriteLine("###############  start");
-
             Title = goal.Title;
             TitleIfPhoto = goal.Title;
             Description = goal.Description;
@@ -76,7 +66,6 @@ namespace TestDemo.Core.ViewModels
 
                 return new MvxCommand(() => 
                 {
-                    //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
                     if (goal.Title.Contains("STARTED")||goal.Title.Contains("COMPLETED")) 
                     {
                         //show toast in view

@@ -1,14 +1,12 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿//author: Elvin Prananta
+using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Models;
 using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Windows.Input;
-using System.Collections.Generic;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Database;
 using System.Diagnostics;
-using TestDemo.Core.Converters;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -37,9 +35,6 @@ namespace TestDemo.Core.ViewModels
             this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
             this.goalDatabase = new GoalDatabase(sqlite);
 
-
-            // only do this if doesn exist. will clear existing selected goals.
-            //insertSampleSelectedGoalsToDbIfNotExist();
             loadSelectedGoalsFromDbToday();
             ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal =>
             {
@@ -91,8 +86,6 @@ namespace TestDemo.Core.ViewModels
         }
         public async void clearSelectedGoalDb()
         {
-            //Debug.WriteLine("###############  clear all selected goals");
-
             await selectedGoalDatabase.DeleteAll();
         }
     }

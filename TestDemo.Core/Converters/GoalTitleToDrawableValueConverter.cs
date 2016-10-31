@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//author: Elvin Prananta
+using System;
 using MvvmCross.Platform.Converters;
 using System.Globalization;
-using Android;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace TestDemo.Core.Converters

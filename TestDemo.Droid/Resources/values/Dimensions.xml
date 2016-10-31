@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
-
+  <!--author: Marta Dubas-->
+  
   <!--button-->
 
   <dimen name="button_fontsize">20dp</dimen>

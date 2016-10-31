@@ -1,5 +1,4 @@
 //Author: Elvin Prananta, N9806482
-
 using Android.App;
 using Android.OS;
 using Android.Views;

@@ -1,29 +1,21 @@
-﻿using System;
+﻿//author: Elvin Prananta
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using SQLite.Net;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Models;
 using MvvmCross.Platform;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace TestDemo.Core.Database
 {
     public class GoalDatabase
     {
         private SQLiteConnection database;
-        //public GoalDatabase()
-        //{
-        //    var sqlite = Mvx.Resolve<ISqlite>();
-        //    database = sqlite.GetConnection();
-        //    database.CreateTable<Goal>();
-        //}
+     
         public GoalDatabase(ISqlite sqlite)
         {
-            //var sqlite = Mvx.Resolve<ISqlite>();
             database = sqlite.GetConnection();
             database.CreateTable<Goal>();
         }
@@ -57,7 +49,6 @@ namespace TestDemo.Core.Database
             return query.FirstOrDefault();
             
         }
-
 
         public async Task<int> InsertGoal(Goal Goal)
         {

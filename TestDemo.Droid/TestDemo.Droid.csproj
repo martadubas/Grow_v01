@@ -295,7 +295,7 @@
     <AndroidResource Include="Resources\drawable\gogreener.jpg" />
     <AndroidResource Include="Resources\drawable\eataleaf.jpg" />
     <AndroidResource Include="Resources\drawable\innerpeace.jpg" />
-    <AndroidResource Include="Resources\drawable\streching.jpg" />
+    <AndroidResource Include="Resources\drawable\stretching.jpg" />
     <AndroidResource Include="Resources\drawable\keepwaterclosetoyou.jpg" />
     <AndroidResource Include="Resources\drawable\teatime.jpg" />
     <AndroidResource Include="Resources\drawable\findabuddy.jpg" />

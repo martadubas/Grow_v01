@@ -43,8 +43,6 @@ namespace TestDemo.Core.ViewModels
             get
             {
                 return new MvxCommand(() => ShowViewModel<SettingsViewModel>());
-                //return new MvxCommand(() => ShowViewModel<GoalListViewModel>());
-
             }
         }
 
@@ -55,23 +53,6 @@ namespace TestDemo.Core.ViewModels
                 return new MvxCommand(() => ShowViewModel<HelloNewUserViewModel>());
             }
         }
-
-
-
-        //private bool isGoing;
-
-        /*
-        public bool IsGoing
-        {
-            get { return isGoing; }
-            set
-            {
-                isGoing = value;
-                RaisePropertyChanged();
-            }
-        }
-        */
-
 
     }
 }

@@ -39,8 +39,6 @@ namespace TestDemo.Core.ViewModels
             {
                 return new MvxCommand(() =>
                 {
-                    //var users  = _userDatabase.GetUsers();
-          
                     if (string.IsNullOrEmpty(Username))
                     {
                         Debug.WriteLine("Throw exception, username is empty");

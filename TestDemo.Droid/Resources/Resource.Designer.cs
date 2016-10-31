@@ -2198,7 +2198,7 @@ namespace TestDemo.Droid
 			public const int status_started = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int streching = 2130837624;
+			public const int stretching = 2130837624;
 			
 			// aapt resource value: 0x7f020079
 			public const int teatime = 2130837625;

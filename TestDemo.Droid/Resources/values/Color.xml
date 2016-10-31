@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
-
+  <!--author: Marta Dubas-->
+  
   <!--gradient-->
   <color name="start_gradient">#D6E59C</color>
   <color name="end_gradient">#81E5BA</color>

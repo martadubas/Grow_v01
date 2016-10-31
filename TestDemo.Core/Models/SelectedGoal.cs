@@ -1,12 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿//author: Elvin Prananta
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
-using System.Diagnostics;
 
 namespace TestDemo.Core.Models
 {
@@ -66,8 +61,6 @@ namespace TestDemo.Core.Models
         private void updateDate()
         {
             DateUpdated = DateTime.Now.ToLocalTime();
-            //Debug.WriteLine("### update date = " + DateUpdated);
-
         }
         public void setGoal(Goal goal)
         {

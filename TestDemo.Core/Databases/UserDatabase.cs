@@ -1,10 +1,10 @@
-﻿using System;
+﻿//author:Marta Dubas
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using SQLite.Net;
 using TestDemo.Core.Interfaces;
 using MvvmCross.Platform;
-using System.Threading.Tasks;
 using TestDemo.Core.Models;
 
 namespace TestDemo.Core.Database
@@ -58,15 +58,6 @@ namespace TestDemo.Core.Database
             database.Commit();
             return num;
         }
-
-        
-
-        //public bool isSetUser()
-        //{
-        //    if (database.Table<User>().Count() > 0) return true;
-
-        //    return false;
-        //}
      
     }
 }

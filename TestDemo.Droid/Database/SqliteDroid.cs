@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using TestDemo.Core.Interfaces;
 using SQLite.Net;
 using System.IO;

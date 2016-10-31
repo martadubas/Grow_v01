@@ -1,14 +1,12 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿//author: Elvin Prananta
+using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Models;
 using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Windows.Input;
-using System.Collections.Generic;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Database;
 using System.Diagnostics;
-using TestDemo.Core.Converters;
 
 namespace TestDemo.Core.ViewModels
 {
@@ -16,7 +14,6 @@ namespace TestDemo.Core.ViewModels
         : MvxViewModel
     {
 
-        //private readonly IDialogService dialog;
         private SelectedGoalDatabase selectedGoalDatabase;
         private GoalDatabase goalDatabase;
         private IDialogService dialog;
@@ -34,25 +31,16 @@ namespace TestDemo.Core.ViewModels
         public GoalDiaryViewModel(ISqlite sqlite, IDialogService dialog)
         {
             this.dialog = dialog;
-            //Debug.WriteLine("###############  new GoalDiary");
             SelectedGoals = new ObservableCollection<SelectedGoal>() { };
-
-            //this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
-            //SelectedGoals = getSampleSelectedGoals();
-
-            //ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => ShowViewModel<SelectedGoalDetailViewModel>(selectedSelectedGoal));
 
             this.selectedGoalDatabase = new SelectedGoalDatabase(sqlite);
             this.goalDatabase = new GoalDatabase(sqlite);
 
-
             // only do this if doesn exist. will clear existing selected goals.
-            //insertSampleSelectedGoalsToDbForTesting();
-            //clearSelectedGoalDb();
+    
             loadSelectedGoalsFromDb();
             ViewSelectedGoalCommand = new MvxCommand<SelectedGoal>(selectedSelectedGoal => 
             {
-                //Debug.WriteLine("###############  selected goal = " + selectedSelectedGoal.Id + " goal Id= " + selectedSelectedGoal.Goal.Id);
                 ShowViewModel<GoalUpdateViewModel>(new { selectedGoalId = selectedSelectedGoal.Id });
                 }
             );
@@ -65,7 +53,6 @@ namespace TestDemo.Core.ViewModels
                 return new MvxCommand(() => 
                 {
                     //Debug.WriteLine("###############  select currentGoal = " + goal + " goal Id= " + goal.Id);
-                    //insertSelectedGoal(new SelectedGoal(goal));
                     ShowViewModel<GoalDiaryViewModel>();
                 });
                 
@@ -77,7 +64,6 @@ namespace TestDemo.Core.ViewModels
         {
             //Debug.WriteLine("###############  load diary from db");
             SelectedGoals.Clear();
-            //var selectedGoalsInDb = await selectedGoalDatabase.GetSelectedGoals();
             //Debug.WriteLine("###############  get selected goals from db");
             var selectedGoalsInDb = selectedGoalDatabase.GetSelectedGoals();
 
@@ -97,33 +83,18 @@ namespace TestDemo.Core.ViewModels
 
                     if (selectedGoal.Status.Equals("STARTED") && selectedGoal.DateUpdated.Date < DateTime.Today.ToLocalTime().Date)
                     {
-                        //Debug.WriteLine("###############  goal seems to be expired. " + selectedGoal.toString());
-                        //Debug.WriteLine("######  created: " + selectedGoal.DateCreated);
-                        //Debug.WriteLine("#####  updated: " + selectedGoal.DateUpdated);
-                        //Debug.WriteLine("########  DateTime.Today.Date: " + DateTime.Today.Date);
-                        //Debug.WriteLine("#######  selectedGoal.DateUpdated.Date: " + selectedGoal.DateCreated.Date);
-
-
-
                         selectedGoal.expire();
-
-                        //Debug.WriteLine("--------   after expired");
-                        //Debug.WriteLine("########  DateTime.Today.Date: " + DateTime.Today.Date);
-                        //Debug.WriteLine("#######  selectedGoal.DateUpdated.Date: " + selectedGoal.DateCreated.Date);
                         selectedGoalDatabase.UpdateSelectedGoal(selectedGoal);
-                        //Debug.WriteLine("###############  expired = " + selectedGoal.toString());
                     }
 
 
                     SelectedGoals.Add(selectedGoal);
-                    //Debug.WriteLine("############### added Goal " + thisGoal.Title +" "+thisGoal.Title);
                 }
                 catch (Exception e)
                 {
                     //possibly NullReferenceException
                     
                     Debug.WriteLine("###############  exception: "+e.Message);
-                    //selectedGoal.GoalId = 1;
                     await selectedGoalDatabase.DeleteSelectedGoal(selectedGoal.Id);
                 }
                 
@@ -142,13 +113,8 @@ namespace TestDemo.Core.ViewModels
                 goal = new Goal(0,"Sample Title", "Desc", "Cat");
             }
             SelectedGoal newSGoal = new SelectedGoal(goal);
-            //DateTime dt = new DateTime(2008, 3, 9, 16, 5, 7, 123);
-            //newSGoal.DateCreated = new DateTime(2008, 3, 9, 16, 5, 7, 123);
-
-
             SelectedGoals.Add(newSGoal);
 
-           // await selectedGoalDatabase.DeleteAll();
             foreach (var selectedGoal in SelectedGoals)
             {
                 await selectedGoalDatabase.InsertSelectedGoal(selectedGoal);

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//authors: Elvin Prananta and Marta Dubas, only for testing 
 using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Database;
 using TestDemo.Core.Models;

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MvvmCross.Platform.Converters;
+﻿//author: Elvin Prananta
+using System;
 using System.Globalization;
-using Android;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
 using MvvmCross.Plugins.Color;
 using MvvmCross.Platform.UI;
 
@@ -24,10 +17,8 @@ namespace TestDemo.Core.Converters
 
         protected override MvxColor Convert(object value, object parameter, CultureInfo culture)
         {
-            //Debug.WriteLine("###### color converter");
             String strvalue = (string)value;
             strvalue = strvalue.ToUpper();
-            //Debug.WriteLine("###### strvalue = "+strvalue);
 
             if (strvalue.Contains("FOOD"))
             {
@@ -50,44 +41,7 @@ namespace TestDemo.Core.Converters
                 return ColorOthers;
             }
         }
-
-
-        /*
-         *
-         * 
-         protected override MvxColor Convert(object value, object parameter, CultureInfo culture)
-        {
-            Debug.WriteLine("###### color converter");
-            String strvalue = (string)value;
-            strvalue = strvalue.ToUpper();
-            Debug.WriteLine("###### strvalue = "+strvalue);
-
-            if (strvalue.Contains("COMPLETED"))
-            {
-                return ColorCompleted;
-            }
-            else if (strvalue.Contains("STARTED"))
-            {
-                return ColorStarted;
-            }
-            else if (strvalue.Contains("EXPIRED"))
-            {
-                return ColorExpired;
-            }
-            else if (strvalue.Contains("DELETED"))
-            {
-                return ColorExpired;
-            }
-            else
-            {
-                return ColorDefault;
-            }
-        }
-         *
-         **/
-
-
-
+       
     }
 
 }

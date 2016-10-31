@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 
 using Android.App;
+//author: Elvin Prananta
 using Android.OS;
-
 using MvvmCross.Droid.Views;
 using Android.Widget;
 using TestDemo.Core.ViewModels;
@@ -49,11 +49,8 @@ namespace TestDemo.Droid.Views
             };
 
             //for images
-           String resourceId = "@drawable/" + vm.Title.ToLower().Trim(); // where myResourceName is the name of your resource file, minus the file extension
-           //int imageResource = getResources().getIdentifier(resourceId, null, getPackageName());
-           // Drawable drawable = ContextCompat.getDrawable(this, imageResource); // For API 21+, gets a drawable styled for theme of passed Context
-           // imageview = (ImageView)findViewById(R.id.imageView);
-           // imageview.setImageDrawable(drawable);
+           string resourceId = "@drawable/" + vm.Title.ToLower().Trim(); // where myResourceName is the name of your resource file, minus the file extension
+         
         }
     }
 }

@@ -1,9 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿//author: Elvin Prananta
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SQLite.Net.Attributes;
 namespace TestDemo.Core.Models
 {
@@ -13,8 +9,6 @@ namespace TestDemo.Core.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        //public DateTime DateCreated { get; set; }
-    
 
         public string Category { get; set; }
 

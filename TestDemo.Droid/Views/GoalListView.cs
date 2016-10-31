@@ -1,14 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+//author: Elvin Prananta
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using MvvmCross.Droid.Views;
 
 namespace TestDemo.Droid.Views
@@ -22,7 +15,6 @@ namespace TestDemo.Droid.Views
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.GoalListView);
 
-            // Create your application here
         }
     }
 }

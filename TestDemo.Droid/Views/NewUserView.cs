@@ -1,5 +1,4 @@
 //Author: Marta Dubas, N9791701
-
 using Android.App;
 using Android.OS;
 using Android.Views;

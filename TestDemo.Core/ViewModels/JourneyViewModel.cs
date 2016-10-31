@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿//author: Marta Dubas
+using MvvmCross.Core.ViewModels;
 using TestDemo.Core.Database;
 using TestDemo.Core.Interfaces;
 using TestDemo.Core.Models;
@@ -26,7 +27,7 @@ namespace TestDemo.Core.ViewModels
             var points = _user.CompletedGoal;
             _h1Journey = _user.Username + "'s journey";
 
-
+            //avatar level1
             if (points < 20)
             {
                 _user.AvatarLevel = 1;
@@ -64,7 +65,7 @@ namespace TestDemo.Core.ViewModels
                 }
 
             }
-
+            //avatar level2
             if (points >= 20 && points < 40)
 
             {
@@ -107,7 +108,8 @@ namespace TestDemo.Core.ViewModels
                         break;
                 }
             }
-            else if (points >= 40)
+            //avatar level3
+            if (points >= 40)
             {
                 _pointsLevel2 = "20/20";
                 _pointsLevel3 = "20/20";
@@ -227,11 +229,8 @@ namespace TestDemo.Core.ViewModels
         {
             this.dialog = dialog;
             _userDatabase = new UserDatabase();
-            
-            
         }
   
-
         public string pointsLevel2
         {
             get { return _pointsLevel2; }

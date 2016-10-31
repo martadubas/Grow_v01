@@ -14,12 +14,10 @@ namespace TestDemo.Core
         private User _user = new User();
         public override void Initialize()
         {
-            //updateSelectedGoals();
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-           // _userDatabase.DeleteAll();
             
             if (_userDatabase.GetUserById(1)==null)
             {
@@ -30,18 +28,7 @@ namespace TestDemo.Core
                 RegisterAppStart<ViewModels.JourneyViewModel>();
             }
 
-
-            //RegisterAppStart<ViewModels.GoalListViewModel>();
-            //RegisterAppStart<ViewModels.GoalDiaryViewModel>();
-            //RegisterAppStart<ViewModels.JourneyViewModel>();
         }
 
-        //private async void updateSelectedGoals()
-        //{
-        //    await _selectedGoalDatabase.DailyRefresh();
-        //}
-
-        
-
-    }
+         }
 }

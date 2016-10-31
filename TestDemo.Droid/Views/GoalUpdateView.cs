@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+//author: Elvin Prananta
 using Android.App;
 using Android.OS;
-
 using MvvmCross.Droid.Views;
 using Android.Widget;
 using TestDemo.Core.ViewModels;

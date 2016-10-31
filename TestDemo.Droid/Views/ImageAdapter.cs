@@ -1,8 +1,8 @@
-﻿using Android.Content;
+﻿//author: Marta Dubas
+using Android.Content;
 using Android.Views;
 using Android.Widget;
 using TestDemo.Droid;
-
 public class ImageAdapter : BaseAdapter
 {
     Context context;

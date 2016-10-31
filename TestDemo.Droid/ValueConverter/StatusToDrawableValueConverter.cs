@@ -1,16 +1,6 @@
+//author: Elvin Prananta
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Diagnostics;
-
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using MvvmCross.Platform.Converters;
 
 namespace TestDemo.Droid.ValueConverter
@@ -19,12 +9,10 @@ namespace TestDemo.Droid.ValueConverter
     {
         protected override int Convert(string value, Type targetType, object parameter, CultureInfo culture)
         {
-            //Debug.WriteLine("###### Status drawable converter");
-
+           
             int image = 0;
             if (value.Contains("STARTED"))
             {
-               // Debug.WriteLine("###### started = ");
                 image = Resource.Drawable.status_started;
             }else if (value.Contains("COMPLETED"))
             {
@@ -39,10 +27,7 @@ namespace TestDemo.Droid.ValueConverter
             {
                 image = Resource.Drawable.status_deleted;
             }
-                    
-
-
-
+                
             return image;
         }
     }
